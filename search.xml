@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何闭环的完成阶段性的工作]]></title>
+    <url>%2F2018%2F11%2F04%2Fhow-closed-loop-done%2F</url>
+    <content type="text"><![CDATA[有始有终 再小的事情也不要忘了结束。 谨小慎微 小问题随处可见，为什么要轻易忽视呢。 连续作业 任务开始了，就需要一根到底，直到关闭任务。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Mac Terminal基本工具介绍]]></title>
     <url>%2F2018%2F11%2F04%2Fmac-terminal-tool-introduction%2F</url>
     <content type="text"><![CDATA[homebrewgitsvnantmavennodepythonjavahexonpm 如何查看已安装的工具和环境变量? 命令行有哪些使用的命令？]]></content>
@@ -36,9 +41,9 @@
     <content type="text"><![CDATA[本地Java IDE准备Hadoop远程访问基本Hadoop程序开发 【待完成】]]></content>
       <tags>
         <tag>Hadoop</tag>
-        <tag>HDFS</tag>
         <tag>Mapreduce</tag>
         <tag>Eclipse</tag>
+        <tag>HDFS</tag>
       </tags>
   </entry>
   <entry>
