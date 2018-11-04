@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="404yuJzr96ZVCR7qIjbcrQy5nQ2wWxlDnIQ2mAqsPTE" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="本文主要讲述Hadoop环境搭建的准备工作，涉及基础环境，Linux命令，以及节点规划三个部分。">
+<meta name="keywords" content="Hadoop,Linux,Node,MacOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="（一）Hadoop笔记：准备工作">
+<meta property="og:url" content="http://quippy.tech/2018/07/27/hadoop-learn-01/index.html">
+<meta property="og:site_name" content="Breeze Blows">
+<meta property="og:description" content="本文主要讲述Hadoop环境搭建的准备工作，涉及基础环境，Linux命令，以及节点规划三个部分。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-29T04:43:45.108Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="（一）Hadoop笔记：准备工作">
+<meta name="twitter:description" content="本文主要讲述Hadoop环境搭建的准备工作，涉及基础环境，Linux命令，以及节点规划三个部分。">
+
+
+
+
+
+
+  <link rel="canonical" href="http://quippy.tech/2018/07/27/hadoop-learn-01/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>（一）Hadoop笔记：准备工作 | Breeze Blows</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?11d6b7465649525db958a78d393ceb32";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Breeze Blows</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">清風徐來</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://quippy.tech/2018/07/27/hadoop-learn-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Quippy">
+      <meta itemprop="description" content="清風徐來，水波不興，寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Breeze Blows">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">（一）Hadoop笔记：准备工作
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-07-27 20:34:37" itemprop="dateCreated datePublished" datetime="2018-07-27T20:34:37+08:00">2018-07-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-07-29 12:43:45" itemprop="dateModified" datetime="2018-07-29T12:43:45+08:00">2018-07-29</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/27/hadoop-learn-01/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/27/hadoop-learn-01/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">本文主要讲述Hadoop环境搭建的准备工作，涉及基础环境，Linux命令，以及节点规划三个部分。</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ul>
+<li>MacOS 10.13.3 (17D47)</li>
+<li>Java version 1.8.0_151</li>
+<li>VMware Fusion 专业版 10.0.1</li>
+<li>CentOS-7-x86_64-Minimal-1708</li>
+<li>Kernel 3.10.0-0-693.21.1.e17.x86_64</li>
+<li>hadoop-2.6.0</li>
+</ul>
+<h1 id="基本Linux命令"><a href="#基本Linux命令" class="headerlink" title="基本Linux命令"></a>基本Linux命令</h1><h2 id="系统查询"><a href="#系统查询" class="headerlink" title="系统查询"></a>系统查询</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ssh连接</span></span><br><span class="line">ssh root@cluster03.kwp.com</span><br><span class="line"><span class="comment"># 查看主机名</span></span><br><span class="line">hostname</span><br><span class="line"><span class="comment"># 查看端口是否连通</span></span><br><span class="line">telnet cluster03.kwp.com 8088</span><br><span class="line"><span class="comment"># 查看端口当前使用情况</span></span><br><span class="line">ss -ntl</span><br><span class="line"><span class="comment"># 查看Linux网络状态</span></span><br><span class="line">netstat -anp|grep 8088</span><br><span class="line"><span class="comment"># 查看操作系统的发行版本号内核</span></span><br><span class="line">uname -r</span><br><span class="line"><span class="comment"># 查看定时任务</span></span><br><span class="line">crontab -l</span><br><span class="line"><span class="comment"># 查看IP</span></span><br><span class="line">ip addr</span><br><span class="line"><span class="comment"># 查询系统中全部的内核</span></span><br><span class="line">rpm -q kernel</span><br><span class="line"><span class="comment"># 查看防火墙状态</span></span><br><span class="line">firewall-cmd --state</span><br><span class="line"><span class="comment"># 查看Hadoop安装路径</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$HADOOP_HOME</span></span><br><span class="line"><span class="comment"># 查看目录下所有文件大小</span></span><br><span class="line">du -sh share/doc/</span><br><span class="line"><span class="comment"># 获得所有软件包安装信息</span></span><br><span class="line">rpm -qa | grep telnet</span><br><span class="line"><span class="comment"># 查看服务状态</span></span><br><span class="line">service ntpd status</span><br><span class="line"><span class="comment"># 查看邮件</span></span><br><span class="line">cat /var/spool/mail/root</span><br><span class="line"><span class="comment"># 查看当前时间</span></span><br><span class="line">date <span class="string">"+%Y-%m-%d %H:%M:%S"</span></span><br><span class="line"><span class="comment"># 显示所有本地IP地址+端口号</span></span><br><span class="line">netstat -an</span><br></pre></td></tr></table></figure>
+<h2 id="目录和配置文件"><a href="#目录和配置文件" class="headerlink" title="目录和配置文件"></a>目录和配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 系统参数设置</span></span><br><span class="line">/etc</span><br><span class="line"><span class="comment"># 用户级的程序目录</span></span><br><span class="line">/opt</span><br><span class="line"><span class="comment"># 系统运行时需改变的数据</span></span><br><span class="line">/var</span><br><span class="line"><span class="comment"># 应用程序存放目录</span></span><br><span class="line">/usr </span><br><span class="line"><span class="comment"># 用于加载各种文件系统</span></span><br><span class="line">/mnt</span><br><span class="line"><span class="comment"># 所有外设所在目录</span></span><br><span class="line">/dev</span><br><span class="line"><span class="comment"># 内存的映射，非真实目录</span></span><br><span class="line">/proc</span><br><span class="line"><span class="comment"># hosts主机硬伤文件</span></span><br><span class="line">vi /etc/hosts</span><br><span class="line"><span class="comment"># 网卡IP设置</span></span><br><span class="line"><span class="built_in">cd</span> /etc/sysconfig/network-scripts/</span><br><span class="line"><span class="comment"># 本机SSH公钥</span></span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line"><span class="comment"># 超级管理员权限控制文件</span></span><br><span class="line">cat /etc/sudoers</span><br><span class="line"><span class="comment"># 系统启动时自动mount的文件列表</span></span><br><span class="line">cat /etc/fstab</span><br><span class="line"><span class="comment"># 主机名</span></span><br><span class="line">cat /etc/hostname</span><br></pre></td></tr></table></figure>
+<h2 id="软件安装与更新"><a href="#软件安装与更新" class="headerlink" title="软件安装与更新"></a>软件安装与更新</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装软件</span></span><br><span class="line">yum -y install telnet</span><br><span class="line">yum -y install ntpdate</span><br><span class="line">yum -y install bash-completion</span><br><span class="line">yum -y install make</span><br><span class="line">yum -y install kernel-headers</span><br><span class="line"><span class="comment"># 更新软件</span></span><br><span class="line">yum -y update firewalld</span><br><span class="line">yum -y pdate kernel</span><br><span class="line"><span class="comment"># 查看是否安装telnet</span></span><br><span class="line">yum list |grep telnet</span><br></pre></td></tr></table></figure>
+<h3 id="基本设置和操作"><a href="#基本设置和操作" class="headerlink" title="基本设置和操作"></a>基本设置和操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改主机名</span></span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname cluster01.kwp.com</span><br><span class="line"><span class="comment"># 清除屏幕</span></span><br><span class="line">clear</span><br><span class="line"><span class="comment"># 挂载设备到文件夹</span></span><br><span class="line">mount /dev/cdrom /mnt/cdrom</span><br><span class="line"><span class="comment"># 添加用户</span></span><br><span class="line">adduser hadoop</span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line">passwd hadoop</span><br><span class="line"><span class="comment"># 删除用户</span></span><br><span class="line">userdel -r hadoop</span><br><span class="line"><span class="comment"># 删除用户组</span></span><br><span class="line">groupdel hadoop</span><br><span class="line"><span class="comment"># 优雅重启</span></span><br><span class="line">init 6</span><br><span class="line"><span class="comment"># 强制重启</span></span><br><span class="line">reboot</span><br><span class="line"><span class="comment"># 生成公钥私钥对</span></span><br><span class="line">ssh-keygen</span><br><span class="line"><span class="comment"># 将本机公钥追加到cluster03.kwp.com主机</span></span><br><span class="line">ssh-copy-id -i cluster03.kwp.com</span><br><span class="line">chmod 600 authorized_keys</span><br><span class="line"><span class="comment"># ntp同步网络时间</span></span><br><span class="line">ntpdate time.nist.gov</span><br><span class="line"><span class="comment"># 将系统时钟同步到硬件时钟</span></span><br><span class="line">hwclock -w</span><br><span class="line"><span class="comment"># 请求网页内容</span></span><br><span class="line">curl cluster02:8088/cluster</span><br><span class="line"><span class="comment"># 解压缩文件到指定目录</span></span><br><span class="line">tar -xvf hadoop-2.6.0.tar -C /opt/modules</span><br><span class="line"><span class="comment"># 关闭防火墙</span></span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line"><span class="comment"># 设置防火墙开启端口对外访问</span></span><br><span class="line">firewall-cmd --zone=public --add-port=8082/tcp --permanent</span><br><span class="line"><span class="comment"># 重新加载防火墙服务</span></span><br><span class="line">firewall-cmd --zone=public --reload</span><br><span class="line"><span class="comment"># sshd服务重启</span></span><br><span class="line">service sshd restart</span><br><span class="line"><span class="comment"># 网络重启</span></span><br><span class="line">service network restart</span><br><span class="line"><span class="comment"># 局域网主机之间互传文件</span></span><br><span class="line">scp -r yarn-site.xml cluster02.kwp.com:/opt/modules/hadoop-2.6.0/etc/hadoop/</span><br></pre></td></tr></table></figure>
+<h2 id="Hadoop命令"><a href="#Hadoop命令" class="headerlink" title="Hadoop命令"></a>Hadoop命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># HDFS格式化命令</span></span><br><span class="line">hdfs namenode –format</span><br><span class="line"><span class="comment"># 执行mapreduce任务</span></span><br><span class="line">bin/yarn jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar wordcount /input/wc.input /output</span><br><span class="line"><span class="comment"># 启动Yarn任务</span></span><br><span class="line">start-yarn.sh</span><br><span class="line"><span class="comment"># 启动HDFS服务</span></span><br><span class="line">start-dfs.sh</span><br><span class="line"><span class="comment"># 停止resourcemanager服务</span></span><br><span class="line">yarn-daemon.sh stop resourcemanager</span><br><span class="line"><span class="comment"># 启动historyserver服务</span></span><br><span class="line">mr-jobhistory-daemon.sh start historyserver</span><br></pre></td></tr></table></figure>
+<h1 id="节点规划"><a href="#节点规划" class="headerlink" title="节点规划"></a>节点规划</h1><h2 id="节点服务列表"><a href="#节点服务列表" class="headerlink" title="节点服务列表"></a>节点服务列表</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">节点</th>
+<th style="text-align:left">主机名</th>
+<th style="text-align:left">服务项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">节点1</td>
+<td style="text-align:left">cluster01.kwp.com</td>
+<td style="text-align:left">NameNode, DataNode,Nodemanager, HistoryServer</td>
+</tr>
+<tr>
+<td style="text-align:left">节点2</td>
+<td style="text-align:left">cluster02.kwp.com</td>
+<td style="text-align:left">ResourceManager, DataNode,Nodemanager</td>
+</tr>
+<tr>
+<td style="text-align:left">节点3</td>
+<td style="text-align:left">cluster03.kwp.com</td>
+<td style="text-align:left">SecondaryNameNode, DataNode,Nodemanager</td>
+</tr>
+</tbody>
+</table>
+<h2 id="本机虚拟机和共享目录"><a href="#本机虚拟机和共享目录" class="headerlink" title="本机虚拟机和共享目录"></a>本机虚拟机和共享目录</h2><p>路径：/Users/mac/Documents/Virtual Machines.localized</p>
+<blockquote>
+<p>CentOS:  CentOS-7-x86_64-Minimal-1708.ISO</p>
+</blockquote>
+<ul>
+<li>cluster01.vmwarevm<ul>
+<li>硬盘：20G </li>
+<li>内存：1024MB</li>
+<li>IP：192.168.32.141</li>
+<li>连接类型：NAT</li>
+<li>sharefolder (/mnt/hgfs/sharefolder) </li>
+</ul>
+</li>
+<li>cluster02.vmwarevm<ul>
+<li>硬盘：20G </li>
+<li>内存：1024MB</li>
+<li>IP：192.168.32.142</li>
+<li>连接类型：NAT</li>
+<li>sharefolder (/mnt/hgfs/sharefolder) </li>
+</ul>
+</li>
+<li>cluster03.vmwarevm<ul>
+<li>硬盘：20G </li>
+<li>内存：1024MB</li>
+<li>IP：192.168.32.143</li>
+<li>连接类型：NAT</li>
+<li>sharefolder (/mnt/hgfs/sharefolder) </li>
+</ul>
+</li>
+</ul>
+<h2 id="Hadoop和JDK安装目录"><a href="#Hadoop和JDK安装目录" class="headerlink" title="Hadoop和JDK安装目录"></a>Hadoop和JDK安装目录</h2><p>路径：/opt/modules/</p>
+<ul>
+<li>hadoop-2.6.0</li>
+<li>jdk1.8.0_171</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hadoop/" rel="tag"># Hadoop</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Node/" rel="tag"># Node</a>
+          
+            <a href="/tags/MacOS/" rel="tag"># MacOS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/24/why-not-beautiful-code/" rel="next" title="为什么程序员写不出优雅的代码">
+                <i class="fa fa-chevron-left"></i> 为什么程序员写不出优雅的代码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/27/hadoop-learn-02/" rel="prev" title="（二）Hadoop笔记：虚拟机CentOS环境准备">
+                （二）Hadoop笔记：虚拟机CentOS环境准备 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Quippy</p>
+              <p class="site-description motion-element" itemprop="description">清風徐來，水波不興，寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本Linux命令"><span class="nav-number">2.</span> <span class="nav-text">基本Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统查询"><span class="nav-number">2.1.</span> <span class="nav-text">系统查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录和配置文件"><span class="nav-number">2.2.</span> <span class="nav-text">目录和配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件安装与更新"><span class="nav-number">2.3.</span> <span class="nav-text">软件安装与更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本设置和操作"><span class="nav-number">2.3.1.</span> <span class="nav-text">基本设置和操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop命令"><span class="nav-number">2.4.</span> <span class="nav-text">Hadoop命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#节点规划"><span class="nav-number">3.</span> <span class="nav-text">节点规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#节点服务列表"><span class="nav-number">3.1.</span> <span class="nav-text">节点服务列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本机虚拟机和共享目录"><span class="nav-number">3.2.</span> <span class="nav-text">本机虚拟机和共享目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop和JDK安装目录"><span class="nav-number">3.3.</span> <span class="nav-text">Hadoop和JDK安装目录</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Quippy  k-751@qq.com</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a></div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="Total Visitors">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="Total Views">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'VVwFJ2jPwmz82WsU7yAhhCu1-gzGzoHsz',
+        appKey: 'af3bTCVS03aKmkuK4PYgNlSn',
+        placeholder: 'ヾﾉ≧∀≦)o 来呀~快活呀~',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

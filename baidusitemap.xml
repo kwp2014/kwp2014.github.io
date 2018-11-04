@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/11/04/how-to-accumulate/</loc>
+    <lastmod>2018-11-04T10:39:26.124Z</lastmod>
+    <data>
+        <display>
+        <title>如何有效的积累</title>
+        <pubTime>2018-11-04T10:35:16.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/08/13/Idea-IDE-for-Java/</loc>
+    <lastmod>2018-08-13T14:49:01.456Z</lastmod>
+    <data>
+        <display>
+        <title>Idea 开发工具使用</title>
+        <pubTime>2018-08-13T14:44:32.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/08/13/SVN-deliverer-for-coder/</loc>
+    <lastmod>2018-08-13T14:42:36.579Z</lastmod>
+    <data>
+        <display>
+        <title>SVN工具用于本地版本管理</title>
+        <pubTime>2018-08-13T14:24:17.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/08/13/JPA-mapping-for-data/</loc>
+    <lastmod>2018-08-13T14:41:10.091Z</lastmod>
+    <data>
+        <display>
+        <title>JPA用于数据持久化</title>
+        <pubTime>2018-08-13T14:32:53.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/08/13/Maven-elegant-project/</loc>
+    <lastmod>2018-08-13T14:32:50.977Z</lastmod>
+    <data>
+        <display>
+        <title>Maven工具用于项目构建和规划</title>
+        <pubTime>2018-08-13T14:17:21.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://quippy.tech/2018/07/27/hadoop-learn-01/</loc>
+    <lastmod>2018-07-29T04:43:45.108Z</lastmod>
+    <data>
+        <display>
+        <title>（一）Hadoop笔记：准备工作</title>
+        <pubTime>2018-07-27T12:34:37.000Z</pubTime>
+        
+        <tag>Hadoop</tag>
+         
+        <tag>Linux</tag>
+         
+        <tag>Node</tag>
+         
+        <tag>MacOS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/07/27/hadoop-learn-03/</loc>
+    <lastmod>2018-07-29T04:36:36.446Z</lastmod>
+    <data>
+        <display>
+        <title>（三）Hadoop笔记：Hadoop分布式集群搭建</title>
+        <pubTime>2018-07-27T12:59:59.000Z</pubTime>
+        
+        <tag>Hadoop</tag>
+         
+        <tag>HDFS</tag>
+         
+        <tag>Yarn</tag>
+         
+        <tag>DataNode</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/07/27/hadoop-learn-02/</loc>
+    <lastmod>2018-07-28T08:58:17.859Z</lastmod>
+    <data>
+        <display>
+        <title>（二）Hadoop笔记：虚拟机CentOS环境准备</title>
+        <pubTime>2018-07-27T12:54:03.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>CentOS</tag>
+         
+        <tag>VMware Tools</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/07/27/hadoop-learn-04/</loc>
+    <lastmod>2018-07-27T13:13:48.120Z</lastmod>
+    <data>
+        <display>
+        <title>（四）Hadoop笔记：MacOS本地开发Mapreduce程序</title>
+        <pubTime>2018-07-27T13:05:19.000Z</pubTime>
+        
+        <tag>Hadoop</tag>
+         
+        <tag>HDFS</tag>
+         
+        <tag>Mapreduce</tag>
+         
+        <tag>Eclipse</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/07/24/why-not-beautiful-code/</loc>
+    <lastmod>2018-07-24T15:15:32.225Z</lastmod>
+    <data>
+        <display>
+        <title>为什么程序员写不出优雅的代码</title>
+        <pubTime>2018-07-24T15:14:27.000Z</pubTime>
+        
+        <tag>程序员</tag>
+         
+        <tag>代码</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/07/12/breeze-blows/</loc>
+    <lastmod>2018-07-19T14:26:06.656Z</lastmod>
+    <data>
+        <display>
+        <title>Breeze blows</title>
+        <pubTime>2018-07-12T14:24:35.000Z</pubTime>
+        
+        <tag>code</tag>
+         
+        <tag>idea</tag>
+         
+        <tag>joy</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/07/12/Start-with-hexo/</loc>
+    <lastmod>2018-07-19T13:48:43.290Z</lastmod>
+    <data>
+        <display>
+        <title>Start with Hexo</title>
+        <pubTime>2018-07-12T13:30:34.196Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/07/16/sublime-hexo-write-blog/</loc>
+    <lastmod>2018-07-18T13:42:28.883Z</lastmod>
+    <data>
+        <display>
+        <title>Sublime+Hexo 优雅写博客</title>
+        <pubTime>2018-07-16T15:44:04.000Z</pubTime>
+        
+        <tag>Sublime</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/07/13/markdown-hexo-content-presentation/</loc>
+    <lastmod>2018-07-17T14:36:23.819Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown+Hexo 内容呈现</title>
+        <pubTime>2018-07-13T10:25:56.000Z</pubTime>
+        
+        <tag>markdown</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://quippy.tech/2018/07/13/git-basic-command/</loc>
+    <lastmod>2018-07-14T10:13:42.316Z</lastmod>
+    <data>
+        <display>
+        <title>Git 基本命令</title>
+        <pubTime>2018-07-13T10:13:47.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>
