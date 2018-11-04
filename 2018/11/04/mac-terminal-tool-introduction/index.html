@@ -136,25 +136,24 @@
 
 
 
-  <meta name="description" content="该部分主要涉及Hadoop分布式集群搭建，主要分为3小节：Hadoop安装环境准备，Hadoop服务安装，Hadoop服务启动停止和访问。">
-<meta name="keywords" content="Hadoop,HDFS,Yarn,DataNode">
+  <meta name="description" content="介绍命令行常用的基本工具，便于日常零碎间断的开发，能迅速的联想起相应的使用和注意事项。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="（三）Hadoop笔记：Hadoop分布式集群搭建">
-<meta property="og:url" content="http://quippy.tech/2018/07/27/hadoop-learn-03/index.html">
+<meta property="og:title" content="Mac Terminal基本工具介绍">
+<meta property="og:url" content="http://quippy.tech/2018/11/04/mac-terminal-tool-introduction/index.html">
 <meta property="og:site_name" content="Breeze Blows">
-<meta property="og:description" content="该部分主要涉及Hadoop分布式集群搭建，主要分为3小节：Hadoop安装环境准备，Hadoop服务安装，Hadoop服务启动停止和访问。">
+<meta property="og:description" content="介绍命令行常用的基本工具，便于日常零碎间断的开发，能迅速的联想起相应的使用和注意事项。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-29T04:36:36.446Z">
+<meta property="og:updated_time" content="2018-11-04T11:06:57.969Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="（三）Hadoop笔记：Hadoop分布式集群搭建">
-<meta name="twitter:description" content="该部分主要涉及Hadoop分布式集群搭建，主要分为3小节：Hadoop安装环境准备，Hadoop服务安装，Hadoop服务启动停止和访问。">
+<meta name="twitter:title" content="Mac Terminal基本工具介绍">
+<meta name="twitter:description" content="介绍命令行常用的基本工具，便于日常零碎间断的开发，能迅速的联想起相应的使用和注意事项。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://quippy.tech/2018/07/27/hadoop-learn-03/"/>
+  <link rel="canonical" href="http://quippy.tech/2018/11/04/mac-terminal-tool-introduction/"/>
 
 
 
@@ -164,7 +163,7 @@
   };
 </script>
 
-  <title>（三）Hadoop笔记：Hadoop分布式集群搭建 | Breeze Blows</title>
+  <title>Mac Terminal基本工具介绍 | Breeze Blows</title>
   
 
 
@@ -370,7 +369,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://quippy.tech/2018/07/27/hadoop-learn-03/">
+    <link itemprop="mainEntityOfPage" href="http://quippy.tech/2018/11/04/mac-terminal-tool-introduction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Quippy">
@@ -387,7 +386,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">（三）Hadoop笔记：Hadoop分布式集群搭建
+          <h1 class="post-title" itemprop="name headline">Mac Terminal基本工具介绍
               
             
           </h1>
@@ -412,24 +411,12 @@
                 
               
 
-              <time title="Created: 2018-07-27 20:59:59" itemprop="dateCreated datePublished" datetime="2018-07-27T20:59:59+08:00">2018-07-27</time>
+              <time title="Created: 2018-11-04 18:57:33 / Modified: 19:06:57" itemprop="dateCreated datePublished" datetime="2018-11-04T18:57:33+08:00">2018-11-04</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-07-29 12:36:36" itemprop="dateModified" datetime="2018-07-29T12:36:36+08:00">2018-07-29</time>
               
             
           </span>
@@ -443,8 +430,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/27/hadoop-learn-03/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/27/hadoop-learn-03/" itemprop="commentCount"></span>
+                <a href="/2018/11/04/mac-terminal-tool-introduction/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/mac-terminal-tool-introduction/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -466,7 +453,7 @@
           
 
           
-              <div class="post-description">该部分主要涉及Hadoop分布式集群搭建，主要分为3小节：Hadoop安装环境准备，Hadoop服务安装，Hadoop服务启动停止和访问。</div>
+              <div class="post-description">介绍命令行常用的基本工具，便于日常零碎间断的开发，能迅速的联想起相应的使用和注意事项。</div>
           
 
         </div>
@@ -482,137 +469,16 @@
       
 
       
-        <h1 id="Hadoop安装环境准备"><a href="#Hadoop安装环境准备" class="headerlink" title="Hadoop安装环境准备"></a>Hadoop安装环境准备</h1><p>安装Hadoop分布式集群，对于操作系统，有一些前置条件需要满足。</p>
-<h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">查看是否安装</span><br><span class="line">java –version</span><br><span class="line">解压缩jdk安装包</span><br><span class="line">tar -zxvf jdk-8u171-linux-x64.tar.gz -C /opt/modules</span><br><span class="line">配置环境变量</span><br><span class="line">vi /etc/profile</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="string">"/opt/modules/jdk1.8.0_171"</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line">修改生效</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
-<h2 id="静态IP和主机"><a href="#静态IP和主机" class="headerlink" title="静态IP和主机"></a>静态IP和主机</h2><p>检查各机器是否配置静态IP，且在hosts文件中配置IP和主机名映射。</p>
-<h2 id="免密码登陆"><a href="#免密码登陆" class="headerlink" title="免密码登陆"></a>免密码登陆</h2><p>检查是否可以在每一个节点上通过ssh免密码登陆到别等节点。</p>
-<h2 id="端口访问权限"><a href="#端口访问权限" class="headerlink" title="端口访问权限"></a>端口访问权限</h2><p>检查防火墙是否关闭，或使用firewall-cmd相关命令开启端口访问。</p>
-<h2 id="集群时钟同步"><a href="#集群时钟同步" class="headerlink" title="集群时钟同步"></a>集群时钟同步</h2><h1 id="Hadoop配置和服务安装"><a href="#Hadoop配置和服务安装" class="headerlink" title="Hadoop配置和服务安装"></a>Hadoop配置和服务安装</h1><h2 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h2><p>解压Hadoop安装包到指定目录/opt/modules/下，并做相应的配置。</p>
-<ol>
-<li><p>配置JDK路径<br>修改hadoop-env.sh、mapred-env.sh、yarn-env.sh文件中的JDK路径</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="string">"/opt/modules/jdk1.8.0_171"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置core-site.xml</p>
-</li>
-</ol>
-<p>进入Hadoop安装目录下： vi etc/hadoop/core-site.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://cluster01.kwp.com:8020<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">value</span>&gt;</span>/opt/modules/hadoop-2.6.0/data/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>说明：</p>
-<ul>
-<li>fs.defaultFS为NameNode的地址</li>
-<li>hadoop.tmp.dir为hadoop临时目录，需提前创建</li>
-</ul>
-<ol start="3">
-<li>配置hdfs-site.xml</li>
-</ol>
-<p>进入Hadoop安装目录下： vi etc/hadoop/hdfs-site.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.secondary.http-address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">value</span>&gt;</span>cluster03.kwp.com:50090<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.permissions<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>说明：</p>
-<ul>
-<li>dfs.namenode.secondary.http-address 备用的NameNode</li>
-<li>dfs.permissions=false 关闭访问权限，供外部程序访问</li>
-</ul>
-<ol start="4">
-<li>配置slaves</li>
-</ol>
-<p>进入Hadoop安装目录下： vi etc/hadoop/slaves</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cluster01.kwp.com</span><br><span class="line">cluster02.kwp.com</span><br><span class="line">cluster03.kwp.com</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>配置yarn-site.xml</li>
-</ol>
-<p>进入Hadoop安装目录下： vi etc/hadoop/yarn-site.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.hostname<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>cluster02.kwp.com<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.log-aggregation-enable<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.log-aggregation.retain-seconds<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>106800<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.webapp.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>cluster02.kwp.com:8088<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>cluster02.kwp.com:8032<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.scheduler.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>cluster02.kwp.com:8030<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.resource-tracker.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>cluster02.kwp.com:8031<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>配置mapred-site.xml</li>
-</ol>
-<p>进入Hadoop安装目录下： vi etc/hadoop/mapred-site.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.jobhistory.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>cluster01.kwp.com:10020<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.jobhistory.webapp.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>cluster01.kwp.com:19888<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="homebrew"><a href="#homebrew" class="headerlink" title="homebrew"></a>homebrew</h2><h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><h2 id="svn"><a href="#svn" class="headerlink" title="svn"></a>svn</h2><h2 id="ant"><a href="#ant" class="headerlink" title="ant"></a>ant</h2><h2 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h2><h2 id="node"><a href="#node" class="headerlink" title="node"></a>node</h2><h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><blockquote>
 <blockquote>
-<p>上面配置在一个节点完成后，下一步需要通过scp命令把当前配置好的Hadoop包分发到其他节点。另外，由于是虚拟机环境，也可以通过克隆虚拟机的方式，直接克隆两外两个节点主机，而后修改相应的静态IP以及主机名。</p>
+<p>如何查看已安装的工具和环境变量?</p>
 </blockquote>
-<h2 id="服务安装"><a href="#服务安装" class="headerlink" title="服务安装"></a>服务安装</h2><p>结合节点规划，依次安装相应的服务。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">节点</th>
-<th style="text-align:left">主机名</th>
-<th style="text-align:left">服务项</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">节点1</td>
-<td style="text-align:left">cluster01.kwp.com</td>
-<td style="text-align:left">NameNode, DataNode,Nodemanager, HistoryServer</td>
-</tr>
-<tr>
-<td style="text-align:left">节点2</td>
-<td style="text-align:left">cluster02.kwp.com</td>
-<td style="text-align:left">ResourceManager, DataNode,Nodemanager</td>
-</tr>
-<tr>
-<td style="text-align:left">节点3</td>
-<td style="text-align:left">cluster03.kwp.com</td>
-<td style="text-align:left">SecondaryNameNode, DataNode,Nodemanager</td>
-</tr>
-</tbody>
-</table>
-<h2 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">查看HDFS上的目录</span><br><span class="line">hdfs dfs -ls /</span><br><span class="line">在HDFS上建立目录</span><br><span class="line">hdfs dfs -mkdir /out</span><br><span class="line">上传文件到HDFS</span><br><span class="line">hdfs dfs -put local_file hdfs_dir</span><br><span class="line">显示HDFS上的文件内容</span><br><span class="line">hdfs dfs -cat hdfs_file</span><br></pre></td></tr></table></figure>
-<h2 id="NameNode和SecondNameNode"><a href="#NameNode和SecondNameNode" class="headerlink" title="NameNode和SecondNameNode"></a>NameNode和SecondNameNode</h2><h2 id="DataNode和Nodemanager"><a href="#DataNode和Nodemanager" class="headerlink" title="DataNode和Nodemanager"></a>DataNode和Nodemanager</h2><h2 id="ResourceManager和Yarn"><a href="#ResourceManager和Yarn" class="headerlink" title="ResourceManager和Yarn"></a>ResourceManager和Yarn</h2><h2 id="HistoryServer"><a href="#HistoryServer" class="headerlink" title="HistoryServer"></a>HistoryServer</h2><h2 id="NameNode格式化"><a href="#NameNode格式化" class="headerlink" title="NameNode格式化"></a>NameNode格式化</h2><h1 id="Hadoop服务启动停止和访问"><a href="#Hadoop服务启动停止和访问" class="headerlink" title="Hadoop服务启动停止和访问"></a>Hadoop服务启动停止和访问</h1><h2 id="服务启动"><a href="#服务启动" class="headerlink" title="服务启动"></a>服务启动</h2><ol>
-<li>（节点1）启动HDFS<blockquote>
-<p>start-dfs.sh</p>
 </blockquote>
-</li>
-<li>（节点1）启动YARN<blockquote>
-<p>start-yarn.sh</p>
-</blockquote>
-</li>
-<li>（节点2）启动Resourcemanager<blockquote>
-<p>yarn-daemon.sh start resourcemanager</p>
-</blockquote>
-</li>
-<li>（节点3）启动日志服务器<blockquote>
-<p>mr-jobhistory-daemon.sh start historyserver</p>
-</blockquote>
-</li>
-</ol>
 <blockquote>
-<p>jps 命令查看各节点上的服务。</p>
-</blockquote>
-<h2 id="服务监控"><a href="#服务监控" class="headerlink" title="服务监控"></a>服务监控</h2><p>查看Web监控页面</p>
-<ul>
-<li>HDFS <ul>
-<li><a href="http://cluster01.kwp.com:50070/" target="_blank" rel="noopener">http://cluster01.kwp.com:50070/</a> </li>
-</ul>
-</li>
-<li>YARN<ul>
-<li><a href="http://cluster02.kwp.com:8088/cluster" target="_blank" rel="noopener">http://cluster02.kwp.com:8088/cluster</a></li>
-</ul>
-</li>
-</ul>
 <blockquote>
-<p>需要在Mac上配置hosts(/etc/hosts)，且需要开通节点上相应的端口访问权限，这样就可以在本机的浏览器进行访问。</p>
+<p>命令行有哪些使用的命令？</p>
 </blockquote>
-<h2 id="服务终止"><a href="#服务终止" class="headerlink" title="服务终止"></a>服务终止</h2><ol>
-<li>（节点3）终止日志服务器<blockquote>
-<p>mr-jobhistory-daemon.sh stop historyserver</p>
 </blockquote>
-</li>
-<li><p>（节点2）终止Resourcemanager</p>
-<blockquote>
-<p>yarn-daemon.sh stop resourcemanager</p>
-</blockquote>
-</li>
-<li><p>（节点1）终止YARN</p>
-<blockquote>
-<p>stop-yarn.sh</p>
-</blockquote>
-</li>
-<li><p>（节点1）终止HDFS</p>
-<blockquote>
-<p>stop-dfs.sh</p>
-</blockquote>
-</li>
-</ol>
-<hr>
 
       
     </div>
@@ -631,18 +497,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Hadoop/" rel="tag"># Hadoop</a>
-          
-            <a href="/tags/HDFS/" rel="tag"># HDFS</a>
-          
-            <a href="/tags/Yarn/" rel="tag"># Yarn</a>
-          
-            <a href="/tags/DataNode/" rel="tag"># DataNode</a>
-          
-        </div>
-      
 
       
       
@@ -652,8 +506,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/27/hadoop-learn-02/" rel="next" title="（二）Hadoop笔记：虚拟机CentOS环境准备">
-                <i class="fa fa-chevron-left"></i> （二）Hadoop笔记：虚拟机CentOS环境准备
+              <a href="/2018/11/04/how-to-accumulate/" rel="next" title="如何有效的积累">
+                <i class="fa fa-chevron-left"></i> 如何有效的积累
               </a>
             
           </div>
@@ -661,10 +515,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/27/hadoop-learn-04/" rel="prev" title="（四）Hadoop笔记：MacOS本地开发Mapreduce程序">
-                （四）Hadoop笔记：MacOS本地开发Mapreduce程序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -834,7 +684,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop安装环境准备"><span class="nav-number">1.</span> <span class="nav-text">Hadoop安装环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK"><span class="nav-number">1.1.</span> <span class="nav-text">JDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态IP和主机"><span class="nav-number">1.2.</span> <span class="nav-text">静态IP和主机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#免密码登陆"><span class="nav-number">1.3.</span> <span class="nav-text">免密码登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#端口访问权限"><span class="nav-number">1.4.</span> <span class="nav-text">端口访问权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集群时钟同步"><span class="nav-number">1.5.</span> <span class="nav-text">集群时钟同步</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop配置和服务安装"><span class="nav-number">2.</span> <span class="nav-text">Hadoop配置和服务安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop配置"><span class="nav-number">2.1.</span> <span class="nav-text">Hadoop配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务安装"><span class="nav-number">2.2.</span> <span class="nav-text">服务安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDFS"><span class="nav-number">2.3.</span> <span class="nav-text">HDFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NameNode和SecondNameNode"><span class="nav-number">2.4.</span> <span class="nav-text">NameNode和SecondNameNode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataNode和Nodemanager"><span class="nav-number">2.5.</span> <span class="nav-text">DataNode和Nodemanager</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ResourceManager和Yarn"><span class="nav-number">2.6.</span> <span class="nav-text">ResourceManager和Yarn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HistoryServer"><span class="nav-number">2.7.</span> <span class="nav-text">HistoryServer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NameNode格式化"><span class="nav-number">2.8.</span> <span class="nav-text">NameNode格式化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop服务启动停止和访问"><span class="nav-number">3.</span> <span class="nav-text">Hadoop服务启动停止和访问</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务启动"><span class="nav-number">3.1.</span> <span class="nav-text">服务启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务监控"><span class="nav-number">3.2.</span> <span class="nav-text">服务监控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务终止"><span class="nav-number">3.3.</span> <span class="nav-text">服务终止</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#homebrew"><span class="nav-number">1.</span> <span class="nav-text">homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-number">2.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#svn"><span class="nav-number">3.</span> <span class="nav-text">svn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ant"><span class="nav-number">4.</span> <span class="nav-text">ant</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maven"><span class="nav-number">5.</span> <span class="nav-text">maven</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node"><span class="nav-number">6.</span> <span class="nav-text">node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python"><span class="nav-number">7.</span> <span class="nav-text">python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java"><span class="nav-number">8.</span> <span class="nav-text">java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">9.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm"><span class="nav-number">10.</span> <span class="nav-text">npm</span></a></li></ol></div>
             
 
           </div>
