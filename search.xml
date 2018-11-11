@@ -11,9 +11,9 @@
     <content type="text"><![CDATA[问题，是会源源不断的变得更多。积累，需要的是持续有效的进行。]]></content>
   </entry>
   <entry>
-    <title><![CDATA[Mac Terminal基本工具介绍]]></title>
+    <title><![CDATA[Mac Terminal管理工具介绍]]></title>
     <url>%2F2018%2F10%2F04%2Fmac-terminal-tool-introduction%2F</url>
-    <content type="text"><![CDATA[homebrewgitsvnantmavennodepythonjavahexonpm 如何查看已安装的工具和环境变量? 命令行有哪些使用的命令？]]></content>
+    <content type="text"><![CDATA[Homebrew Homebrew: Mac操作系统下的软件包管理工具 基本功能；安装、卸载、查看、更新、搜索 命令： 显示所有已安装：brew list 安装：brew install git 卸载：brew uninstall git 搜索：brew search git 更新：brew update git 查看：brew info git Git Git: 版本管理和代码下载工具 基本功能：管理代码库 概念：工作区、暂存区、本地仓库、远程仓库 6大基本命令： add：增加文件到暂存区 commit：提交变化到本地仓库 push：提交到远程分支 fetch/clone：从远程分支下载 checkout：撤销和恢复 pull：取回远程仓库的变化与本地合并 SVN SVN：局域网内的版本控制工具 概念：项目仓库、工作拷贝、操作文件、标签、分支、合并 Ant Ant：工程自动化构建工具 Maven Maven：项目依赖管理工具 NPM NodeJS依赖包管理工具 Mac上如何通过命令行卸载程序？ Mac上删除程序即卸载程序 查看命令的安装路径： which mvn 对于软连接，可以通过ls命令查看真实的路径：ls -l /usr/local/bin/mvn]]></content>
   </entry>
   <entry>
     <title><![CDATA[Idea 开发工具使用]]></title>
