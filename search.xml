@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[单一职责原则的思考]]></title>
+    <url>%2F2018%2F11%2F15%2FThinking%20for%20Single%20Responsibility%20Principle%2F</url>
+    <content type="text"><![CDATA[前后端分离接口与实现分离业务与系统分离配置与逻辑分离开发与生产分离数据模型和处理分离PO与VO分离读写分离]]></content>
+      <tags>
+        <tag>Design</tag>
+        <tag>Single</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何闭环的完成阶段性的工作]]></title>
     <url>%2F2018%2F11%2F04%2Fhow-closed-loop-done%2F</url>
     <content type="text"><![CDATA[有始有终 再小的事情也不要忘了结束。 谨小慎微 小问题随处可见，为什么要轻易忽视呢。 连续作业 任务开始了，就需要一根到底，直到关闭任务。]]></content>
