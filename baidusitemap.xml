@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://quippy.tech/2018/11/15/Thinking%20for%20Single%20Responsibility%20Principle/</loc>
-    <lastmod>2018-11-15T11:51:27.423Z</lastmod>
+    <lastmod>2018-11-16T14:03:14.838Z</lastmod>
     <data>
         <display>
         <title>单一职责原则的思考</title>
@@ -14,6 +14,8 @@
         <tag>Design</tag>
          
         <tag>Single</tag>
+         
+        <tag>Java Web</tag>
          
          
            
@@ -136,9 +138,9 @@
         <title>（一）Hadoop笔记：准备工作</title>
         <pubTime>2018-07-27T12:34:37.000Z</pubTime>
         
-        <tag>Hadoop</tag>
-         
         <tag>Linux</tag>
+         
+        <tag>Hadoop</tag>
          
         <tag>Node</tag>
          
@@ -182,9 +184,9 @@
         <title>（二）Hadoop笔记：虚拟机CentOS环境准备</title>
         <pubTime>2018-07-27T12:54:03.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
         <tag>CentOS</tag>
+         
+        <tag>Linux</tag>
          
         <tag>VMware Tools</tag>
          
@@ -205,11 +207,11 @@
         
         <tag>Hadoop</tag>
          
-        <tag>HDFS</tag>
-         
         <tag>Mapreduce</tag>
          
         <tag>Eclipse</tag>
+         
+        <tag>HDFS</tag>
          
          
            

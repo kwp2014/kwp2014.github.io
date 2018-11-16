@@ -3,10 +3,11 @@
   <entry>
     <title><![CDATA[单一职责原则的思考]]></title>
     <url>%2F2018%2F11%2F15%2FThinking%20for%20Single%20Responsibility%20Principle%2F</url>
-    <content type="text"><![CDATA[待完善。 前后端分离接口与实现分离业务与系统分离配置与逻辑分离开发与生产分离数据模型和处理分离PO与VO分离读写分离]]></content>
+    <content type="text"><![CDATA[单一职责原则，是面向对象设计的基本原则之一，易于理解，且十分受用。官方对此理解为：一个类应该有且只有一个变化的原因。当有多个原因导致类发生变化时，这意味着可以通过设计新的类来体现这种变化，而不是让一个已有的类变得臃肿。重新思考我们的类，让已有的类尽可能的简单化，是迭代开发中一个必要的环节。 单一职责，追求的是简单明确的设计，这种设计，不局限于类的设计，可以扩展到任何一个程序逻辑单元的设计，如函数的设计，模块的设计，工程的设计，项目的设计等。 核心：化整为零，将整体分解为局部的逻辑单元，不同的逻辑单元之间尽可能相对独立，职责明确。例如，一个项目，可以分解为多个工程；一个工程，可以分解为多个模块；一个模块，可以分解为多个包和类；一个类，可以分解为多个属性和方法行为，等等。下面以Java Web工程为例，探讨分解的各种思路。 前后端分离接口与实现分离业务与系统分离配置与逻辑分离开发与生产分离数据模型和处理分离PO与VO分离读写分离]]></content>
       <tags>
         <tag>Design</tag>
         <tag>Single</tag>
+        <tag>Java Web</tag>
       </tags>
   </entry>
   <entry>
@@ -50,9 +51,9 @@
     <content type="text"><![CDATA[本地Java IDE准备Hadoop远程访问基本Hadoop程序开发 【待完成】]]></content>
       <tags>
         <tag>Hadoop</tag>
-        <tag>HDFS</tag>
         <tag>Mapreduce</tag>
         <tag>Eclipse</tag>
+        <tag>HDFS</tag>
       </tags>
   </entry>
   <entry>
@@ -71,8 +72,8 @@
     <url>%2F2018%2F07%2F27%2Fhadoop-learn-02%2F</url>
     <content type="text"><![CDATA[Linux系统安装和环境配置一般来说，虚拟机加载CentOS镜像文件后，根据向导一步步安装mini版即可。 建议： 先安装配置好一个Linux，其他2个可直接克隆得到 root用户：root/root 操作系统名称：cluster01,cluster02,cluster03 基础环境配置 主机名：便于节点之间的访问，修改主机名如下 1hostnamectl set-hostname cluster01.kwp.com 网卡：联网必备，设置为开机自启动 123vi /etc/sysconfig/network-scripts/ifcfg-eth0ONBOOT=no 改为 yesservice network restart 重启网络 sshd：SSH服务，用于远程连接和访问Linux 1234vi /etc/hosts.denyvi /etc/hosts.allow在 /etc/hosts.deny 和 /etc/hosts.allow 最后都加上一句 sshd:ALL ，保存service sshd restart 重启服务 selinux设置：关闭安全机制 123vi /etc/selinux/config将 SELINUX=enforcing 改成 SELINUX=disabled，保存init 6 重启系统 yum配置：便于联网下载软件 12345678910111213141516171819安装下载工具yum -y install wget进入yum配置文件目录cd /etc/yum.repos.d/下载网易的源配置文件(可直接去网站下载)wget http://mirrors.163.com/.help/CentOS6-Base-163.repo备份旧的配置文件mv CentOS-Base.repo CentOS-Base.repo.bak把下载的配置文件改名mv CentOS6-Base-163.repo CentOS-Base.repo清理缓存yum clean all更新缓存yum makecache更新系统yum update安装常用安装包yum -y install vimyum -y install gcc gcc-c++ make 保持本地时间与internet一致 集群中各节点的时间一致是节点间正常通信的必要条件。 安装时间同步工具：yum install -y ntpdate 同步网络时间：ntpdate time.nist.gov 时间服务器： time.nist.gov time.nuri.net 0.asia.pool.ntp.org 1.asia.pool.ntp.org 2.asia.pool.ntp.org 3.asia.pool.ntp.org 调整硬件时间：hwclock -w 查看时间： date hwclock 定时执行时间同步任务（在配置集群时才配置） crontab -e 来添加定时任务: 每隔一个小时同步一下internet1#* */1 * * * root ntpdatetime.nuri.net;hwclock -w 配置静态IP 修改 /etc/sysconfig/network-scripts/ 下的网络连接配置文件 ifcfg-ens33。 原始： 123456789101112131415TYPE="Ethernet"PROXY_METHOD="none"BROWSER_ONLY="no"BOOTPROTO="dhcp"DEFROUTE="yes"IPV4_FAILURE_FATAL="no"IPV6INIT="yes"IPV6_AUTOCONF="yes"IPV6_DEFROUTE="yes"IPV6_FAILURE_FATAL="no"IPV6_ADDR_GEN_MODE="stable-privacy"NAME="ens33"UUID="5bba20b4-ad83-452e-ac7d-076c1de0b193"DEVICE="ens33"ONBOOT="yes" 修改后： 1234567891011121314151617181920212223TYPE="Ethernet"PROXY_METHOD="none"BROWSER_ONLY="no"BOOTPROTO="static"IPADDR=192.168.32.141PREFIXO=24GATEWAY=192.168.32.2DNS1=8.8.8.8DNS2=8.8.4.4DEFROUTE="yes"IPV4_FAILURE_FATAL="no"IPV6INIT="yes"IPV6_AUTOCONF="yes"IPV6_DEFROUTE="yes"IPV6_FAILURE_FATAL="no"IPV6_ADDR_GEN_MODE="stable-privacy"NAME="ens33"UUID="5bba20b4-ad83-452e-ac7d-076c1de0b193"DEVICE="ens33"ONBOOT="yes"ZONE=public 重启网络服务： service network restart 查看IP： ip addr 配置免密码登陆 生成公钥私钥对:ssh-keygen 公钥私钥存放的目录：~/.ssh/ 目录文件说明 authorized_keys: 存放远程免密登录的公钥,主要通过这个文件记录多台机器的公钥 id_rsa: 生成的私钥文件 id_rsa.pub: 生成的公钥文件 know_hosts: 已知的主机公钥清单 如果希望ssh公钥生效需满足至少下面两个条件: .ssh目录的权限必须是700 .ssh/authorized_keys文件权限必须是600 公钥分发：ssh-copy-id -i root@cluster02.kwp.com 或者直接通过scp命令追加到对方文件中： 1scp -p ~/.ssh/id_rsa.pub root@cluster02.kwp.com: /root/.ssh/authorized_keys 登陆：ssh root@cluster02.kwp.com VMware Tools安装目的：本机设置共享文件夹，与Linux共享本地文件。 注意虚拟机的版本和Linux的版本以及Linux内核的版本，实际安装过程中往往会因为版本的原因导致VMware Tools安装失败。 预先安装依赖：1234yum install -y perlyum install -y net-toolsyum install -y gccyum install -y kernel-headers 上述升级后，可能在开机启动时产生多余的内核启动项，可通过下述方式删除多余启动项。 查询正在使用的内核：uname -a 查询系统中全部的内核：rpm -q kernel 删除多余的内核 yum remove kernel-3.10.0-327.el7.x86_64 工具安装点击虚拟机的安装VMware Tools工具，而后自动挂载安装镜像。 若发现没有挂载，可mount /dec/cdrom /media的方式手动挂载 安装文件拷贝到个人目录下，执行安装，安装过程中默认回车。123tar -xzf vmware-tools.tar.gzcd vmware-tools./vmware-tools.pl tar解压报错：归档中找不到tar: 由于前次错误，将以上次的错误状态退出。 解决办法：添加-C参数，例如 tar -zxvf ZendStudio-10.0.0-x86.tar.gz -C /home/bailin/ 安装完毕后，重启Linux，在/mnt/hgfs目录下可以看到共享的文件夹。 可能出现的问题Searching for a valid kernel header path… The path “” is not valid. 这个问题根源在于虚拟机和Linux内核版本不兼容导致。 更新本机内核：yum update kernel -y 安装所需的内核及依赖：yum install kernel-headers kernel-devel gcc make -y 重启Linux： init 6 查看本机内核和更新的内核： uname -r rpm -qa|grep –e kernel-headers –e kernel-devel 重新执行VMware Tools安装：./vmware-tools.pl 或者直接安装所需的kernel-headers and kernel-devel文件：123yum install kernel-headers-$(uname -r) kernel-devel-$( uname -r) -yyum install gcc make -yuname –r 附加 请提高vi编辑能力 请提高文本查找编辑能力，如sed,awk,grep 请熟悉make原理 请熟悉/etc下的各种配置文件]]></content>
       <tags>
-        <tag>Linux</tag>
         <tag>CentOS</tag>
+        <tag>Linux</tag>
         <tag>VMware Tools</tag>
       </tags>
   </entry>
@@ -81,8 +82,8 @@
     <url>%2F2018%2F07%2F27%2Fhadoop-learn-01%2F</url>
     <content type="text"><![CDATA[环境 MacOS 10.13.3 (17D47) Java version 1.8.0_151 VMware Fusion 专业版 10.0.1 CentOS-7-x86_64-Minimal-1708 Kernel 3.10.0-0-693.21.1.e17.x86_64 hadoop-2.6.0 基本Linux命令系统查询12345678910111213141516171819202122232425262728293031323334# ssh连接ssh root@cluster03.kwp.com# 查看主机名hostname# 查看端口是否连通telnet cluster03.kwp.com 8088# 查看端口当前使用情况ss -ntl# 查看Linux网络状态netstat -anp|grep 8088# 查看操作系统的发行版本号内核uname -r# 查看定时任务crontab -l# 查看IPip addr# 查询系统中全部的内核rpm -q kernel# 查看防火墙状态firewall-cmd --state# 查看Hadoop安装路径echo $HADOOP_HOME# 查看目录下所有文件大小du -sh share/doc/# 获得所有软件包安装信息rpm -qa | grep telnet# 查看服务状态service ntpd status# 查看邮件cat /var/spool/mail/root# 查看当前时间date "+%Y-%m-%d %H:%M:%S"# 显示所有本地IP地址+端口号netstat -an 目录和配置文件1234567891011121314151617181920212223242526# 系统参数设置/etc# 用户级的程序目录/opt# 系统运行时需改变的数据/var# 应用程序存放目录/usr # 用于加载各种文件系统/mnt# 所有外设所在目录/dev# 内存的映射，非真实目录/proc# hosts主机硬伤文件vi /etc/hosts# 网卡IP设置cd /etc/sysconfig/network-scripts/# 本机SSH公钥cat ~/.ssh/id_rsa.pub# 超级管理员权限控制文件cat /etc/sudoers# 系统启动时自动mount的文件列表cat /etc/fstab# 主机名cat /etc/hostname 软件安装与更新1234567891011# 安装软件yum -y install telnetyum -y install ntpdateyum -y install bash-completionyum -y install makeyum -y install kernel-headers# 更新软件yum -y update firewalldyum -y pdate kernel# 查看是否安装telnetyum list |grep telnet 基本设置和操作12345678910111213141516171819202122232425262728293031323334353637383940414243# 修改主机名hostnamectl set-hostname cluster01.kwp.com# 清除屏幕clear# 挂载设备到文件夹mount /dev/cdrom /mnt/cdrom# 添加用户adduser hadoop# 修改密码passwd hadoop# 删除用户userdel -r hadoop# 删除用户组groupdel hadoop# 优雅重启init 6# 强制重启reboot# 生成公钥私钥对ssh-keygen# 将本机公钥追加到cluster03.kwp.com主机ssh-copy-id -i cluster03.kwp.comchmod 600 authorized_keys# ntp同步网络时间ntpdate time.nist.gov# 将系统时钟同步到硬件时钟hwclock -w# 请求网页内容curl cluster02:8088/cluster# 解压缩文件到指定目录tar -xvf hadoop-2.6.0.tar -C /opt/modules# 关闭防火墙systemctl stop firewalld.service# 设置防火墙开启端口对外访问firewall-cmd --zone=public --add-port=8082/tcp --permanent# 重新加载防火墙服务firewall-cmd --zone=public --reload# sshd服务重启service sshd restart# 网络重启service network restart# 局域网主机之间互传文件scp -r yarn-site.xml cluster02.kwp.com:/opt/modules/hadoop-2.6.0/etc/hadoop/ Hadoop命令123456789101112# HDFS格式化命令hdfs namenode –format# 执行mapreduce任务bin/yarn jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar wordcount /input/wc.input /output# 启动Yarn任务start-yarn.sh# 启动HDFS服务start-dfs.sh# 停止resourcemanager服务yarn-daemon.sh stop resourcemanager# 启动historyserver服务mr-jobhistory-daemon.sh start historyserver 节点规划节点服务列表 节点 主机名 服务项 节点1 cluster01.kwp.com NameNode, DataNode,Nodemanager, HistoryServer 节点2 cluster02.kwp.com ResourceManager, DataNode,Nodemanager 节点3 cluster03.kwp.com SecondaryNameNode, DataNode,Nodemanager 本机虚拟机和共享目录路径：/Users/mac/Documents/Virtual Machines.localized CentOS: CentOS-7-x86_64-Minimal-1708.ISO cluster01.vmwarevm 硬盘：20G 内存：1024MB IP：192.168.32.141 连接类型：NAT sharefolder (/mnt/hgfs/sharefolder) cluster02.vmwarevm 硬盘：20G 内存：1024MB IP：192.168.32.142 连接类型：NAT sharefolder (/mnt/hgfs/sharefolder) cluster03.vmwarevm 硬盘：20G 内存：1024MB IP：192.168.32.143 连接类型：NAT sharefolder (/mnt/hgfs/sharefolder) Hadoop和JDK安装目录路径：/opt/modules/ hadoop-2.6.0 jdk1.8.0_171]]></content>
       <tags>
-        <tag>Hadoop</tag>
         <tag>Linux</tag>
+        <tag>Hadoop</tag>
         <tag>Node</tag>
         <tag>MacOS</tag>
       </tags>
