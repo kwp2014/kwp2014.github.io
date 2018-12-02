@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="Breeze Blows">
 <meta property="og:description" content="介绍命令行常用的管理工具，便于日常零碎间断的开发，能迅速的联想起相应的使用和注意事项。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-11T05:31:43.739Z">
+<meta property="og:updated_time" content="2018-12-02T05:09:44.709Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac Terminal管理工具介绍">
 <meta name="twitter:description" content="介绍命令行常用的管理工具，便于日常零碎间断的开发，能迅速的联想起相应的使用和注意事项。">
@@ -429,7 +429,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-11 13:31:43" itemprop="dateModified" datetime="2018-11-11T13:31:43+08:00">2018-11-11</time>
+                <time title="Modified: 2018-12-02 13:09:44" itemprop="dateModified" datetime="2018-12-02T13:09:44+08:00">2018-12-02</time>
               
             
           </span>
@@ -482,7 +482,42 @@
       
 
       
-        <h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><ul>
+        <blockquote>
+<blockquote>
+<p>想要解决的问题：如何知道自己Mac上安装了哪些工具，以及这些工具在哪里，如何使用工具等。</p>
+</blockquote>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>Mac 系统的文件目录结构<ul>
+<li>Finder：个人文档的目录和个人安装的GUI程序，不涉及操作系统层面；</li>
+<li>Console：默认为个人文档目录，可以进入根目录进行操作</li>
+<li>根目录 /：归属 root 用户<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">|- /</span><br><span class="line">  |- Applications  用户软件</span><br><span class="line">  |- Library  系统资源库</span><br><span class="line">  |-<span class="built_in"> Network </span></span><br><span class="line">  |-<span class="built_in"> System </span> 系统软件</span><br><span class="line">  |-<span class="built_in"> Users </span> 用户专有资源</span><br><span class="line">  |- Volumes  文件系统挂载点</span><br><span class="line">  |- bin  Unix命令</span><br><span class="line">  |- cores  内核转存文件</span><br><span class="line">  |- data  mongodb数据库目录，用户自定义</span><br><span class="line">  |- dev  设备文件</span><br><span class="line">  |- etc -&gt; private/etc  系统配置文件</span><br><span class="line">  |- home  空，无用</span><br><span class="line">  |- installer.failurerequests</span><br><span class="line">  |- net  空，无用</span><br><span class="line">  |- private  内存镜像</span><br><span class="line">  |- sbin  系统管理命令</span><br><span class="line">  |- tmp -&gt; private/tmp  系统暂存档</span><br><span class="line">  |- usr  unix software resources，第三方程序安装目录</span><br><span class="line">  |- var -&gt; private/var  变化的文件</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<blockquote>
+<p>理解 /usr 目录</p>
+<ul>
+<li>/usr/bin : 所有可执行文件，如 gcc，firefox 等（指不包含在 /sbin 和 /bin 内的）</li>
+<li>/usr/share : 它包含了各种程序间的共享文件</li>
+<li>/usr/sbin : 类似 /sbin，root 可以执行。但此目录不包含在环境变量 $PATH 中</li>
+<li>/usr/include : 各种头文件，编译文件等时需要使用</li>
+<li>/usr/lib : 所有可执行文件所需要的库文件</li>
+<li>/usr/local : 主要存放那些手动安装的软件</li>
+<li>/usr/local/opt：大型软件的安装目录</li>
+</ul>
+</blockquote>
+</blockquote>
+<ol start="2">
+<li><p>环境变量</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">env  查看环境变量</span><br><span class="line">cat ~<span class="regexp">/.bash_profile  自定义用户级的环境变量</span></span><br><span class="line"><span class="regexp">cat /etc</span><span class="regexp">/paths  系统级的环境变量，不可修改</span></span><br><span class="line"><span class="regexp">cat /etc</span><span class="regexp">/paths.d/xxx</span>  系统级环境变量,应用程序相关</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用Homebrew安装工具</p>
+</li>
+</ol>
+<ul>
 <li>Homebrew: Mac操作系统下的软件包管理工具  </li>
 <li>基本功能；安装、卸载、查看、更新、搜索</li>
 <li>命令：<ul>
@@ -525,7 +560,7 @@
 <blockquote>
 <p>Mac上如何通过命令行卸载程序？</p>
 <ul>
-<li>Mac上删除程序即卸载程序</li>
+<li>Mac上删除程序即卸载程序，注意同时检查环境变量是否残余</li>
 <li>查看命令的安装路径：<ul>
 <li>which mvn</li>
 <li>对于软连接，可以通过ls命令查看真实的路径：ls -l /usr/local/bin/mvn </li>
@@ -748,7 +783,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Homebrew"><span class="nav-number">1.</span> <span class="nav-text">Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">2.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN"><span class="nav-number">3.</span> <span class="nav-text">SVN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ant"><span class="nav-number">4.</span> <span class="nav-text">Ant</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven"><span class="nav-number">5.</span> <span class="nav-text">Maven</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NPM"><span class="nav-number">6.</span> <span class="nav-text">NPM</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">2.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVN"><span class="nav-number">3.</span> <span class="nav-text">SVN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ant"><span class="nav-number">4.</span> <span class="nav-text">Ant</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven"><span class="nav-number">5.</span> <span class="nav-text">Maven</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NPM"><span class="nav-number">6.</span> <span class="nav-text">NPM</span></a></li></ol></div>
             
 
           </div>
