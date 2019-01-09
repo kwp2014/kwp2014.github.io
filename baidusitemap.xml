@@ -4,23 +4,8 @@
 
     
   <url>
-    <loc>http://quippy.tech/2018/10/04/mac-terminal-tool-introduction/</loc>
-    <lastmod>2018-12-02T05:09:44.709Z</lastmod>
-    <data>
-        <display>
-        <title>Mac Terminal管理工具介绍</title>
-        <pubTime>2018-10-04T10:57:33.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://quippy.tech/2018/11/15/Thinking%20for%20Single%20Responsibility%20Principle/</loc>
-    <lastmod>2018-11-17T10:31:37.778Z</lastmod>
+    <lastmod>2019-01-09T11:09:43.093Z</lastmod>
     <data>
         <display>
         <title>单一职责原则的思考</title>
@@ -32,6 +17,21 @@
          
         <tag>Java Web</tag>
          
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://quippy.tech/2018/10/04/mac-terminal-tool-introduction/</loc>
+    <lastmod>2018-12-02T05:09:44.709Z</lastmod>
+    <data>
+        <display>
+        <title>Mac Terminal管理工具介绍</title>
+        <pubTime>2018-10-04T10:57:33.000Z</pubTime>
+        
          
            
         </display>
