@@ -144,7 +144,7 @@
 <meta property="og:site_name" content="Breeze Blows">
 <meta property="og:description" content="单一职责原则是软件开发过程中经常被用到的一个原则，易于理解，且十分受用。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-09T11:09:43.093Z">
+<meta property="og:updated_time" content="2019-01-09T11:12:07.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单一职责原则的思考">
 <meta name="twitter:description" content="单一职责原则是软件开发过程中经常被用到的一个原则，易于理解，且十分受用。">
@@ -429,7 +429,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-09 19:09:43" itemprop="dateModified" datetime="2019-01-09T19:09:43+08:00">2019-01-09</time>
+                <time title="Modified: 2019-01-09 19:12:07" itemprop="dateModified" datetime="2019-01-09T19:12:07+08:00">2019-01-09</time>
               
             
           </span>
@@ -482,7 +482,7 @@
       
 
       
-        <h2 id="什么事单一职责原则"><a href="#什么事单一职责原则" class="headerlink" title="什么事单一职责原则"></a>什么事单一职责原则</h2><p>单一职责原则，是面向对象设计的基本原则之一，易于理解，且十分受用。官方对此理解为：一个类应该有且只有一个变化的原因。当有多个原因导致类发生变化时，这意味着可以通过设计新的类来体现这种变化，而不是让一个已有的类变得臃肿。重新思考我们的类，让已有的类尽可能的简单化，是迭代开发中一个必要的环节。<br>单一职责，追求的是简单明确的设计，强调的是分工明确，职责简单。这种设计，不局限于类的设计，可以扩展到任何一个程序逻辑单元的设计，如函数的设计，模块的设计，工程的设计，项目的设计，集群的设计等。</p>
+        <h2 id="什么是单一职责原则"><a href="#什么是单一职责原则" class="headerlink" title="什么是单一职责原则"></a>什么是单一职责原则</h2><p>单一职责原则，是面向对象设计的基本原则之一，易于理解，且十分受用。官方对此理解为：一个类应该有且只有一个变化的原因。当有多个原因导致类发生变化时，这意味着可以通过设计新的类来体现这种变化，而不是让一个已有的类变得臃肿。重新思考我们的类，让已有的类尽可能的简单化，是迭代开发中一个必要的环节。<br>单一职责，追求的是简单明确的设计，强调的是分工明确，职责简单。这种设计，不局限于类的设计，可以扩展到任何一个程序逻辑单元的设计，如函数的设计，模块的设计，工程的设计，项目的设计，集群的设计等。</p>
 <p>单一职责的核心可以理解为：化整为零，将整体分解为局部的逻辑单元，不同的逻辑单元之间尽可能的相对独立，并且职责明确。例如，一个项目，可以分解为多个工程；一个工程，可以分解为多个模块；一个模块，可以分解为多个包和类；一个类，可以分解为多个属性和方法行为。设计层面的分解，可以对应到具体实现层面的分离。下面以Java Web项目为例，从分离的角度，分享对单一职责原则的思考。</p>
 <h2 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h2><p>在早起的Java Web开发中，MVC是一种经典的分层设计思路。通过将模型、控制和视图进行分层，不同的开发者可以专注于他们擅长的领域，如前端开发者可以专注于视图，后端开发者可以专注于逻辑控制，数据库设计者可以专注于底层数据模型的设计，层与层之间只要约定好接口和规范，就可以顺利的进行协作开发。但这样也有一个问题，模型、控制和视图这三者必须同时运行起来，整个Web工程才可以正常的启动，这对于开发调试和部署的代价都是很大的。本质上讲，视图层的职责就是负责数据的展示，不关心数据从哪里来以及数据如何加工处理。而控制层的职责是处理外部的请求并给出响应，专注于内容而不是内容的表现形式。至于模型层，其职责主要是管理持久化的数据，而并不关心数据要如何被使用。</p>
 <p>因此从职责上讲，这三者可以认为是独立的，既然是独立的，那么能否进行独立的部署呢？答案是可以的，独立的部署，意味着在开发前端视图时，并不依赖于后端的服务，只需要专注于界面的开发即可。对于后端，只需要专注于数据服务和业务逻辑。在具体实现上，前端可以基于Node.js，Webpack或者React 组件进行开发，后端可以基于Spring Boot的微服务架构进行开发，两边通过Restful API 进行数据的交互，且独立开发和部署。这样，将一个Java Web 项目分拆为两个工程，通过前后端分离，将给开发和维护带来很大的便利。</p>
@@ -718,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么事单一职责原则"><span class="nav-number">1.</span> <span class="nav-text">什么事单一职责原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前后端分离"><span class="nav-number">2.</span> <span class="nav-text">前后端分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口与实现分离"><span class="nav-number">3.</span> <span class="nav-text">接口与实现分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务与系统分离"><span class="nav-number">4.</span> <span class="nav-text">业务与系统分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公共与逻辑分离"><span class="nav-number">5.</span> <span class="nav-text">公共与逻辑分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发与生产分离"><span class="nav-number">6.</span> <span class="nav-text">开发与生产分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据模型和处理分离"><span class="nav-number">7.</span> <span class="nav-text">数据模型和处理分离</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是单一职责原则"><span class="nav-number">1.</span> <span class="nav-text">什么是单一职责原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前后端分离"><span class="nav-number">2.</span> <span class="nav-text">前后端分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口与实现分离"><span class="nav-number">3.</span> <span class="nav-text">接口与实现分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务与系统分离"><span class="nav-number">4.</span> <span class="nav-text">业务与系统分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公共与逻辑分离"><span class="nav-number">5.</span> <span class="nav-text">公共与逻辑分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发与生产分离"><span class="nav-number">6.</span> <span class="nav-text">开发与生产分离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据模型和处理分离"><span class="nav-number">7.</span> <span class="nav-text">数据模型和处理分离</span></a></li></ol></div>
             
 
           </div>
