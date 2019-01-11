@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://quippy.tech/2019/01/11/idea-refactor-your-code/</loc>
+    <lastmod>2019-01-11T12:30:43.561Z</lastmod>
+    <data>
+        <display>
+        <title>利用Idea工具重构</title>
+        <pubTime>2019-01-11T12:28:15.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://quippy.tech/2018/11/15/Thinking%20for%20Single%20Responsibility%20Principle/</loc>
     <lastmod>2019-01-09T11:41:55.349Z</lastmod>
     <data>
@@ -207,11 +222,11 @@
         
         <tag>Hadoop</tag>
          
+        <tag>HDFS</tag>
+         
         <tag>Mapreduce</tag>
          
         <tag>Eclipse</tag>
-         
-        <tag>HDFS</tag>
          
          
            

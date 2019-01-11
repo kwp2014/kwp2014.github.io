@@ -136,24 +136,25 @@
 
 
 
-  <meta name="description" content="除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。本文将着重探讨版本管理的实际应用。">
+  <meta name="description" content="重构是开发过程中必不可少的环节，是提高工程质量的关键。">
+<meta name="keywords" content="refactor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SVN工具用于本地版本管理">
-<meta property="og:url" content="http://quippy.tech/2018/08/13/SVN-deliverer-for-coder/index.html">
+<meta property="og:title" content="利用Idea工具重构">
+<meta property="og:url" content="http://quippy.tech/2019/01/11/idea-refactor-your-code/index.html">
 <meta property="og:site_name" content="Breeze Blows">
-<meta property="og:description" content="除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。本文将着重探讨版本管理的实际应用。">
+<meta property="og:description" content="重构是开发过程中必不可少的环节，是提高工程质量的关键。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-13T14:42:36.579Z">
+<meta property="og:updated_time" content="2019-01-11T12:30:43.561Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SVN工具用于本地版本管理">
-<meta name="twitter:description" content="除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。本文将着重探讨版本管理的实际应用。">
+<meta name="twitter:title" content="利用Idea工具重构">
+<meta name="twitter:description" content="重构是开发过程中必不可少的环节，是提高工程质量的关键。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://quippy.tech/2018/08/13/SVN-deliverer-for-coder/"/>
+  <link rel="canonical" href="http://quippy.tech/2019/01/11/idea-refactor-your-code/"/>
 
 
 
@@ -163,7 +164,7 @@
   };
 </script>
 
-  <title>SVN工具用于本地版本管理 | Breeze Blows</title>
+  <title>利用Idea工具重构 | Breeze Blows</title>
   
 
 
@@ -369,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://quippy.tech/2018/08/13/SVN-deliverer-for-coder/">
+    <link itemprop="mainEntityOfPage" href="http://quippy.tech/2019/01/11/idea-refactor-your-code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Quippy">
@@ -386,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SVN工具用于本地版本管理
+          <h1 class="post-title" itemprop="name headline">利用Idea工具重构
               
             
           </h1>
@@ -411,7 +412,7 @@
                 
               
 
-              <time title="Created: 2018-08-13 22:24:17 / Modified: 22:42:36" itemprop="dateCreated datePublished" datetime="2018-08-13T22:24:17+08:00">2018-08-13</time>
+              <time title="Created: 2019-01-11 20:28:15 / Modified: 20:30:43" itemprop="dateCreated datePublished" datetime="2019-01-11T20:28:15+08:00">2019-01-11</time>
             
 
             
@@ -430,8 +431,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/13/SVN-deliverer-for-coder/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/13/SVN-deliverer-for-coder/" itemprop="commentCount"></span>
+                <a href="/2019/01/11/idea-refactor-your-code/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/11/idea-refactor-your-code/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -453,7 +454,7 @@
           
 
           
-              <div class="post-description">除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。本文将着重探讨版本管理的实际应用。</div>
+              <div class="post-description">重构是开发过程中必不可少的环节，是提高工程质量的关键。</div>
           
 
         </div>
@@ -469,10 +470,8 @@
       
 
       
-        <blockquote>
-<p>待完成。</p>
-</blockquote>
-
+        <p>重构是开发过程中必不可少的环节，是提高工程质量的关键。</p>
+<h1 id="Idea-Refactor的使用"><a href="#Idea-Refactor的使用" class="headerlink" title="Idea Refactor的使用"></a>Idea Refactor的使用</h1><h1 id="什么时候需要重构"><a href="#什么时候需要重构" class="headerlink" title="什么时候需要重构"></a>什么时候需要重构</h1><h1 id="如何进行重构"><a href="#如何进行重构" class="headerlink" title="如何进行重构"></a>如何进行重构</h1>
       
     </div>
 
@@ -499,8 +498,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/13/Maven-elegant-project/" rel="next" title="Maven工具用于项目构建和规划">
-                <i class="fa fa-chevron-left"></i> Maven工具用于项目构建和规划
+              <a href="/2018/11/15/Thinking for Single Responsibility Principle/" rel="next" title="单一职责原则的思考">
+                <i class="fa fa-chevron-left"></i> 单一职责原则的思考
               </a>
             
           </div>
@@ -508,10 +507,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/13/JPA-mapping-for-data/" rel="prev" title="JPA用于数据持久化">
-                JPA用于数据持久化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -565,8 +560,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -668,6 +672,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Idea-Refactor的使用"><span class="nav-number">1.</span> <span class="nav-text">Idea Refactor的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么时候需要重构"><span class="nav-number">2.</span> <span class="nav-text">什么时候需要重构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何进行重构"><span class="nav-number">3.</span> <span class="nav-text">如何进行重构</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
