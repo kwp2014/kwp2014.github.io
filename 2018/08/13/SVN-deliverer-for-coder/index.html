@@ -136,17 +136,18 @@
 
 
 
-  <meta name="description" content="除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。本文将着重探讨版本管理的实际应用。">
+  <meta name="description" content="除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。">
+<meta name="keywords" content="SVN,master,branch,rollback">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SVN工具用于本地版本管理">
 <meta property="og:url" content="http://quippy.tech/2018/08/13/svn-deliverer-for-coder/index.html">
 <meta property="og:site_name" content="Breeze Blows">
-<meta property="og:description" content="除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。本文将着重探讨版本管理的实际应用。">
+<meta property="og:description" content="除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-13T14:42:36.579Z">
+<meta property="og:updated_time" content="2019-01-11T14:22:37.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SVN工具用于本地版本管理">
-<meta name="twitter:description" content="除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。本文将着重探讨版本管理的实际应用。">
+<meta name="twitter:description" content="除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。">
 
 
 
@@ -411,12 +412,24 @@
                 
               
 
-              <time title="Created: 2018-08-13 22:24:17 / Modified: 22:42:36" itemprop="dateCreated datePublished" datetime="2018-08-13T22:24:17+08:00">2018-08-13</time>
+              <time title="Created: 2018-08-13 22:24:17" itemprop="dateCreated datePublished" datetime="2018-08-13T22:24:17+08:00">2018-08-13</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-11 22:22:37" itemprop="dateModified" datetime="2019-01-11T22:22:37+08:00">2019-01-11</time>
               
             
           </span>
@@ -453,7 +466,7 @@
           
 
           
-              <div class="post-description">除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。本文将着重探讨版本管理的实际应用。</div>
+              <div class="post-description">除了代码提交，记录每次代码的修改，SVN工具还可以进行多分支管理，用于隔离生产和开发的代码，如遇到生产发布问题时，还可以通过版本控制的方式进行版本回退，从而保证生产的稳定。</div>
           
 
         </div>
@@ -469,9 +482,25 @@
       
 
       
-        <blockquote>
-<p>待完成。</p>
-</blockquote>
+        <h1 id="SVN是什么"><a href="#SVN是什么" class="headerlink" title="SVN是什么"></a>SVN是什么</h1><p>SVN是Subversion的简称，即版本控制系统。</p>
+<p>首先，SVN不仅可用于代码版本的管理，还可以用于项目资源的管理。本质上，SVN会在本地提供一个公共的共享仓库，仓库用于存放资源，资源以文件的方式表示，并且这些文件都是有状态的，状态通过版本号来标识。只要有需要，任何人在任何时间都可以获取到仓库里的任何历史版本的资源。SVN的一个实际用途是在团队内进行项目资源的管理，将项目涉及的所有资料、文档以及代码等都放在一个项目目录下，这样，在项目开展过程中，可以很方便的管理项目相关的文件，且便于不同成员之间进行资源的分享。比如，从项目管理的角度，SVN的文件夹可以如下进行创建：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">- Project_Name</span><br><span class="line">  <span class="string">|--- 01_需求分析</span></span><br><span class="line">    <span class="string">|--- 业务相关</span></span><br><span class="line">    <span class="string">|--- 技术相关</span></span><br><span class="line">    <span class="string">|--- 产品相关</span></span><br><span class="line">    <span class="string">|--- Readme.md</span></span><br><span class="line">  <span class="string">|--- 02_开发阶段</span></span><br><span class="line">    <span class="string">|--- 环境准备</span></span><br><span class="line">    <span class="string">|--- 数据模型</span></span><br><span class="line">    <span class="string">|--- 第三方服务</span></span><br><span class="line">    <span class="string">|--- 工程源码</span></span><br><span class="line">    <span class="string">|--- Readme.md</span></span><br><span class="line">  <span class="string">|--- 03_测试阶段</span></span><br><span class="line">    <span class="string">|--- 第一轮测试_YYMMDD</span></span><br><span class="line">    <span class="string">|--- 第二轮测试_YYMMDD</span></span><br><span class="line">    <span class="string">|--- 第三轮测试_YYMMDD</span></span><br><span class="line">    <span class="string">|--- Readme.md</span></span><br><span class="line">  <span class="string">|--- 04_上线阶段</span></span><br><span class="line">    <span class="string">|--- 源码发布</span></span><br><span class="line">    <span class="string">|--- 上线计划</span></span><br><span class="line">    <span class="string">|--- Readme.md </span></span><br><span class="line">  <span class="string">|--- 05_文档输出</span></span><br><span class="line">    <span class="string">|--- Readme.md</span></span><br></pre></td></tr></table></figure>
+<p>这里关注的问题是，SVN如何有效的用到实际项目开发过程中呢？</p>
+<h1 id="SVN有哪些实用的功能"><a href="#SVN有哪些实用的功能" class="headerlink" title="SVN有哪些实用的功能"></a>SVN有哪些实用的功能</h1><ol>
+<li>文件共享</li>
+<li>代码同步</li>
+<li>协作开发</li>
+<li>版本回退</li>
+</ol>
+<h1 id="协作开发和分支合并"><a href="#协作开发和分支合并" class="headerlink" title="协作开发和分支合并"></a>协作开发和分支合并</h1><ol>
+<li>主线和分支</li>
+<li>开发者权限</li>
+<li>分支合并</li>
+</ol>
+<h1 id="版本恢复和回退"><a href="#版本恢复和回退" class="headerlink" title="版本恢复和回退"></a>版本恢复和回退</h1><ol>
+<li>代码更新</li>
+<li>版本回退</li>
+</ol>
 
       
     </div>
@@ -565,8 +594,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -668,6 +706,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SVN是什么"><span class="nav-number">1.</span> <span class="nav-text">SVN是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVN有哪些实用的功能"><span class="nav-number">2.</span> <span class="nav-text">SVN有哪些实用的功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#协作开发和分支合并"><span class="nav-number">3.</span> <span class="nav-text">协作开发和分支合并</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本恢复和回退"><span class="nav-number">4.</span> <span class="nav-text">版本恢复和回退</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

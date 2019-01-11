@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://quippy.tech/2018/08/13/svn-deliverer-for-coder/</loc>
+    
+    <lastmod>2019-01-11T14:22:37.751Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://quippy.tech/2018/07/24/why-not-beautiful-code/</loc>
     
     <lastmod>2019-01-11T13:31:57.476Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://quippy.tech/2018/08/13/idea-for-Java/</loc>
     
     <lastmod>2018-08-13T14:49:01.456Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://quippy.tech/2018/08/13/svn-deliverer-for-coder/</loc>
-    
-    <lastmod>2018-08-13T14:42:36.579Z</lastmod>
     
   </url>
   
