@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://quippy.tech/2018/07/12/breeze-blows/</loc>
+    
+    <lastmod>2019-01-11T12:47:39.494Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://quippy.tech/about/index.html</loc>
     
     <lastmod>2019-01-11T12:41:56.614Z</lastmod>
@@ -103,13 +110,6 @@
     <loc>http://quippy.tech/2018/07/24/why-not-beautiful-code/</loc>
     
     <lastmod>2018-07-24T15:15:32.225Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://quippy.tech/2018/07/12/breeze-blows/</loc>
-    
-    <lastmod>2018-07-19T14:26:06.656Z</lastmod>
     
   </url>
   
