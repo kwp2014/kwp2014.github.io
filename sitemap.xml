@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://quippy.tech/2018/07/12/breeze-blows/</loc>
+    <loc>http://quippy.tech/about/index.html</loc>
     
-    <lastmod>2019-01-11T12:52:32.682Z</lastmod>
+    <lastmod>2019-01-11T13:30:01.678Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://quippy.tech/about/index.html</loc>
+    <loc>http://quippy.tech/2018/07/24/why-not-beautiful-code/</loc>
     
-    <lastmod>2019-01-11T12:41:56.614Z</lastmod>
+    <lastmod>2019-01-11T13:29:50.650Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://quippy.tech/2018/07/12/breeze-blows/</loc>
+    
+    <lastmod>2019-01-11T12:52:32.682Z</lastmod>
     
   </url>
   
@@ -103,13 +110,6 @@
     <loc>http://quippy.tech/2018/07/27/hadoop-learn-04/</loc>
     
     <lastmod>2018-07-27T13:13:48.120Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://quippy.tech/2018/07/24/why-not-beautiful-code/</loc>
-    
-    <lastmod>2018-07-24T15:15:32.225Z</lastmod>
     
   </url>
   
