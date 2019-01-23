@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Hive中大表Join大表的优化]]></title>
     <url>%2F2019%2F01%2F23%2Fhive-big-table-join%2F</url>
-    <content type="text"><![CDATA[Join模型12345select A.a B.bfrom Ajoin B on A.a_id = B.b_id 处理思路 先过滤A和B，减少Join的表的数据量 既然on 条件导致的数据倾斜，那么试图改造Join的条件 分而治之，基于数据的统计规律，单独处理倾斜的数据和均匀的数据，最后Union All在一起 数据倾斜对性能影响有多大？如何分别从物理存储和查询SQL上进行优化？能否定期稽核或监控这种数据倾斜？]]></content>
+    <content type="text"><![CDATA[Join模型12345select A.a B.bfrom Ajoin B on A.a_id = B.b_id 处理思路 先过滤A和B，减少Join的表的数据量 既然on 条件导致的数据倾斜，那么试图改造Join的条件 分而治之，基于数据的统计规律，单独处理倾斜的数据和均匀的数据，最后Union All在一起 数据倾斜对性能影响有多大？如何分别从物理存储和查询SQL上进行优化？能否定期稽核或监控这种数据倾斜？待完成。]]></content>
   </entry>
   <entry>
     <title><![CDATA[单一职责原则的思考]]></title>
