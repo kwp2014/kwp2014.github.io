@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://quippy.tech/2019/01/23/hive-big-table-join/</loc>
+    
+    <lastmod>2019-01-23T14:15:37.523Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://quippy.tech/2018/10/04/mac-terminal-tool-introduction/</loc>
+    
+    <lastmod>2019-01-23T13:55:03.783Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://quippy.tech/2018/08/13/idea-for-Java/</loc>
     
     <lastmod>2019-01-11T15:47:16.521Z</lastmod>
@@ -40,13 +54,6 @@
     <loc>http://quippy.tech/2018/11/15/thinking-for-single-responsibility-principle/</loc>
     
     <lastmod>2019-01-09T11:41:55.349Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://quippy.tech/2018/10/04/mac-terminal-tool-introduction/</loc>
-    
-    <lastmod>2018-12-02T05:09:44.709Z</lastmod>
     
   </url>
   

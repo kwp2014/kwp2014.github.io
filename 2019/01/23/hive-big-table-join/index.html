@@ -136,25 +136,24 @@
 
 
 
-  <meta name="description" content="Blog for sharing idea. Simple, synergic and shared.">
-<meta name="keywords" content="code,idea,joy">
+  <meta name="description" content="有这样的情景：如果事实表和维度表都很大，如何进行关联查询？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Breeze blows">
-<meta property="og:url" content="http://quippy.tech/2018/07/12/breeze-blows/index.html">
+<meta property="og:title" content="Hive中大表Join大表的优化">
+<meta property="og:url" content="http://quippy.tech/2019/01/23/hive-big-table-join/index.html">
 <meta property="og:site_name" content="Breeze Blows">
-<meta property="og:description" content="Blog for sharing idea. Simple, synergic and shared.">
+<meta property="og:description" content="有这样的情景：如果事实表和维度表都很大，如何进行关联查询？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-11T12:52:32.682Z">
+<meta property="og:updated_time" content="2019-01-23T14:15:37.523Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Breeze blows">
-<meta name="twitter:description" content="Blog for sharing idea. Simple, synergic and shared.">
+<meta name="twitter:title" content="Hive中大表Join大表的优化">
+<meta name="twitter:description" content="有这样的情景：如果事实表和维度表都很大，如何进行关联查询？">
 
 
 
 
 
 
-  <link rel="canonical" href="http://quippy.tech/2018/07/12/breeze-blows/"/>
+  <link rel="canonical" href="http://quippy.tech/2019/01/23/hive-big-table-join/"/>
 
 
 
@@ -164,7 +163,7 @@
   };
 </script>
 
-  <title>Breeze blows | Breeze Blows</title>
+  <title>Hive中大表Join大表的优化 | Breeze Blows</title>
   
 
 
@@ -370,7 +369,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://quippy.tech/2018/07/12/breeze-blows/">
+    <link itemprop="mainEntityOfPage" href="http://quippy.tech/2019/01/23/hive-big-table-join/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Quippy">
@@ -387,7 +386,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Breeze blows
+          <h1 class="post-title" itemprop="name headline">Hive中大表Join大表的优化
               
             
           </h1>
@@ -412,24 +411,12 @@
                 
               
 
-              <time title="Created: 2018-07-12 22:24:35" itemprop="dateCreated datePublished" datetime="2018-07-12T22:24:35+08:00">2018-07-12</time>
+              <time title="Created: 2019-01-23 21:55:08 / Modified: 22:15:37" itemprop="dateCreated datePublished" datetime="2019-01-23T21:55:08+08:00">2019-01-23</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-01-11 20:52:32" itemprop="dateModified" datetime="2019-01-11T20:52:32+08:00">2019-01-11</time>
               
             
           </span>
@@ -443,8 +430,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/12/breeze-blows/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/12/breeze-blows/" itemprop="commentCount"></span>
+                <a href="/2019/01/23/hive-big-table-join/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/23/hive-big-table-join/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -466,7 +453,7 @@
           
 
           
-              <div class="post-description">Blog for sharing idea. Simple, synergic and shared.</div>
+              <div class="post-description">有这样的情景：如果事实表和维度表都很大，如何进行关联查询？</div>
           
 
         </div>
@@ -482,17 +469,13 @@
       
 
       
-        <p>Codding is fun.<br>Computer has accompanied us for many years.<br>Friends, in this time of happiness, joy and good will accompany to you! </p>
-<blockquote><p>It is the kind of mind that can see things as they are, which step by step and in a flash can realize the original nature of everything. Beginner’s mind is Zen practice in action. It is the mind that is innocent of preconceptions and expectations, judgements and prejudices. Think of beginner’s mind as the mind that faces life like a small child, full of curiosity and wonder and amazement.</p>
-<footer><strong>Steve Jobs</strong></footer></blockquote>
-<p>There’s a phrase in Buddhism, ‘Beginner’s mind.’ It’s wonderful to have a beginner’s mind.</p>
-<p>The only way to do great work is to love what you do. If you haven’t found it yet, keep looking. Don’t settle. As with all matters of the heart, you’ll know when you find it.</p>
-<blockquote><p>Have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.  </p>
-<footer><strong>Steve Jobs</strong></footer></blockquote>
-<p>If you have a drream, you will never stop here.</p>
-<hr>
-<p>Created by Quippy on 2018-07-12.</p>
-
+        <h1 id="Join模型"><a href="#Join模型" class="headerlink" title="Join模型"></a>Join模型</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select </span><br><span class="line">    A.a</span><br><span class="line">    B.b</span><br><span class="line">from A</span><br><span class="line">join B on A<span class="selector-class">.a_id</span> = B.b_id</span><br></pre></td></tr></table></figure>
+<h1 id="处理思路"><a href="#处理思路" class="headerlink" title="处理思路"></a>处理思路</h1><ol>
+<li>先过滤A和B，减少Join的表的数据量</li>
+<li>既然on 条件导致的数据倾斜，那么试图改造Join的条件</li>
+<li>分而治之，基于数据的统计规律，单独处理倾斜的数据和均匀的数据，最后Union All在一起</li>
+</ol>
+<h1 id="数据倾斜对性能影响有多大？"><a href="#数据倾斜对性能影响有多大？" class="headerlink" title="数据倾斜对性能影响有多大？"></a>数据倾斜对性能影响有多大？</h1><h1 id="如何分别从物理存储和查询SQL上进行优化？"><a href="#如何分别从物理存储和查询SQL上进行优化？" class="headerlink" title="如何分别从物理存储和查询SQL上进行优化？"></a>如何分别从物理存储和查询SQL上进行优化？</h1><h1 id="能否定期稽核或监控这种数据倾斜？"><a href="#能否定期稽核或监控这种数据倾斜？" class="headerlink" title="能否定期稽核或监控这种数据倾斜？"></a>能否定期稽核或监控这种数据倾斜？</h1>
       
     </div>
 
@@ -510,16 +493,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/code/" rel="tag"># code</a>
-          
-            <a href="/tags/idea/" rel="tag"># idea</a>
-          
-            <a href="/tags/joy/" rel="tag"># joy</a>
-          
-        </div>
-      
 
       
       
@@ -529,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/12/start-with-hexo/" rel="next" title="Start with Hexo">
-                <i class="fa fa-chevron-left"></i> Start with Hexo
+              <a href="/2018/11/15/thinking-for-single-responsibility-principle/" rel="next" title="单一职责原则的思考">
+                <i class="fa fa-chevron-left"></i> 单一职责原则的思考
               </a>
             
           </div>
@@ -538,10 +511,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/13/git-basic-command/" rel="prev" title="Git 基本命令">
-                Git 基本命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -595,8 +564,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -698,6 +676,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Join模型"><span class="nav-number">1.</span> <span class="nav-text">Join模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#处理思路"><span class="nav-number">2.</span> <span class="nav-text">处理思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据倾斜对性能影响有多大？"><span class="nav-number">3.</span> <span class="nav-text">数据倾斜对性能影响有多大？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何分别从物理存储和查询SQL上进行优化？"><span class="nav-number">4.</span> <span class="nav-text">如何分别从物理存储和查询SQL上进行优化？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#能否定期稽核或监控这种数据倾斜？"><span class="nav-number">5.</span> <span class="nav-text">能否定期稽核或监控这种数据倾斜？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
