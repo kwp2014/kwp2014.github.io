@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://quippy.tech/2019/01/26/java-threadlocal/</loc>
+    
+    <lastmod>2019-01-26T12:33:51.833Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://quippy.tech/2019/01/23/hive-big-table-join/</loc>
     
     <lastmod>2019-01-23T14:21:48.761Z</lastmod>
