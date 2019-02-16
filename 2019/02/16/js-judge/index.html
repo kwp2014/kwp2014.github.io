@@ -136,25 +136,24 @@
 
 
 
-  <meta name="description" content="概念 工作目录 本地版本库 远程版本库">
-<meta name="keywords" content="Git">
+  <meta name="description" content="情景1: 如何判断一个对象是否有某成员？如let user = {}; user.username ?   情景2: 如何判断一个变量是数值类型？userId = 1;   情景3: 如何判断空数组？ users = []   情景4: 如何判断数组的长度为1？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git 基本命令">
-<meta property="og:url" content="http://quippy.tech/2018/07/13/git-basic-command/index.html">
+<meta property="og:title" content="JS判断">
+<meta property="og:url" content="http://quippy.tech/2019/02/16/js-judge/index.html">
 <meta property="og:site_name" content="Breeze Blows">
-<meta property="og:description" content="概念 工作目录 本地版本库 远程版本库">
+<meta property="og:description" content="情景1: 如何判断一个对象是否有某成员？如let user = {}; user.username ?   情景2: 如何判断一个变量是数值类型？userId = 1;   情景3: 如何判断空数组？ users = []   情景4: 如何判断数组的长度为1？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-14T10:13:42.316Z">
+<meta property="og:updated_time" content="2019-02-16T04:17:00.376Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git 基本命令">
-<meta name="twitter:description" content="概念 工作目录 本地版本库 远程版本库">
+<meta name="twitter:title" content="JS判断">
+<meta name="twitter:description" content="情景1: 如何判断一个对象是否有某成员？如let user = {}; user.username ?   情景2: 如何判断一个变量是数值类型？userId = 1;   情景3: 如何判断空数组？ users = []   情景4: 如何判断数组的长度为1？">
 
 
 
 
 
 
-  <link rel="canonical" href="http://quippy.tech/2018/07/13/git-basic-command/"/>
+  <link rel="canonical" href="http://quippy.tech/2019/02/16/js-judge/"/>
 
 
 
@@ -164,7 +163,7 @@
   };
 </script>
 
-  <title>Git 基本命令 | Breeze Blows</title>
+  <title>JS判断 | Breeze Blows</title>
   
 
 
@@ -370,7 +369,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://quippy.tech/2018/07/13/git-basic-command/">
+    <link itemprop="mainEntityOfPage" href="http://quippy.tech/2019/02/16/js-judge/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Quippy">
@@ -387,7 +386,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Git 基本命令
+          <h1 class="post-title" itemprop="name headline">JS判断
               
             
           </h1>
@@ -412,24 +411,12 @@
                 
               
 
-              <time title="Created: 2018-07-13 18:13:47" itemprop="dateCreated datePublished" datetime="2018-07-13T18:13:47+08:00">2018-07-13</time>
+              <time title="Created: 2019-02-16 12:06:21 / Modified: 12:17:00" itemprop="dateCreated datePublished" datetime="2019-02-16T12:06:21+08:00">2019-02-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-07-14 18:13:42" itemprop="dateModified" datetime="2018-07-14T18:13:42+08:00">2018-07-14</time>
               
             
           </span>
@@ -443,8 +430,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/13/git-basic-command/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/13/git-basic-command/" itemprop="commentCount"></span>
+                <a href="/2019/02/16/js-judge/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/16/js-judge/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -480,18 +467,18 @@
       
 
       
-        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol>
-<li>工作目录</li>
-<li>本地版本库</li>
-<li>远程版本库</li>
-</ol>
-<a id="more"></a>
-<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"you@example.com"</span></span><br><span class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"Your Name"</span></span><br></pre></td></tr></table></figure>
-<h2 id="作业提交"><a href="#作业提交" class="headerlink" title="作业提交"></a>作业提交</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line">git <span class="keyword">add</span><span class="bash"> ./</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">git commit -m <span class="string">"init"</span></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">git remote rm origin</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">git remote add origin git@github.com:用户名/仓库名.git</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">git push -u origin master</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="版本恢复"><a href="#版本恢复" class="headerlink" title="版本恢复"></a>版本恢复</h2><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line">git checkout &lt;sha1-<span class="keyword">of</span>-<span class="keyword">a</span>-commit&gt; &lt;/path/<span class="built_in">to</span>/your/<span class="built_in">file</span>&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="去托管"><a href="#去托管" class="headerlink" title="去托管"></a>去托管</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r <span class="comment">--cached filename </span></span><br><span class="line">git <span class="keyword">commit</span> -m <span class="string">"delete"</span></span><br><span class="line">git push -u origin <span class="keyword">master</span></span><br></pre></td></tr></table></figure>
-<h2 id="gitignore文件"><a href="#gitignore文件" class="headerlink" title=".gitignore文件"></a>.gitignore文件</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span> -<span class="keyword">la</span></span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>情景1: 如何判断一个对象是否有某成员？如let user = {}; user.username ?</p>
+</blockquote>
+<blockquote>
+<p>情景2: 如何判断一个变量是数值类型？userId = 1;</p>
+</blockquote>
+<blockquote>
+<p>情景3: 如何判断空数组？ users = []</p>
+</blockquote>
+<blockquote>
+<p>情景4: 如何判断数组的长度为1？</p>
+</blockquote>
 
       
     </div>
@@ -510,12 +497,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Git/" rel="tag"># Git</a>
-          
-        </div>
-      
 
       
       
@@ -525,8 +506,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/12/breeze-blows/" rel="next" title="Breeze blows">
-                <i class="fa fa-chevron-left"></i> Breeze blows
+              <a href="/2019/01/26/java-threadlocal/" rel="next" title="ThreadLocal-优雅写法">
+                <i class="fa fa-chevron-left"></i> ThreadLocal-优雅写法
               </a>
             
           </div>
@@ -534,10 +515,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/13/markdown-hexo-content-presentation/" rel="prev" title="Markdown+Hexo 内容呈现">
-                Markdown+Hexo 内容呈现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -591,17 +568,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -703,22 +671,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置"><span class="nav-number">2.</span> <span class="nav-text">设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业提交"><span class="nav-number">3.</span> <span class="nav-text">作业提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本恢复"><span class="nav-number">4.</span> <span class="nav-text">版本恢复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去托管"><span class="nav-number">5.</span> <span class="nav-text">去托管</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore文件"><span class="nav-number">6.</span> <span class="nav-text">.gitignore文件</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

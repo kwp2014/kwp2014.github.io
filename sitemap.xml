@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://quippy.tech/2019/02/16/js-judge/</loc>
+    
+    <lastmod>2019-02-16T04:17:00.376Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://quippy.tech/2019/01/26/java-threadlocal/</loc>
     
-    <lastmod>2019-01-26T12:37:39.126Z</lastmod>
+    <lastmod>2019-01-28T12:03:32.332Z</lastmod>
     
   </url>
   
