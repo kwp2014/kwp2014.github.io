@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://quippy.tech/2019/02/25/React-project/</loc>
+    <lastmod>2019-02-25T09:50:17.308Z</lastmod>
+    <data>
+        <display>
+        <title>React 前端项目规划思路</title>
+        <pubTime>2019-02-25T09:46:33.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://quippy.tech/2019/02/16/js-judge/</loc>
     <lastmod>2019-02-16T04:17:00.376Z</lastmod>
     <data>
@@ -219,9 +234,9 @@
         <title>（一）Hadoop笔记：准备工作</title>
         <pubTime>2018-07-27T12:34:37.000Z</pubTime>
         
-        <tag>Hadoop</tag>
-         
         <tag>Linux</tag>
+         
+        <tag>Hadoop</tag>
          
         <tag>Node</tag>
          
@@ -265,9 +280,9 @@
         <title>（二）Hadoop笔记：虚拟机CentOS环境准备</title>
         <pubTime>2018-07-27T12:54:03.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
         <tag>CentOS</tag>
+         
+        <tag>Linux</tag>
          
         <tag>VMware Tools</tag>
          
