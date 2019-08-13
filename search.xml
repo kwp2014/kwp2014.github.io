@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java技术成长之路]]></title>
+    <url>%2F2019%2F08%2F13%2Fgrow-up-with-java%2F</url>
+    <content type="text"><![CDATA[从IF ELSE到FOR循环从增删查改到持久化工具IO和集合框架的认识从多线程到线程池从单应用到分布式从运营监控到JVM调优从一个人战斗到一个团队从编程到系统从系统到产品]]></content>
+      <tags>
+        <tag>Java</tag>
+        <tag>Skill</tag>
+        <tag>Coder</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[React 前端项目规划思路]]></title>
     <url>%2F2019%2F02%2F25%2FReact-project%2F</url>
     <content type="text"><![CDATA[Create-react-app 的使用引入 React Router 4 路由安装基本依赖规划工程目录引入 Redux 全局状态管理安装 Chrome 调试插件路由规划Just write now]]></content>
