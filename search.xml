@@ -80,10 +80,10 @@
     <url>%2F2018%2F07%2F27%2Fhadoop-learn-04%2F</url>
     <content type="text"><![CDATA[本地Java IDE准备Hadoop远程访问基本Hadoop程序开发 【待完成】]]></content>
       <tags>
-        <tag>Mapreduce</tag>
         <tag>Hadoop</tag>
-        <tag>Eclipse</tag>
         <tag>HDFS</tag>
+        <tag>Mapreduce</tag>
+        <tag>Eclipse</tag>
       </tags>
   </entry>
   <entry>
