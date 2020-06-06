@@ -482,39 +482,39 @@
       
         <h2 id="Hexo和Next主题自带标签"><a href="#Hexo和Next主题自带标签" class="headerlink" title="Hexo和Next主题自带标签"></a>Hexo和Next主题自带标签</h2><ol>
 <li><p>内容居中</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">cq</span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    Your content.</span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">endcq</span> %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% cq %&#125;</span><br><span class="line">    Your content.</span><br><span class="line">&#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>引用</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">blockquote</span> David Levithan, Wide Awake %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    Do not just seek happiness for yourself. </span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">endblockquote</span> %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</span><br><span class="line">    Do not just seek happiness for yourself. </span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>插入代码块</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">codeblock</span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    alert('Hello World!');</span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">endcodeblock</span> %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock %&#125;</span><br><span class="line">    alert(&apos;Hello World!&apos;);</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <a id="more"></a>
 <h2 id="Markdown标签"><a href="#Markdown标签" class="headerlink" title="Markdown标签"></a>Markdown标签</h2><p>新建md文稿，先通过分级标题形式建立目录结构，然后通过列表形式填充各级子目录内容。</p>
 <ol>
 <li><p>标题</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 这是一级标题</span><br><span class="line">## 这是二级标题</span><br><span class="line">### 这是三级标题</span><br><span class="line">#### 这是四级标题</span><br><span class="line">##### 这是五级标题</span><br><span class="line">###### 这是六级标题</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 这是一级标题</span><br><span class="line">## 这是二级标题</span><br><span class="line">### 这是三级标题</span><br><span class="line">#### 这是四级标题</span><br><span class="line">##### 这是五级标题</span><br><span class="line">###### 这是六级标题</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>字体</p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">*这是倾斜的文字*</span></span><br><span class="line">*<span class="strong">*这是加粗的文字*</span><span class="strong">*</span></span><br><span class="line"><span class="strong">*</span>*<span class="strong">*这是斜体加粗的文字*</span>*<span class="strong">*</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*这是倾斜的文字*</span><br><span class="line">**这是加粗的文字**</span><br><span class="line">***这是斜体加粗的文字***</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>分割线和引用</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">分隔符：3个或3个以上的短横线或星号</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="bullet">-</span><span class="meta">---</span></span><br><span class="line"><span class="string">***</span></span><br><span class="line"><span class="string">*****</span></span><br><span class="line"></span><br><span class="line"><span class="string">&gt; 引用</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">分隔符：3个或3个以上的短横线或星号</span><br><span class="line">---</span><br><span class="line">----</span><br><span class="line">***</span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">&gt; 引用</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>链接</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">图片名</span>](<span class="link">url “title”</span>)</span><br><span class="line">[<span class="string">超链接名</span>](<span class="link">url "title"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![图片名](url “title”)</span><br><span class="line">[超链接名](url &quot;title&quot;)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>建议以插入网络链接的方式插入图片。</p>
 <ol start="5">
-<li>列表<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>列表内容</span><br><span class="line"><span class="bullet">+ </span>列表内容</span><br><span class="line"><span class="bullet">* </span>列表内容</span><br></pre></td></tr></table></figure>
+<li>列表<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 列表内容</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>列表嵌套：上一级和下一级之间敲三个空格即可。</p>
 <ol start="6">
-<li>表格<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">|标题1|</span>标题<span class="number">2</span><span class="params">|标题3|</span></span><br><span class="line"><span class="params">|:---|</span><span class="symbol">:---</span><span class="symbol">:|---</span><span class="symbol">:|</span></span><br><span class="line"><span class="params">|居左测试文本|</span>居中测试文本<span class="params">|居右测试文本|</span></span><br></pre></td></tr></table></figure>
+<li>表格<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|标题1|标题2|标题3|</span><br><span class="line">|:---|:---:|---:|</span><br><span class="line">|居左测试文本|居中测试文本|居右测试文本|</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>未完待续：如何画流程图？</p>
@@ -745,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo和Next主题自带标签"><span class="nav-number">1.</span> <span class="nav-text">Hexo和Next主题自带标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown标签"><span class="nav-number">2.</span> <span class="nav-text">Markdown标签</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo和Next主题自带标签"><span class="nav-text">Hexo和Next主题自带标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown标签"><span class="nav-text">Markdown标签</span></a></li></ol></div>
             
 
           </div>
@@ -765,7 +765,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>

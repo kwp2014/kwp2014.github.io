@@ -4,6 +4,42 @@
 
     
   <url>
+    <loc>http://kwp2014.github.io/2019/02/16/js-judge/</loc>
+    <lastmod>2020-06-06T03:09:30.534Z</lastmod>
+    <data>
+        <display>
+        <title>JS判断</title>
+        <pubTime>2019-02-16T04:06:21.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://kwp2014.github.io/2018/07/27/hadoop-learn-02/</loc>
+    <lastmod>2020-05-30T06:01:39.099Z</lastmod>
+    <data>
+        <display>
+        <title>（二）Hadoop笔记：虚拟机CentOS环境准备</title>
+        <pubTime>2018-07-27T12:54:03.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>CentOS</tag>
+         
+        <tag>VMware Tools</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://kwp2014.github.io/2019/08/13/grow-up-with-java/</loc>
     <lastmod>2019-08-13T13:28:31.663Z</lastmod>
     <data>
@@ -31,21 +67,6 @@
         <display>
         <title>React 前端项目规划思路</title>
         <pubTime>2019-02-25T09:46:33.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://kwp2014.github.io/2019/02/16/js-judge/</loc>
-    <lastmod>2019-02-16T04:17:00.376Z</lastmod>
-    <data>
-        <display>
-        <title>JS判断</title>
-        <pubTime>2019-02-16T04:06:21.000Z</pubTime>
         
          
            
@@ -294,27 +315,6 @@
 
     
   <url>
-    <loc>http://kwp2014.github.io/2018/07/27/hadoop-learn-02/</loc>
-    <lastmod>2018-07-28T08:58:17.859Z</lastmod>
-    <data>
-        <display>
-        <title>（二）Hadoop笔记：虚拟机CentOS环境准备</title>
-        <pubTime>2018-07-27T12:54:03.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>CentOS</tag>
-         
-        <tag>VMware Tools</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://kwp2014.github.io/2018/07/27/hadoop-learn-04/</loc>
     <lastmod>2018-07-27T13:13:48.120Z</lastmod>
     <data>
@@ -322,13 +322,13 @@
         <title>（四）Hadoop笔记：MacOS本地开发Mapreduce程序</title>
         <pubTime>2018-07-27T13:05:19.000Z</pubTime>
         
-        <tag>Hadoop</tag>
-         
-        <tag>HDFS</tag>
-         
         <tag>Mapreduce</tag>
          
+        <tag>Hadoop</tag>
+         
         <tag>Eclipse</tag>
+         
+        <tag>HDFS</tag>
          
          
            

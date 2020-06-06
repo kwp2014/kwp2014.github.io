@@ -469,7 +469,7 @@
       
 
       
-        <h1 id="Join模型"><a href="#Join模型" class="headerlink" title="Join模型"></a>Join模型</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select </span><br><span class="line">    A.a</span><br><span class="line">    B.b</span><br><span class="line">from A</span><br><span class="line">join B on A<span class="selector-class">.a_id</span> = B.b_id</span><br></pre></td></tr></table></figure>
+        <h1 id="Join模型"><a href="#Join模型" class="headerlink" title="Join模型"></a>Join模型</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select </span><br><span class="line">    A.a</span><br><span class="line">    B.b</span><br><span class="line">from A</span><br><span class="line">join B on A.a_id = B.b_id</span><br></pre></td></tr></table></figure>
 <h1 id="处理思路"><a href="#处理思路" class="headerlink" title="处理思路"></a>处理思路</h1><ol>
 <li>先过滤A和B，减少Join的表的数据量</li>
 <li>既然on 条件导致的数据倾斜，那么试图改造Join的条件</li>
@@ -697,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Join模型"><span class="nav-number">1.</span> <span class="nav-text">Join模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#处理思路"><span class="nav-number">2.</span> <span class="nav-text">处理思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据倾斜对性能影响有多大？"><span class="nav-number">3.</span> <span class="nav-text">数据倾斜对性能影响有多大？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何分别从物理存储和查询SQL上进行优化？"><span class="nav-number">4.</span> <span class="nav-text">如何分别从物理存储和查询SQL上进行优化？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#能否定期稽核或监控这种数据倾斜？"><span class="nav-number">5.</span> <span class="nav-text">能否定期稽核或监控这种数据倾斜？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Join模型"><span class="nav-text">Join模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#处理思路"><span class="nav-text">处理思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据倾斜对性能影响有多大？"><span class="nav-text">数据倾斜对性能影响有多大？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何分别从物理存储和查询SQL上进行优化？"><span class="nav-text">如何分别从物理存储和查询SQL上进行优化？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#能否定期稽核或监控这种数据倾斜？"><span class="nav-text">能否定期稽核或监控这种数据倾斜？</span></a></li></ol></div>
             
 
           </div>
@@ -717,7 +717,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
