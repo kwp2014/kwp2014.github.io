@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://kwp2014.github.io/categories/index.html</loc>
+    
+    <lastmod>2020-06-06T04:39:27.214Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://kwp2014.github.io/tags/index.html</loc>
+    
+    <lastmod>2020-06-06T04:39:12.832Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://kwp2014.github.io/about/index.html</loc>
     
     <lastmod>2020-06-06T03:52:39.980Z</lastmod>
@@ -159,20 +173,6 @@
     <loc>http://kwp2014.github.io/2018/07/13/markdown-hexo-content-presentation/</loc>
     
     <lastmod>2018-07-17T14:36:23.819Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://kwp2014.github.io/tags/index.html</loc>
-    
-    <lastmod>2018-07-14T12:19:51.375Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://kwp2014.github.io/categories/index.html</loc>
-    
-    <lastmod>2018-07-14T12:19:44.800Z</lastmod>
     
   </url>
   

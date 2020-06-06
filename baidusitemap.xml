@@ -4,6 +4,8 @@
 
     
     
+    
+    
   <url>
     <loc>http://kwp2014.github.io/2019/02/16/js-judge/</loc>
     <lastmod>2020-06-06T03:09:30.534Z</lastmod>
@@ -324,11 +326,11 @@
         
         <tag>Hadoop</tag>
          
+        <tag>HDFS</tag>
+         
         <tag>Mapreduce</tag>
          
         <tag>Eclipse</tag>
-         
-        <tag>HDFS</tag>
          
          
            
@@ -387,8 +389,6 @@
     </data>
     </url>
 
-    
-    
     
   <url>
     <loc>http://kwp2014.github.io/2018/07/13/git-basic-command/</loc>
