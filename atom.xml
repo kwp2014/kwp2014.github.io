@@ -2,15 +2,15 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>清风徐来</title>
   
-  <subtitle>清风徐来</subtitle>
+  <subtitle>水波不兴</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://blinkfox.github.io/"/>
+  <link href="https://kwp2014.github.io/"/>
   <updated>2019-08-13T13:28:31.663Z</updated>
-  <id>https://blinkfox.github.io/</id>
+  <id>https://kwp2014.github.io/</id>
   
   <author>
-    <name>blinkfox</name>
+    <name>quippy</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Java技术成长之路</title>
-    <link href="https://blinkfox.github.io/2019/08/13/grow-up-with-java/"/>
-    <id>https://blinkfox.github.io/2019/08/13/grow-up-with-java/</id>
+    <link href="https://kwp2014.github.io/2019/08/13/grow-up-with-java/"/>
+    <id>https://kwp2014.github.io/2019/08/13/grow-up-with-java/</id>
     <published>2019-08-13T13:19:49.000Z</published>
     <updated>2019-08-13T13:28:31.663Z</updated>
     
@@ -30,18 +30,18 @@
     </summary>
     
     
-      <category term="Java" scheme="https://blinkfox.github.io/tags/Java/"/>
+      <category term="Java" scheme="https://kwp2014.github.io/tags/Java/"/>
     
-      <category term="Skill" scheme="https://blinkfox.github.io/tags/Skill/"/>
+      <category term="Skill" scheme="https://kwp2014.github.io/tags/Skill/"/>
     
-      <category term="Coder" scheme="https://blinkfox.github.io/tags/Coder/"/>
+      <category term="Coder" scheme="https://kwp2014.github.io/tags/Coder/"/>
     
   </entry>
   
   <entry>
     <title>React 前端项目规划思路</title>
-    <link href="https://blinkfox.github.io/2019/02/25/react-project/"/>
-    <id>https://blinkfox.github.io/2019/02/25/react-project/</id>
+    <link href="https://kwp2014.github.io/2019/02/25/react-project/"/>
+    <id>https://kwp2014.github.io/2019/02/25/react-project/</id>
     <published>2019-02-25T09:46:33.000Z</published>
     <updated>2019-02-25T09:50:17.308Z</updated>
     
@@ -56,8 +56,8 @@
   
   <entry>
     <title>JS判断</title>
-    <link href="https://blinkfox.github.io/2019/02/16/js-judge/"/>
-    <id>https://blinkfox.github.io/2019/02/16/js-judge/</id>
+    <link href="https://kwp2014.github.io/2019/02/16/js-judge/"/>
+    <id>https://kwp2014.github.io/2019/02/16/js-judge/</id>
     <published>2019-02-16T04:06:21.000Z</published>
     <updated>2020-06-06T03:09:30.534Z</updated>
     
@@ -82,8 +82,8 @@
   
   <entry>
     <title>ThreadLocal-优雅写法</title>
-    <link href="https://blinkfox.github.io/2019/01/26/java-threadlocal/"/>
-    <id>https://blinkfox.github.io/2019/01/26/java-threadlocal/</id>
+    <link href="https://kwp2014.github.io/2019/01/26/java-threadlocal/"/>
+    <id>https://kwp2014.github.io/2019/01/26/java-threadlocal/</id>
     <published>2019-01-26T11:47:04.000Z</published>
     <updated>2019-01-28T12:03:32.332Z</updated>
     
@@ -98,8 +98,8 @@
   
   <entry>
     <title>Hive中大表Join大表的优化</title>
-    <link href="https://blinkfox.github.io/2019/01/23/hive-big-table-join/"/>
-    <id>https://blinkfox.github.io/2019/01/23/hive-big-table-join/</id>
+    <link href="https://kwp2014.github.io/2019/01/23/hive-big-table-join/"/>
+    <id>https://kwp2014.github.io/2019/01/23/hive-big-table-join/</id>
     <published>2019-01-23T13:55:08.000Z</published>
     <updated>2019-01-23T14:21:48.761Z</updated>
     
@@ -114,8 +114,8 @@
   
   <entry>
     <title>单一职责原则的思考</title>
-    <link href="https://blinkfox.github.io/2018/11/15/thinking-for-single-responsibility-principle/"/>
-    <id>https://blinkfox.github.io/2018/11/15/thinking-for-single-responsibility-principle/</id>
+    <link href="https://kwp2014.github.io/2018/11/15/thinking-for-single-responsibility-principle/"/>
+    <id>https://kwp2014.github.io/2018/11/15/thinking-for-single-responsibility-principle/</id>
     <published>2018-11-15T11:36:05.000Z</published>
     <updated>2020-06-07T07:37:55.322Z</updated>
     
@@ -126,18 +126,18 @@
     </summary>
     
     
-      <category term="Design Pattern" scheme="https://blinkfox.github.io/tags/Design-Pattern/"/>
+      <category term="Design Pattern" scheme="https://kwp2014.github.io/tags/Design-Pattern/"/>
     
-      <category term="SRP" scheme="https://blinkfox.github.io/tags/SRP/"/>
+      <category term="SRP" scheme="https://kwp2014.github.io/tags/SRP/"/>
     
-      <category term="Java Web" scheme="https://blinkfox.github.io/tags/Java-Web/"/>
+      <category term="Java Web" scheme="https://kwp2014.github.io/tags/Java-Web/"/>
     
   </entry>
   
   <entry>
     <title>如何闭环的完成阶段性的工作</title>
-    <link href="https://blinkfox.github.io/2018/11/04/how-closed-loop-done/"/>
-    <id>https://blinkfox.github.io/2018/11/04/how-closed-loop-done/</id>
+    <link href="https://kwp2014.github.io/2018/11/04/how-closed-loop-done/"/>
+    <id>https://kwp2014.github.io/2018/11/04/how-closed-loop-done/</id>
     <published>2018-11-04T14:38:00.000Z</published>
     <updated>2018-11-04T14:51:33.611Z</updated>
     
@@ -152,8 +152,8 @@
   
   <entry>
     <title>如何有效的积累</title>
-    <link href="https://blinkfox.github.io/2018/11/04/how-to-accumulate/"/>
-    <id>https://blinkfox.github.io/2018/11/04/how-to-accumulate/</id>
+    <link href="https://kwp2014.github.io/2018/11/04/how-to-accumulate/"/>
+    <id>https://kwp2014.github.io/2018/11/04/how-to-accumulate/</id>
     <published>2018-11-04T10:35:16.000Z</published>
     <updated>2018-11-04T10:39:26.124Z</updated>
     
@@ -168,8 +168,8 @@
   
   <entry>
     <title>Mac Terminal管理工具介绍</title>
-    <link href="https://blinkfox.github.io/2018/10/04/mac-terminal-tool-introduction/"/>
-    <id>https://blinkfox.github.io/2018/10/04/mac-terminal-tool-introduction/</id>
+    <link href="https://kwp2014.github.io/2018/10/04/mac-terminal-tool-introduction/"/>
+    <id>https://kwp2014.github.io/2018/10/04/mac-terminal-tool-introduction/</id>
     <published>2018-10-04T10:57:33.000Z</published>
     <updated>2020-06-06T14:58:39.132Z</updated>
     
@@ -184,8 +184,8 @@
   
   <entry>
     <title>Idea 开发工具使用</title>
-    <link href="https://blinkfox.github.io/2018/08/13/idea-for-java/"/>
-    <id>https://blinkfox.github.io/2018/08/13/idea-for-java/</id>
+    <link href="https://kwp2014.github.io/2018/08/13/idea-for-java/"/>
+    <id>https://kwp2014.github.io/2018/08/13/idea-for-java/</id>
     <published>2018-08-13T14:44:32.000Z</published>
     <updated>2019-01-11T15:47:16.521Z</updated>
     
@@ -200,8 +200,8 @@
   
   <entry>
     <title>JPA用于数据持久化</title>
-    <link href="https://blinkfox.github.io/2018/08/13/jpa-mapping-for-data/"/>
-    <id>https://blinkfox.github.io/2018/08/13/jpa-mapping-for-data/</id>
+    <link href="https://kwp2014.github.io/2018/08/13/jpa-mapping-for-data/"/>
+    <id>https://kwp2014.github.io/2018/08/13/jpa-mapping-for-data/</id>
     <published>2018-08-13T14:32:53.000Z</published>
     <updated>2018-08-13T14:41:10.091Z</updated>
     
@@ -216,8 +216,8 @@
   
   <entry>
     <title>SVN工具用于本地版本管理</title>
-    <link href="https://blinkfox.github.io/2018/08/13/svn-for-coder/"/>
-    <id>https://blinkfox.github.io/2018/08/13/svn-for-coder/</id>
+    <link href="https://kwp2014.github.io/2018/08/13/svn-for-coder/"/>
+    <id>https://kwp2014.github.io/2018/08/13/svn-for-coder/</id>
     <published>2018-08-13T14:24:17.000Z</published>
     <updated>2019-01-11T14:36:19.246Z</updated>
     
@@ -232,8 +232,8 @@
   
   <entry>
     <title>Maven工具用于项目构建和规划</title>
-    <link href="https://blinkfox.github.io/2018/08/13/maven-elegant-project/"/>
-    <id>https://blinkfox.github.io/2018/08/13/maven-elegant-project/</id>
+    <link href="https://kwp2014.github.io/2018/08/13/maven-elegant-project/"/>
+    <id>https://kwp2014.github.io/2018/08/13/maven-elegant-project/</id>
     <published>2018-08-13T14:17:21.000Z</published>
     <updated>2018-08-13T14:32:50.977Z</updated>
     
@@ -248,8 +248,8 @@
   
   <entry>
     <title>（四）Hadoop笔记：MacOS本地开发Mapreduce程序</title>
-    <link href="https://blinkfox.github.io/2018/07/27/hadoop-learn-04/"/>
-    <id>https://blinkfox.github.io/2018/07/27/hadoop-learn-04/</id>
+    <link href="https://kwp2014.github.io/2018/07/27/hadoop-learn-04/"/>
+    <id>https://kwp2014.github.io/2018/07/27/hadoop-learn-04/</id>
     <published>2018-07-27T13:05:19.000Z</published>
     <updated>2018-07-27T13:13:48.120Z</updated>
     
@@ -260,20 +260,20 @@
     </summary>
     
     
-      <category term="Hadoop" scheme="https://blinkfox.github.io/tags/Hadoop/"/>
+      <category term="Hadoop" scheme="https://kwp2014.github.io/tags/Hadoop/"/>
     
-      <category term="Mapreduce" scheme="https://blinkfox.github.io/tags/Mapreduce/"/>
+      <category term="HDFS" scheme="https://kwp2014.github.io/tags/HDFS/"/>
     
-      <category term="Eclipse" scheme="https://blinkfox.github.io/tags/Eclipse/"/>
+      <category term="Mapreduce" scheme="https://kwp2014.github.io/tags/Mapreduce/"/>
     
-      <category term="HDFS" scheme="https://blinkfox.github.io/tags/HDFS/"/>
+      <category term="Eclipse" scheme="https://kwp2014.github.io/tags/Eclipse/"/>
     
   </entry>
   
   <entry>
     <title>（三）Hadoop笔记：Hadoop分布式集群搭建</title>
-    <link href="https://blinkfox.github.io/2018/07/27/hadoop-learn-03/"/>
-    <id>https://blinkfox.github.io/2018/07/27/hadoop-learn-03/</id>
+    <link href="https://kwp2014.github.io/2018/07/27/hadoop-learn-03/"/>
+    <id>https://kwp2014.github.io/2018/07/27/hadoop-learn-03/</id>
     <published>2018-07-27T12:59:59.000Z</published>
     <updated>2018-07-29T04:36:36.446Z</updated>
     
@@ -284,20 +284,20 @@
     </summary>
     
     
-      <category term="Hadoop" scheme="https://blinkfox.github.io/tags/Hadoop/"/>
+      <category term="Hadoop" scheme="https://kwp2014.github.io/tags/Hadoop/"/>
     
-      <category term="HDFS" scheme="https://blinkfox.github.io/tags/HDFS/"/>
+      <category term="HDFS" scheme="https://kwp2014.github.io/tags/HDFS/"/>
     
-      <category term="Yarn" scheme="https://blinkfox.github.io/tags/Yarn/"/>
+      <category term="Yarn" scheme="https://kwp2014.github.io/tags/Yarn/"/>
     
-      <category term="DataNode" scheme="https://blinkfox.github.io/tags/DataNode/"/>
+      <category term="DataNode" scheme="https://kwp2014.github.io/tags/DataNode/"/>
     
   </entry>
   
   <entry>
     <title>（二）Hadoop笔记：虚拟机CentOS环境准备</title>
-    <link href="https://blinkfox.github.io/2018/07/27/hadoop-learn-02/"/>
-    <id>https://blinkfox.github.io/2018/07/27/hadoop-learn-02/</id>
+    <link href="https://kwp2014.github.io/2018/07/27/hadoop-learn-02/"/>
+    <id>https://kwp2014.github.io/2018/07/27/hadoop-learn-02/</id>
     <published>2018-07-27T12:54:03.000Z</published>
     <updated>2020-05-30T06:01:39.099Z</updated>
     
@@ -308,18 +308,18 @@
     </summary>
     
     
-      <category term="Linux" scheme="https://blinkfox.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://kwp2014.github.io/tags/Linux/"/>
     
-      <category term="CentOS" scheme="https://blinkfox.github.io/tags/CentOS/"/>
+      <category term="CentOS" scheme="https://kwp2014.github.io/tags/CentOS/"/>
     
-      <category term="VMware Tools" scheme="https://blinkfox.github.io/tags/VMware-Tools/"/>
+      <category term="VMware Tools" scheme="https://kwp2014.github.io/tags/VMware-Tools/"/>
     
   </entry>
   
   <entry>
     <title>（一）Hadoop笔记：准备工作</title>
-    <link href="https://blinkfox.github.io/2018/07/27/hadoop-learn-01/"/>
-    <id>https://blinkfox.github.io/2018/07/27/hadoop-learn-01/</id>
+    <link href="https://kwp2014.github.io/2018/07/27/hadoop-learn-01/"/>
+    <id>https://kwp2014.github.io/2018/07/27/hadoop-learn-01/</id>
     <published>2018-07-27T12:34:37.000Z</published>
     <updated>2018-07-29T04:43:45.108Z</updated>
     
@@ -330,20 +330,20 @@
     </summary>
     
     
-      <category term="Hadoop" scheme="https://blinkfox.github.io/tags/Hadoop/"/>
+      <category term="Hadoop" scheme="https://kwp2014.github.io/tags/Hadoop/"/>
     
-      <category term="Linux" scheme="https://blinkfox.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://kwp2014.github.io/tags/Linux/"/>
     
-      <category term="Node" scheme="https://blinkfox.github.io/tags/Node/"/>
+      <category term="Node" scheme="https://kwp2014.github.io/tags/Node/"/>
     
-      <category term="MacOS" scheme="https://blinkfox.github.io/tags/MacOS/"/>
+      <category term="MacOS" scheme="https://kwp2014.github.io/tags/MacOS/"/>
     
   </entry>
   
   <entry>
     <title>为什么程序员写不出优雅的代码</title>
-    <link href="https://blinkfox.github.io/2018/07/24/why-not-beautiful-code/"/>
-    <id>https://blinkfox.github.io/2018/07/24/why-not-beautiful-code/</id>
+    <link href="https://kwp2014.github.io/2018/07/24/why-not-beautiful-code/"/>
+    <id>https://kwp2014.github.io/2018/07/24/why-not-beautiful-code/</id>
     <published>2018-07-24T15:14:27.000Z</published>
     <updated>2019-01-11T13:31:57.476Z</updated>
     
@@ -358,8 +358,8 @@
   
   <entry>
     <title>Sublime+Hexo 优雅写博客</title>
-    <link href="https://blinkfox.github.io/2018/07/16/sublime-hexo-write-blog/"/>
-    <id>https://blinkfox.github.io/2018/07/16/sublime-hexo-write-blog/</id>
+    <link href="https://kwp2014.github.io/2018/07/16/sublime-hexo-write-blog/"/>
+    <id>https://kwp2014.github.io/2018/07/16/sublime-hexo-write-blog/</id>
     <published>2018-07-16T15:44:04.000Z</published>
     <updated>2018-07-18T13:42:28.883Z</updated>
     
@@ -370,16 +370,16 @@
     </summary>
     
     
-      <category term="Sublime" scheme="https://blinkfox.github.io/tags/Sublime/"/>
+      <category term="Sublime" scheme="https://kwp2014.github.io/tags/Sublime/"/>
     
-      <category term="Hexo" scheme="https://blinkfox.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://kwp2014.github.io/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Markdown+Hexo 内容呈现</title>
-    <link href="https://blinkfox.github.io/2018/07/13/markdown-hexo-content-presentation/"/>
-    <id>https://blinkfox.github.io/2018/07/13/markdown-hexo-content-presentation/</id>
+    <link href="https://kwp2014.github.io/2018/07/13/markdown-hexo-content-presentation/"/>
+    <id>https://kwp2014.github.io/2018/07/13/markdown-hexo-content-presentation/</id>
     <published>2018-07-13T10:25:56.000Z</published>
     <updated>2018-07-17T14:36:23.819Z</updated>
     
@@ -403,7 +403,7 @@
     </summary>
     
     
-      <category term="markdown" scheme="https://blinkfox.github.io/tags/markdown/"/>
+      <category term="markdown" scheme="https://kwp2014.github.io/tags/markdown/"/>
     
   </entry>
   
