@@ -262,11 +262,11 @@
     
       <category term="Hadoop" scheme="https://blinkfox.github.io/tags/Hadoop/"/>
     
-      <category term="HDFS" scheme="https://blinkfox.github.io/tags/HDFS/"/>
-    
       <category term="Mapreduce" scheme="https://blinkfox.github.io/tags/Mapreduce/"/>
     
       <category term="Eclipse" scheme="https://blinkfox.github.io/tags/Eclipse/"/>
+    
+      <category term="HDFS" scheme="https://blinkfox.github.io/tags/HDFS/"/>
     
   </entry>
   
