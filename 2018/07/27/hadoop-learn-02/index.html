@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="CentOS,Linux,VMware Tools">
-    <meta name="description" content="清風徐來，水波不興，寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。">
+    <meta name="description" content="从来没有真正的绝境，只有心灵的迷途">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>（二）Hadoop笔记：虚拟机CentOS环境准备 | Breeze Blows</title>
+    <title>（二）Hadoop笔记：虚拟机CentOS环境准备 | 拾下</title>
     <link rel="icon" type="image/png" href="/duola-a-meng_43.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
                     
                     <img src="/duola-a-meng_43.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Breeze Blows</span>
+                    <span class="logo-span">拾下</span>
                 </a>
             </div>
             
@@ -97,7 +97,7 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
     </a>
@@ -118,10 +118,10 @@
         
         <img src="/duola-a-meng_43.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Breeze Blows</div>
+        <div class="logo-name">拾下</div>
         <div class="logo-desc">
             
-            清風徐來，水波不興，寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。
+            从来没有真正的绝境，只有心灵的迷途
             
         </div>
     </div>
@@ -178,7 +178,7 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
 		</a>
@@ -289,8 +289,16 @@
         display: block;
     }
 
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
     #toc-content .is-active-link {
         color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -323,12 +331,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CentOS/">
-                                <span class="chip bg-color">CentOS</span>
-                            </a>
-                        
                             <a href="/tags/Linux/">
                                 <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/CentOS/">
+                                <span class="chip bg-color">CentOS</span>
                             </a>
                         
                             <a href="/tags/VMware-Tools/">
@@ -354,10 +362,25 @@
                 
 
                 
-
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.3k
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    5 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -374,100 +397,119 @@
 </ul>
 <h2 id="基础环境配置"><a href="#基础环境配置" class="headerlink" title="基础环境配置"></a>基础环境配置</h2><ol>
 <li><p>主机名：便于节点之间的访问，修改主机名如下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl <span class="built_in">set</span>-hostname cluster01.kwp.com</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash">hostnamectl set-hostname cluster01.kwp.com</code></pre>
 </li>
 <li><p>网卡：联网必备，设置为开机自启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">ONBOOT=no 改为 yes</span><br><span class="line">service network restart 重启网络</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-eth0
+ONBOOT<span class="token operator">=</span>no 改为 <span class="token function">yes</span>
+<span class="token function">service</span> network restart 重启网络</code></pre>
 </li>
 <li><p>sshd：SSH服务，用于远程连接和访问Linux</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/hosts.deny</span><br><span class="line">vi /etc/hosts.allow</span><br><span class="line">在 /etc/hosts.deny 和 /etc/hosts.allow 最后都加上一句 sshd:ALL ，保存</span><br><span class="line">service sshd restart 重启服务</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/hosts.deny
+<span class="token function">vi</span> /etc/hosts.allow
+在 /etc/hosts.deny 和 /etc/hosts.allow 最后都加上一句 sshd:ALL ，保存
+<span class="token function">service</span> sshd restart 重启服务</code></pre>
 </li>
 <li><p>selinux设置：关闭安全机制</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">将 SELINUX=enforcing 改成 SELINUX=disabled，保存</span><br><span class="line">init 6 重启系统</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/selinux/config
+将 SELINUX<span class="token operator">=</span>enforcing 改成 SELINUX<span class="token operator">=</span>disabled，保存
+init 6 重启系统</code></pre>
 </li>
 <li><p>yum配置：便于联网下载软件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">安装下载工具</span><br><span class="line">yum -y install wget</span><br><span class="line">进入yum配置文件目录</span><br><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d/</span><br><span class="line">下载网易的源配置文件(可直接去网站下载)</span><br><span class="line">wget http://mirrors.163.com/.<span class="built_in">help</span>/CentOS6-Base-163.repo</span><br><span class="line">备份旧的配置文件</span><br><span class="line">mv CentOS-Base.repo CentOS-Base.repo.bak</span><br><span class="line">把下载的配置文件改名</span><br><span class="line"></span><br><span class="line">l~~ 清理缓存</span><br><span class="line">yum clean all</span><br><span class="line">更新缓存</span><br><span class="line">yum makecache</span><br><span class="line">更新系统</span><br><span class="line">yum update</span><br><span class="line">安装常用安装包</span><br><span class="line">yum -y install vim</span><br><span class="line">yum -y install gcc gcc-c++ make</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>保持本地时间与internet一致</p>
-<blockquote>
-<p>集群中各节点的时间一致是节点间正常通信的必要条件。</p>
-</blockquote>
+<pre class=" language-bash"><code class="language-bash">安装下载工具
+yum -y <span class="token function">install</span> <span class="token function">wget</span>
+进入yum配置文件目录
+<span class="token function">cd</span> /etc/yum.repos.d/
+下载网易的源配置文件<span class="token punctuation">(</span>可直接去网站下载<span class="token punctuation">)</span>
+<span class="token function">wget</span> http://mirrors.163.com/.help/CentOS6-Base-163.repo
+备份旧的配置文件
+<span class="token function">mv</span> CentOS-Base.repo CentOS-Base.repo.bak
+把下载的配置文件改名
+</code></pre>
 </li>
 </ol>
-<ul>
-<li>安装时间同步工具：yum install -y ntpdate</li>
-<li>同步网络时间：ntpdate time.nist.gov</li>
-</ul>
-<blockquote>
-<p>时间服务器：</p>
-<ul>
-<li>time.nist.gov</li>
-<li>time.nuri.net</li>
-<li>0.asia.pool.ntp.org</li>
-<li>1.asia.pool.ntp.org</li>
-<li>2.asia.pool.ntp.org</li>
-<li>3.asia.pool.ntp.org</li>
-<li>调整硬件时间：hwclock -w</li>
-<li>查看时间：<ul>
-<li>date</li>
-<li>hwclock</li>
-</ul>
-</li>
-<li>定时执行时间同步任务（在配置集群时才配置）<ul>
-<li>crontab -e 来添加定时任务: 每隔一个小时同步一下internet<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#* */1 * * * root ntpdatetime.nuri.net;hwclock -w</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h2 id="配置静态IP"><a href="#配置静态IP" class="headerlink" title="配置静态IP"></a>配置静态IP</h2><ol>
+<p>l~~ 清理缓存<br>yum clean all<br>更新缓存<br>yum makecache<br>更新系统<br>yum update<br>安装常用安装包<br>yum -y install vim<br>yum -y install gcc gcc-c++ make</p>
+<pre><code>
+6. 保持本地时间与internet一致
+&gt; 集群中各节点的时间一致是节点间正常通信的必要条件。
+- 安装时间同步工具：yum install -y ntpdate
+- 同步网络时间：ntpdate time.nist.gov
+
+&gt; 时间服务器：
+&gt; - time.nist.gov
+&gt; - time.nuri.net
+&gt; - 0.asia.pool.ntp.org
+&gt; - 1.asia.pool.ntp.org
+&gt; - 2.asia.pool.ntp.org
+&gt; - 3.asia.pool.ntp.org
+- 调整硬件时间：hwclock -w
+- 查看时间：
+  - date
+  - hwclock
+- 定时执行时间同步任务（在配置集群时才配置）
+  - crontab -e 来添加定时任务: 每隔一个小时同步一下internet
+```bash
+#* */1 * * * root ntpdatetime.nuri.net;hwclock -w </code></pre><h2 id="配置静态IP"><a href="#配置静态IP" class="headerlink" title="配置静态IP"></a>配置静态IP</h2><ol>
 <li>修改 /etc/sysconfig/network-scripts/ 下的网络连接配置文件 ifcfg-ens33。</li>
-<li>原始：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">TYPE=<span class="string">"Ethernet"</span></span><br><span class="line">PROXY_METHOD=<span class="string">"none"</span></span><br><span class="line">BROWSER_ONLY=<span class="string">"no"</span></span><br><span class="line">BOOTPROTO=<span class="string">"dhcp"</span></span><br><span class="line">DEFROUTE=<span class="string">"yes"</span></span><br><span class="line">IPV4_FAILURE_FATAL=<span class="string">"no"</span></span><br><span class="line">IPV6INIT=<span class="string">"yes"</span></span><br><span class="line">IPV6_AUTOCONF=<span class="string">"yes"</span></span><br><span class="line">IPV6_DEFROUTE=<span class="string">"yes"</span></span><br><span class="line">IPV6_FAILURE_FATAL=<span class="string">"no"</span></span><br><span class="line">IPV6_ADDR_GEN_MODE=<span class="string">"stable-privacy"</span></span><br><span class="line">NAME=<span class="string">"ens33"</span></span><br><span class="line">UUID=<span class="string">"5bba20b4-ad83-452e-ac7d-076c1de0b193"</span></span><br><span class="line">DEVICE=<span class="string">"ens33"</span></span><br><span class="line">ONBOOT=<span class="string">"yes"</span></span><br></pre></td></tr></table></figure>
+<li>原始：<pre class=" language-bash"><code class="language-bash">TYPE<span class="token operator">=</span><span class="token string">"Ethernet"</span>
+PROXY_METHOD<span class="token operator">=</span><span class="token string">"none"</span>
+BROWSER_ONLY<span class="token operator">=</span><span class="token string">"no"</span>
+BOOTPROTO<span class="token operator">=</span><span class="token string">"dhcp"</span>
+DEFROUTE<span class="token operator">=</span><span class="token string">"yes"</span>
+IPV4_FAILURE_FATAL<span class="token operator">=</span><span class="token string">"no"</span>
+IPV6INIT<span class="token operator">=</span><span class="token string">"yes"</span>
+IPV6_AUTOCONF<span class="token operator">=</span><span class="token string">"yes"</span>
+IPV6_DEFROUTE<span class="token operator">=</span><span class="token string">"yes"</span>
+IPV6_FAILURE_FATAL<span class="token operator">=</span><span class="token string">"no"</span>
+IPV6_ADDR_GEN_MODE<span class="token operator">=</span><span class="token string">"stable-privacy"</span>
+NAME<span class="token operator">=</span><span class="token string">"ens33"</span>
+UUID<span class="token operator">=</span><span class="token string">"5bba20b4-ad83-452e-ac7d-076c1de0b193"</span>
+DEVICE<span class="token operator">=</span><span class="token string">"ens33"</span>
+ONBOOT<span class="token operator">=</span><span class="token string">"yes"</span></code></pre>
 </li>
 </ol>
 <ul>
-<li>修改后：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">TYPE=<span class="string">"Ethernet"</span></span><br><span class="line">PROXY_METHOD=<span class="string">"none"</span></span><br><span class="line">BROWSER_ONLY=<span class="string">"no"</span></span><br><span class="line"></span><br><span class="line">BOOTPROTO=<span class="string">"static"</span></span><br><span class="line">IPADDR=192.168.32.141</span><br><span class="line">PREFIXO=24</span><br><span class="line">GATEWAY=192.168.32.2</span><br><span class="line">DNS1=8.8.8.8</span><br><span class="line">DNS2=8.8.4.4</span><br><span class="line"></span><br><span class="line">DEFROUTE=<span class="string">"yes"</span></span><br><span class="line">IPV4_FAILURE_FATAL=<span class="string">"no"</span></span><br><span class="line">IPV6INIT=<span class="string">"yes"</span></span><br><span class="line">IPV6_AUTOCONF=<span class="string">"yes"</span></span><br><span class="line">IPV6_DEFROUTE=<span class="string">"yes"</span></span><br><span class="line">IPV6_FAILURE_FATAL=<span class="string">"no"</span></span><br><span class="line">IPV6_ADDR_GEN_MODE=<span class="string">"stable-privacy"</span></span><br><span class="line">NAME=<span class="string">"ens33"</span></span><br><span class="line">UUID=<span class="string">"5bba20b4-ad83-452e-ac7d-076c1de0b193"</span></span><br><span class="line">DEVICE=<span class="string">"ens33"</span></span><br><span class="line">ONBOOT=<span class="string">"yes"</span></span><br><span class="line">ZONE=public</span><br></pre></td></tr></table></figure>
+<li>修改后：<pre class=" language-bash"><code class="language-bash">TYPE<span class="token operator">=</span><span class="token string">"Ethernet"</span>
+PROXY_METHOD<span class="token operator">=</span><span class="token string">"none"</span>
+BROWSER_ONLY<span class="token operator">=</span><span class="token string">"no"</span>
+</code></pre>
 </li>
 </ul>
-<ol start="2">
-<li>重启网络服务： service network restart</li>
-<li>查看IP： ip addr</li>
-</ol>
-<h2 id="配置免密码登陆"><a href="#配置免密码登陆" class="headerlink" title="配置免密码登陆"></a>配置免密码登陆</h2><ol>
-<li>生成公钥私钥对:ssh-keygen<blockquote>
-<p>公钥私钥存放的目录：~/.ssh/</p>
-</blockquote>
-</li>
-</ol>
-<ul>
-<li>目录文件说明<ul>
-<li>authorized_keys: 存放远程免密登录的公钥,主要通过这个文件记录多台机器的公钥</li>
-<li>id_rsa: 生成的私钥文件</li>
-<li>id_rsa.pub: 生成的公钥文件</li>
-<li>know_hosts: 已知的主机公钥清单</li>
-</ul>
-</li>
-<li>如果希望ssh公钥生效需满足至少下面两个条件:<ul>
-<li>.ssh目录的权限必须是700</li>
-<li>.ssh/authorized_keys文件权限必须是600</li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li>公钥分发：ssh-copy-id -i <a href="mailto:root@cluster02.kwp.com" target="_blank" rel="noopener">root@cluster02.kwp.com</a><blockquote>
-<p>或者直接通过scp命令追加到对方文件中：</p>
-</blockquote>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -p ~/.ssh/id_rsa.pub root@cluster02.kwp.com: /root/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-<ol start="3">
+<p>BOOTPROTO=”static”<br>IPADDR=192.168.32.141<br>PREFIXO=24<br>GATEWAY=192.168.32.2<br>DNS1=8.8.8.8<br>DNS2=8.8.4.4</p>
+<p>DEFROUTE=”yes”<br>IPV4_FAILURE_FATAL=”no”<br>IPV6INIT=”yes”<br>IPV6_AUTOCONF=”yes”<br>IPV6_DEFROUTE=”yes”<br>IPV6_FAILURE_FATAL=”no”<br>IPV6_ADDR_GEN_MODE=”stable-privacy”<br>NAME=”ens33”<br>UUID=”5bba20b4-ad83-452e-ac7d-076c1de0b193”<br>DEVICE=”ens33”<br>ONBOOT=”yes”<br>ZONE=public</p>
+<pre><code>2. 重启网络服务： service network restart
+3. 查看IP： ip addr
+
+
+
+## 配置免密码登陆
+
+1. 生成公钥私钥对:ssh-keygen
+&gt; 公钥私钥存放的目录：\~/.ssh/
+- 目录文件说明
+  - authorized\_keys: 存放远程免密登录的公钥,主要通过这个文件记录多台机器的公钥
+  - id\_rsa: 生成的私钥文件
+  - id\_rsa.pub: 生成的公钥文件
+  - know\_hosts: 已知的主机公钥清单
+- 如果希望ssh公钥生效需满足至少下面两个条件:
+  - .ssh目录的权限必须是700
+  - .ssh/authorized\_keys文件权限必须是600
+
+2. 公钥分发：ssh-copy-id -i root@cluster02.kwp.com
+&gt; 或者直接通过scp命令追加到对方文件中：
+
+```bash
+scp -p ~/.ssh/id_rsa.pub root@cluster02.kwp.com: /root/.ssh/authorized_keys</code></pre><ol start="3">
 <li>登陆：ssh <a href="mailto:root@cluster02.kwp.com" target="_blank" rel="noopener">root@cluster02.kwp.com</a></li>
 </ol>
 <h1 id="VMware-Tools安装"><a href="#VMware-Tools安装" class="headerlink" title="VMware Tools安装"></a>VMware Tools安装</h1><p>目的：本机设置共享文件夹，与Linux共享本地文件。</p>
 <blockquote>
 <p>注意虚拟机的版本和Linux的版本以及Linux内核的版本，实际安装过程中往往会因为版本的原因导致VMware Tools安装失败。</p>
 </blockquote>
-<h2 id="预先安装依赖："><a href="#预先安装依赖：" class="headerlink" title="预先安装依赖："></a>预先安装依赖：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install -y perl</span><br><span class="line">yum install -y net-tools</span><br><span class="line">yum install -y gcc</span><br><span class="line">yum install -y kernel-headers</span><br></pre></td></tr></table></figure>
+<h2 id="预先安装依赖："><a href="#预先安装依赖：" class="headerlink" title="预先安装依赖："></a>预先安装依赖：</h2><pre class=" language-bash"><code class="language-bash">yum <span class="token function">install</span> -y perl
+yum <span class="token function">install</span> -y net-tools
+yum <span class="token function">install</span> -y gcc
+yum <span class="token function">install</span> -y kernel-headers</code></pre>
 <blockquote>
 <p>上述升级后，可能在开机启动时产生多余的内核启动项，可通过下述方式删除多余启动项。</p>
 <ul>
@@ -480,13 +522,10 @@
 <blockquote>
 <p>若发现没有挂载，可mount /dec/cdrom /media的方式手动挂载</p>
 <ul>
-<li>安装文件拷贝到个人目录下，执行安装，安装过程中默认回车。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -xzf vmware-tools.tar.gz</span><br><span class="line"><span class="built_in">cd</span> vmware-tools</span><br><span class="line">./vmware-tools.pl</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>tar解压报错：归档中找不到tar: 由于前次错误，将以上次的错误状态退出。</p>
-<ul>
+<li>安装文件拷贝到个人目录下，执行安装，安装过程中默认回车。<pre class=" language-bash"><code class="language-bash"><span class="token function">tar</span> -xzf vmware-tools.tar.gz
+<span class="token function">cd</span> vmware-tools
+./vmware-tools.pl</code></pre>
+tar解压报错：归档中找不到tar: 由于前次错误，将以上次的错误状态退出。</li>
 <li>解决办法：添加-C参数，例如 <ul>
 <li>tar -zxvf ZendStudio-10.0.0-x86.tar.gz  -C  /home/bailin/</li>
 </ul>
@@ -511,7 +550,10 @@
 </li>
 <li>重新执行VMware Tools安装：./vmware-tools.pl</li>
 </ul>
-<p>或者直接安装所需的kernel-headers and kernel-devel文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install kernel-headers-$(uname -r) kernel-devel-$( uname -r) -y</span><br><span class="line">yum install gcc make -y</span><br><span class="line">uname –r</span><br></pre></td></tr></table></figure></p>
+<p>或者直接安装所需的kernel-headers and kernel-devel文件：</p>
+<pre class=" language-bash"><code class="language-bash">yum <span class="token function">install</span> kernel-headers-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -r<span class="token variable">)</span></span> kernel-devel-<span class="token variable"><span class="token variable">$(</span> <span class="token function">uname</span> -r<span class="token variable">)</span></span> -y
+yum <span class="token function">install</span> gcc <span class="token function">make</span> -y
+<span class="token function">uname</span> –r</code></pre>
 <h1 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h1><ol>
 <li>请提高vi编辑能力</li>
 <li>请提高文本查找编辑能力，如sed,awk,grep</li>
@@ -533,7 +575,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Quippy</a>
+                    <a href="https://blinkfox.github.io" rel="external nofollow noreferrer">blinkfox</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -543,7 +585,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://kwp2014.github.io/2018/07/27/hadoop-learn-02/">http://kwp2014.github.io/2018/07/27/hadoop-learn-02/</a>
+                    <a href="https://blinkfox.github.io/2018/07/27/hadoop-learn-02/">https://blinkfox.github.io/2018/07/27/hadoop-learn-02/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -556,7 +598,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Quippy</a>
+                    <a href="https://blinkfox.github.io" target="_blank">blinkfox</a>
                     !
                 </span>
             </div>
@@ -581,12 +623,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/CentOS/">
-                                    <span class="chip bg-color">CentOS</span>
-                                </a>
-                            
                                 <a href="/tags/Linux/">
                                     <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/CentOS/">
+                                    <span class="chip bg-color">CentOS</span>
                                 </a>
                             
                                 <a href="/tags/VMware-Tools/">
@@ -601,7 +643,7 @@
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
@@ -775,7 +817,10 @@
                     <div class="summary block-with-text">
                         
                             Hadoop安装环境准备安装Hadoop分布式集群，对于操作系统，有一些前置条件需要满足。
-JDK12345678910查看是否安装java –version解压缩jdk安装包tar -zxvf jdk-8u171-linux-x64.ta
+JDK查看是否安装
+java –version
+解压缩jdk安装包
+tar -zxvf jdk-8u171-linux-x64.tar.gz -C 
                         
                     </div>
                     <div class="publish-info">
@@ -785,7 +830,7 @@ JDK12345678910查看是否安装java –version解压缩jdk安装包tar -zxvf jd
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Quippy
+                            blinkfox
                             
                         </span>
                     </div>
@@ -847,7 +892,7 @@ Kernel 3.10.0-0-69
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Quippy
+                            blinkfox
                             
                         </span>
                     </div>
@@ -855,12 +900,12 @@ Kernel 3.10.0-0-69
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
                     <a href="/tags/Hadoop/">
                         <span class="chip bg-color">Hadoop</span>
+                    </a>
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                     <a href="/tags/Node/">
@@ -1014,18 +1059,12 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
         font-size: 12px;
         font-weight: 700;
         line-height: 16px !important;
     }
 
     .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
         font-size: 15px;
         color: #42b983;
     }
@@ -1065,14 +1104,17 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2020</span>
-            <a href="/about" target="_blank">Quippy</a>
+            <span id="year">2018</span>
+            <a href="https://blinkfox.github.io" target="_blank">blinkfox</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">11.4k</span>&nbsp;字
             
             
             
@@ -1091,6 +1133,50 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2018";
+                    var startMonth = "09";
+                    var startDate = "20";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             
@@ -1111,10 +1197,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=695595369" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 695595369" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
 
 
 
@@ -1198,6 +1280,10 @@ $(function () {
 
     
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

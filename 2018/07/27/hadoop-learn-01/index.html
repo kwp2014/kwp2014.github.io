@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Hadoop,Linux,Node,MacOS">
-    <meta name="description" content="清風徐來，水波不興，寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。">
+    <meta name="description" content="从来没有真正的绝境，只有心灵的迷途">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>（一）Hadoop笔记：准备工作 | Breeze Blows</title>
+    <title>（一）Hadoop笔记：准备工作 | 拾下</title>
     <link rel="icon" type="image/png" href="/duola-a-meng_43.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
                     
                     <img src="/duola-a-meng_43.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Breeze Blows</span>
+                    <span class="logo-span">拾下</span>
                 </a>
             </div>
             
@@ -97,7 +97,7 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
     </a>
@@ -118,10 +118,10 @@
         
         <img src="/duola-a-meng_43.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Breeze Blows</div>
+        <div class="logo-name">拾下</div>
         <div class="logo-desc">
             
-            清風徐來，水波不興，寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。
+            从来没有真正的绝境，只有心灵的迷途
             
         </div>
     </div>
@@ -178,7 +178,7 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
 		</a>
@@ -289,8 +289,16 @@
         display: block;
     }
 
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
     #toc-content .is-active-link {
         color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -323,12 +331,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
-                            </a>
-                        
                             <a href="/tags/Hadoop/">
                                 <span class="chip bg-color">Hadoop</span>
+                            </a>
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                             <a href="/tags/Node/">
@@ -358,10 +366,25 @@
                 
 
                 
-
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    903
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    4 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -375,37 +398,162 @@
 <li>Kernel 3.10.0-0-693.21.1.e17.x86_64</li>
 <li>hadoop-2.6.0</li>
 </ul>
-<h1 id="基本Linux命令"><a href="#基本Linux命令" class="headerlink" title="基本Linux命令"></a>基本Linux命令</h1><h2 id="系统查询"><a href="#系统查询" class="headerlink" title="系统查询"></a>系统查询</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ssh连接</span></span><br><span class="line">ssh root@cluster03.kwp.com</span><br><span class="line"><span class="comment"># 查看主机名</span></span><br><span class="line">hostname</span><br><span class="line"><span class="comment"># 查看端口是否连通</span></span><br><span class="line">telnet cluster03.kwp.com 8088</span><br><span class="line"><span class="comment"># 查看端口当前使用情况</span></span><br><span class="line">ss -ntl</span><br><span class="line"><span class="comment"># 查看Linux网络状态</span></span><br><span class="line">netstat -anp|grep 8088</span><br><span class="line"><span class="comment"># 查看操作系统的发行版本号内核</span></span><br><span class="line">uname -r</span><br><span class="line"><span class="comment"># 查看定时任务</span></span><br><span class="line">crontab -l</span><br><span class="line"><span class="comment"># 查看IP</span></span><br><span class="line">ip addr</span><br><span class="line"><span class="comment"># 查询系统中全部的内核</span></span><br><span class="line">rpm -q kernel</span><br><span class="line"><span class="comment"># 查看防火墙状态</span></span><br><span class="line">firewall-cmd --state</span><br><span class="line"><span class="comment"># 查看Hadoop安装路径</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$HADOOP_HOME</span></span><br><span class="line"><span class="comment"># 查看目录下所有文件大小</span></span><br><span class="line">du -sh share/doc/</span><br><span class="line"><span class="comment"># 获得所有软件包安装信息</span></span><br><span class="line">rpm -qa | grep telnet</span><br><span class="line"><span class="comment"># 查看服务状态</span></span><br><span class="line">service ntpd status</span><br><span class="line"><span class="comment"># 查看邮件</span></span><br><span class="line">cat /var/spool/mail/root</span><br><span class="line"><span class="comment"># 查看当前时间</span></span><br><span class="line">date <span class="string">"+%Y-%m-%d %H:%M:%S"</span></span><br><span class="line"><span class="comment"># 显示所有本地IP地址+端口号</span></span><br><span class="line">netstat -an</span><br></pre></td></tr></table></figure>
-<h2 id="目录和配置文件"><a href="#目录和配置文件" class="headerlink" title="目录和配置文件"></a>目录和配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 系统参数设置</span></span><br><span class="line">/etc</span><br><span class="line"><span class="comment"># 用户级的程序目录</span></span><br><span class="line">/opt</span><br><span class="line"><span class="comment"># 系统运行时需改变的数据</span></span><br><span class="line">/var</span><br><span class="line"><span class="comment"># 应用程序存放目录</span></span><br><span class="line">/usr </span><br><span class="line"><span class="comment"># 用于加载各种文件系统</span></span><br><span class="line">/mnt</span><br><span class="line"><span class="comment"># 所有外设所在目录</span></span><br><span class="line">/dev</span><br><span class="line"><span class="comment"># 内存的映射，非真实目录</span></span><br><span class="line">/proc</span><br><span class="line"><span class="comment"># hosts主机硬伤文件</span></span><br><span class="line">vi /etc/hosts</span><br><span class="line"><span class="comment"># 网卡IP设置</span></span><br><span class="line"><span class="built_in">cd</span> /etc/sysconfig/network-scripts/</span><br><span class="line"><span class="comment"># 本机SSH公钥</span></span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line"><span class="comment"># 超级管理员权限控制文件</span></span><br><span class="line">cat /etc/sudoers</span><br><span class="line"><span class="comment"># 系统启动时自动mount的文件列表</span></span><br><span class="line">cat /etc/fstab</span><br><span class="line"><span class="comment"># 主机名</span></span><br><span class="line">cat /etc/hostname</span><br></pre></td></tr></table></figure>
-<h2 id="软件安装与更新"><a href="#软件安装与更新" class="headerlink" title="软件安装与更新"></a>软件安装与更新</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装软件</span></span><br><span class="line">yum -y install telnet</span><br><span class="line">yum -y install ntpdate</span><br><span class="line">yum -y install bash-completion</span><br><span class="line">yum -y install make</span><br><span class="line">yum -y install kernel-headers</span><br><span class="line"><span class="comment"># 更新软件</span></span><br><span class="line">yum -y update firewalld</span><br><span class="line">yum -y pdate kernel</span><br><span class="line"><span class="comment"># 查看是否安装telnet</span></span><br><span class="line">yum list |grep telnet</span><br></pre></td></tr></table></figure>
-<h3 id="基本设置和操作"><a href="#基本设置和操作" class="headerlink" title="基本设置和操作"></a>基本设置和操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改主机名</span></span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname cluster01.kwp.com</span><br><span class="line"><span class="comment"># 清除屏幕</span></span><br><span class="line">clear</span><br><span class="line"><span class="comment"># 挂载设备到文件夹</span></span><br><span class="line">mount /dev/cdrom /mnt/cdrom</span><br><span class="line"><span class="comment"># 添加用户</span></span><br><span class="line">adduser hadoop</span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line">passwd hadoop</span><br><span class="line"><span class="comment"># 删除用户</span></span><br><span class="line">userdel -r hadoop</span><br><span class="line"><span class="comment"># 删除用户组</span></span><br><span class="line">groupdel hadoop</span><br><span class="line"><span class="comment"># 优雅重启</span></span><br><span class="line">init 6</span><br><span class="line"><span class="comment"># 强制重启</span></span><br><span class="line">reboot</span><br><span class="line"><span class="comment"># 生成公钥私钥对</span></span><br><span class="line">ssh-keygen</span><br><span class="line"><span class="comment"># 将本机公钥追加到cluster03.kwp.com主机</span></span><br><span class="line">ssh-copy-id -i cluster03.kwp.com</span><br><span class="line">chmod 600 authorized_keys</span><br><span class="line"><span class="comment"># ntp同步网络时间</span></span><br><span class="line">ntpdate time.nist.gov</span><br><span class="line"><span class="comment"># 将系统时钟同步到硬件时钟</span></span><br><span class="line">hwclock -w</span><br><span class="line"><span class="comment"># 请求网页内容</span></span><br><span class="line">curl cluster02:8088/cluster</span><br><span class="line"><span class="comment"># 解压缩文件到指定目录</span></span><br><span class="line">tar -xvf hadoop-2.6.0.tar -C /opt/modules</span><br><span class="line"><span class="comment"># 关闭防火墙</span></span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line"><span class="comment"># 设置防火墙开启端口对外访问</span></span><br><span class="line">firewall-cmd --zone=public --add-port=8082/tcp --permanent</span><br><span class="line"><span class="comment"># 重新加载防火墙服务</span></span><br><span class="line">firewall-cmd --zone=public --reload</span><br><span class="line"><span class="comment"># sshd服务重启</span></span><br><span class="line">service sshd restart</span><br><span class="line"><span class="comment"># 网络重启</span></span><br><span class="line">service network restart</span><br><span class="line"><span class="comment"># 局域网主机之间互传文件</span></span><br><span class="line">scp -r yarn-site.xml cluster02.kwp.com:/opt/modules/hadoop-2.6.0/etc/hadoop/</span><br></pre></td></tr></table></figure>
-<h2 id="Hadoop命令"><a href="#Hadoop命令" class="headerlink" title="Hadoop命令"></a>Hadoop命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># HDFS格式化命令</span></span><br><span class="line">hdfs namenode –format</span><br><span class="line"><span class="comment"># 执行mapreduce任务</span></span><br><span class="line">bin/yarn jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar wordcount /input/wc.input /output</span><br><span class="line"><span class="comment"># 启动Yarn任务</span></span><br><span class="line">start-yarn.sh</span><br><span class="line"><span class="comment"># 启动HDFS服务</span></span><br><span class="line">start-dfs.sh</span><br><span class="line"><span class="comment"># 停止resourcemanager服务</span></span><br><span class="line">yarn-daemon.sh stop resourcemanager</span><br><span class="line"><span class="comment"># 启动historyserver服务</span></span><br><span class="line">mr-jobhistory-daemon.sh start historyserver</span><br></pre></td></tr></table></figure>
+<h1 id="基本Linux命令"><a href="#基本Linux命令" class="headerlink" title="基本Linux命令"></a>基本Linux命令</h1><h2 id="系统查询"><a href="#系统查询" class="headerlink" title="系统查询"></a>系统查询</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ssh连接</span>
+<span class="token function">ssh</span> root@cluster03.kwp.com
+<span class="token comment" spellcheck="true"># 查看主机名</span>
+<span class="token function">hostname</span>
+<span class="token comment" spellcheck="true"># 查看端口是否连通</span>
+telnet cluster03.kwp.com 8088
+<span class="token comment" spellcheck="true"># 查看端口当前使用情况</span>
+ss -ntl
+<span class="token comment" spellcheck="true"># 查看Linux网络状态</span>
+<span class="token function">netstat</span> -anp<span class="token operator">|</span><span class="token function">grep</span> 8088
+<span class="token comment" spellcheck="true"># 查看操作系统的发行版本号内核</span>
+<span class="token function">uname</span> -r
+<span class="token comment" spellcheck="true"># 查看定时任务</span>
+<span class="token function">crontab</span> -l
+<span class="token comment" spellcheck="true"># 查看IP</span>
+ip addr
+<span class="token comment" spellcheck="true"># 查询系统中全部的内核</span>
+rpm -q kernel
+<span class="token comment" spellcheck="true"># 查看防火墙状态</span>
+firewall-cmd --state
+<span class="token comment" spellcheck="true"># 查看Hadoop安装路径</span>
+<span class="token keyword">echo</span> <span class="token variable">$HADOOP_HOME</span>
+<span class="token comment" spellcheck="true"># 查看目录下所有文件大小</span>
+<span class="token function">du</span> -sh share/doc/
+<span class="token comment" spellcheck="true"># 获得所有软件包安装信息</span>
+rpm -qa <span class="token operator">|</span> <span class="token function">grep</span> telnet
+<span class="token comment" spellcheck="true"># 查看服务状态</span>
+<span class="token function">service</span> ntpd status
+<span class="token comment" spellcheck="true"># 查看邮件</span>
+<span class="token function">cat</span> /var/spool/mail/root
+<span class="token comment" spellcheck="true"># 查看当前时间</span>
+<span class="token function">date</span> <span class="token string">"+%Y-%m-%d %H:%M:%S"</span>
+<span class="token comment" spellcheck="true"># 显示所有本地IP地址+端口号</span>
+<span class="token function">netstat</span> -an
+</code></pre>
+<h2 id="目录和配置文件"><a href="#目录和配置文件" class="headerlink" title="目录和配置文件"></a>目录和配置文件</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 系统参数设置</span>
+/etc
+<span class="token comment" spellcheck="true"># 用户级的程序目录</span>
+/opt
+<span class="token comment" spellcheck="true"># 系统运行时需改变的数据</span>
+/var
+<span class="token comment" spellcheck="true"># 应用程序存放目录</span>
+/usr 
+<span class="token comment" spellcheck="true"># 用于加载各种文件系统</span>
+/mnt
+<span class="token comment" spellcheck="true"># 所有外设所在目录</span>
+/dev
+<span class="token comment" spellcheck="true"># 内存的映射，非真实目录</span>
+/proc
+<span class="token comment" spellcheck="true"># hosts主机硬伤文件</span>
+<span class="token function">vi</span> /etc/hosts
+<span class="token comment" spellcheck="true"># 网卡IP设置</span>
+<span class="token function">cd</span> /etc/sysconfig/network-scripts/
+<span class="token comment" spellcheck="true"># 本机SSH公钥</span>
+<span class="token function">cat</span> ~/.ssh/id_rsa.pub
+<span class="token comment" spellcheck="true"># 超级管理员权限控制文件</span>
+<span class="token function">cat</span> /etc/sudoers
+<span class="token comment" spellcheck="true"># 系统启动时自动mount的文件列表</span>
+<span class="token function">cat</span> /etc/fstab
+<span class="token comment" spellcheck="true"># 主机名</span>
+<span class="token function">cat</span> /etc/hostname
+
+</code></pre>
+<h2 id="软件安装与更新"><a href="#软件安装与更新" class="headerlink" title="软件安装与更新"></a>软件安装与更新</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 安装软件</span>
+yum -y <span class="token function">install</span> telnet
+yum -y <span class="token function">install</span> ntpdate
+yum -y <span class="token function">install</span> bash-completion
+yum -y <span class="token function">install</span> <span class="token function">make</span>
+yum -y <span class="token function">install</span> kernel-headers
+<span class="token comment" spellcheck="true"># 更新软件</span>
+yum -y update firewalld
+yum -y pdate kernel
+<span class="token comment" spellcheck="true"># 查看是否安装telnet</span>
+yum list <span class="token operator">|</span><span class="token function">grep</span> telnet
+</code></pre>
+<h3 id="基本设置和操作"><a href="#基本设置和操作" class="headerlink" title="基本设置和操作"></a>基本设置和操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 修改主机名</span>
+hostnamectl set-hostname cluster01.kwp.com
+<span class="token comment" spellcheck="true"># 清除屏幕</span>
+<span class="token function">clear</span>
+<span class="token comment" spellcheck="true"># 挂载设备到文件夹</span>
+<span class="token function">mount</span> /dev/cdrom /mnt/cdrom
+<span class="token comment" spellcheck="true"># 添加用户</span>
+adduser hadoop
+<span class="token comment" spellcheck="true"># 修改密码</span>
+<span class="token function">passwd</span> hadoop
+<span class="token comment" spellcheck="true"># 删除用户</span>
+<span class="token function">userdel</span> -r hadoop
+<span class="token comment" spellcheck="true"># 删除用户组</span>
+<span class="token function">groupdel</span> hadoop
+<span class="token comment" spellcheck="true"># 优雅重启</span>
+init 6
+<span class="token comment" spellcheck="true"># 强制重启</span>
+<span class="token function">reboot</span>
+<span class="token comment" spellcheck="true"># 生成公钥私钥对</span>
+ssh-keygen
+<span class="token comment" spellcheck="true"># 将本机公钥追加到cluster03.kwp.com主机</span>
+ssh-copy-id -i cluster03.kwp.com
+<span class="token function">chmod</span> 600 authorized_keys
+<span class="token comment" spellcheck="true"># ntp同步网络时间</span>
+ntpdate time.nist.gov
+<span class="token comment" spellcheck="true"># 将系统时钟同步到硬件时钟</span>
+hwclock -w
+<span class="token comment" spellcheck="true"># 请求网页内容</span>
+curl cluster02:8088/cluster
+<span class="token comment" spellcheck="true"># 解压缩文件到指定目录</span>
+<span class="token function">tar</span> -xvf hadoop-2.6.0.tar -C /opt/modules
+<span class="token comment" spellcheck="true"># 关闭防火墙</span>
+systemctl stop firewalld.service
+<span class="token comment" spellcheck="true"># 设置防火墙开启端口对外访问</span>
+firewall-cmd --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span>8082/tcp --permanent
+<span class="token comment" spellcheck="true"># 重新加载防火墙服务</span>
+firewall-cmd --zone<span class="token operator">=</span>public --reload
+<span class="token comment" spellcheck="true"># sshd服务重启</span>
+<span class="token function">service</span> sshd restart
+<span class="token comment" spellcheck="true"># 网络重启</span>
+<span class="token function">service</span> network restart
+<span class="token comment" spellcheck="true"># 局域网主机之间互传文件</span>
+<span class="token function">scp</span> -r yarn-site.xml cluster02.kwp.com:/opt/modules/hadoop-2.6.0/etc/hadoop/
+</code></pre>
+<h2 id="Hadoop命令"><a href="#Hadoop命令" class="headerlink" title="Hadoop命令"></a>Hadoop命令</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># HDFS格式化命令</span>
+hdfs namenode –format
+<span class="token comment" spellcheck="true"># 执行mapreduce任务</span>
+bin/yarn jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar wordcount /input/wc.input /output
+<span class="token comment" spellcheck="true"># 启动Yarn任务</span>
+start-yarn.sh
+<span class="token comment" spellcheck="true"># 启动HDFS服务</span>
+start-dfs.sh
+<span class="token comment" spellcheck="true"># 停止resourcemanager服务</span>
+yarn-daemon.sh stop resourcemanager
+<span class="token comment" spellcheck="true"># 启动historyserver服务</span>
+mr-jobhistory-daemon.sh start historyserver
+</code></pre>
 <h1 id="节点规划"><a href="#节点规划" class="headerlink" title="节点规划"></a>节点规划</h1><h2 id="节点服务列表"><a href="#节点服务列表" class="headerlink" title="节点服务列表"></a>节点服务列表</h2><table>
 <thead>
 <tr>
-<th style="text-align:left">节点</th>
-<th style="text-align:left">主机名</th>
-<th style="text-align:left">服务项</th>
+<th align="left">节点</th>
+<th align="left">主机名</th>
+<th align="left">服务项</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">节点1</td>
-<td style="text-align:left">cluster01.kwp.com</td>
-<td style="text-align:left">NameNode, DataNode,Nodemanager, HistoryServer</td>
+<tbody><tr>
+<td align="left">节点1</td>
+<td align="left">cluster01.kwp.com</td>
+<td align="left">NameNode, DataNode,Nodemanager, HistoryServer</td>
 </tr>
 <tr>
-<td style="text-align:left">节点2</td>
-<td style="text-align:left">cluster02.kwp.com</td>
-<td style="text-align:left">ResourceManager, DataNode,Nodemanager</td>
+<td align="left">节点2</td>
+<td align="left">cluster02.kwp.com</td>
+<td align="left">ResourceManager, DataNode,Nodemanager</td>
 </tr>
 <tr>
-<td style="text-align:left">节点3</td>
-<td style="text-align:left">cluster03.kwp.com</td>
-<td style="text-align:left">SecondaryNameNode, DataNode,Nodemanager</td>
+<td align="left">节点3</td>
+<td align="left">cluster03.kwp.com</td>
+<td align="left">SecondaryNameNode, DataNode,Nodemanager</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="本机虚拟机和共享目录"><a href="#本机虚拟机和共享目录" class="headerlink" title="本机虚拟机和共享目录"></a>本机虚拟机和共享目录</h2><p>路径：/Users/mac/Documents/Virtual Machines.localized</p>
 <blockquote>
 <p>CentOS:  CentOS-7-x86_64-Minimal-1708.ISO</p>
@@ -456,7 +604,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Quippy</a>
+                    <a href="https://blinkfox.github.io" rel="external nofollow noreferrer">blinkfox</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -466,7 +614,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://kwp2014.github.io/2018/07/27/hadoop-learn-01/">http://kwp2014.github.io/2018/07/27/hadoop-learn-01/</a>
+                    <a href="https://blinkfox.github.io/2018/07/27/hadoop-learn-01/">https://blinkfox.github.io/2018/07/27/hadoop-learn-01/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -479,7 +627,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Quippy</a>
+                    <a href="https://blinkfox.github.io" target="_blank">blinkfox</a>
                     !
                 </span>
             </div>
@@ -504,12 +652,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
-                                </a>
-                            
                                 <a href="/tags/Hadoop/">
                                     <span class="chip bg-color">Hadoop</span>
+                                </a>
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                                 <a href="/tags/Node/">
@@ -528,7 +676,7 @@
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
@@ -716,7 +864,7 @@ root用户：root/root
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Quippy
+                            blinkfox
                             
                         </span>
                     </div>
@@ -724,12 +872,12 @@ root用户：root/root
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CentOS/">
-                        <span class="chip bg-color">CentOS</span>
-                    </a>
-                    
                     <a href="/tags/Linux/">
                         <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/CentOS/">
+                        <span class="chip bg-color">CentOS</span>
                     </a>
                     
                     <a href="/tags/VMware-Tools/">
@@ -760,7 +908,9 @@ root用户：root/root
                     <div class="summary block-with-text">
                         
                             为什么程序员写不出优雅的代码呢？这个问题困惑了我好多年。似乎写代码的人很多，但留存久的代码却很少。
-上大学时，起初还停留在只会某种或少许的几种语言，比如C语言，Matlab，当时每多学一门语言都觉得很自豪，但学语言，主要还是为了解决老师留下
+
+
+上大学时，起初还停留在只会某种或少许的几种语言，比如C语言，Matlab，当时每多学一门语言都觉得很自豪，但学语言，主要还是为了解决老师
                         
                     </div>
                     <div class="publish-info">
@@ -770,7 +920,7 @@ root用户：root/root
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Quippy
+                            blinkfox
                             
                         </span>
                     </div>
@@ -917,18 +1067,12 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
         font-size: 12px;
         font-weight: 700;
         line-height: 16px !important;
     }
 
     .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
         font-size: 15px;
         color: #42b983;
     }
@@ -968,14 +1112,17 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2020</span>
-            <a href="/about" target="_blank">Quippy</a>
+            <span id="year">2018</span>
+            <a href="https://blinkfox.github.io" target="_blank">blinkfox</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">11.4k</span>&nbsp;字
             
             
             
@@ -994,6 +1141,50 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2018";
+                    var startMonth = "09";
+                    var startDate = "20";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             
@@ -1014,10 +1205,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=695595369" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 695595369" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
 
 
 
@@ -1101,6 +1288,10 @@ $(function () {
 
     
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

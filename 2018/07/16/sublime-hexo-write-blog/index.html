@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Sublime,Hexo">
-    <meta name="description" content="清風徐來，水波不興，寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。">
+    <meta name="description" content="从来没有真正的绝境，只有心灵的迷途">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Sublime+Hexo 优雅写博客 | Breeze Blows</title>
+    <title>Sublime+Hexo 优雅写博客 | 拾下</title>
     <link rel="icon" type="image/png" href="/duola-a-meng_43.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
                     
                     <img src="/duola-a-meng_43.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Breeze Blows</span>
+                    <span class="logo-span">拾下</span>
                 </a>
             </div>
             
@@ -97,7 +97,7 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
     </a>
@@ -118,10 +118,10 @@
         
         <img src="/duola-a-meng_43.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Breeze Blows</div>
+        <div class="logo-name">拾下</div>
         <div class="logo-desc">
             
-            清風徐來，水波不興，寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。
+            从来没有真正的绝境，只有心灵的迷途
             
         </div>
     </div>
@@ -178,7 +178,7 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
 		</a>
@@ -289,8 +289,16 @@
         display: block;
     }
 
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
     #toc-content .is-active-link {
         color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -350,10 +358,25 @@
                 
 
                 
-
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    813
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    3 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -371,23 +394,63 @@
 <li>Tools工具栏启动本地浏览或直接发布到远程仓库。</li>
 </ol>
 <h3 id="Sublime-新建博客命令"><a href="#Sublime-新建博客命令" class="headerlink" title="Sublime 新建博客命令"></a>Sublime 新建博客命令</h3><p>命令创建的路径 Sublime &gt;&gt; Tools &gt;&gt; Build System &gt;&gt; New Build System…，新建以下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;shell_cmd&quot;: &quot;title=\\$(date +%H%M%S) &amp;&amp; hexo new \\$title &amp;&amp; subl /Users/mac/Documents/blog/source/_posts/\\$title.md&quot;,</span><br><span class="line">    &quot;working_dir&quot;: &quot;/Users/mac/Documents/blog/&quot;,</span><br><span class="line">    &quot;path&quot;: &quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>另存为 hexo-new-blog.sublime-build</p>
+<pre><code>{
+    &quot;shell_cmd&quot;: &quot;title=\\$(date +%H%M%S) &amp;&amp; hexo new \\$title &amp;&amp; subl /Users/mac/Documents/blog/source/_posts/\\$title.md&quot;,
+    &quot;working_dir&quot;: &quot;/Users/mac/Documents/blog/&quot;,
+    &quot;path&quot;: &quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH&quot;
+}
+</code></pre><p>另存为 hexo-new-blog.sublime-build</p>
 <p>默认博客文件和文件名为title.md，需要通过下面所设的快捷键F2进行重命名。</p>
 <blockquote>
 <p>注意：需要结合自己本地的blog目录和Sublime安装目录进行配置shell_cmd和path。</p>
 </blockquote>
 <h3 id="Sublime-本地Hexo服务器启动命令"><a href="#Sublime-本地Hexo服务器启动命令" class="headerlink" title="Sublime 本地Hexo服务器启动命令"></a>Sublime 本地Hexo服务器启动命令</h3><p>命令创建的路径 Sublime &gt;&gt; Tools &gt;&gt; Build System &gt;&gt; New Build System…，新建以下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;shell_cmd&quot;: &quot;ps -ef|grep hexo|grep -v grep|awk &apos;&#123;print \&quot;kill -9 \&quot;\\$2&#125;&apos;|sh &amp;&amp; hexo clean &amp;&amp; hexo s&quot;,</span><br><span class="line">    &quot;working_dir&quot;: &quot;/Users/mac/Documents/blog/&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>另存为 hexo-start.sublime-build</p>
+<pre><code>{
+    &quot;shell_cmd&quot;: &quot;ps -ef|grep hexo|grep -v grep|awk &#39;{print \&quot;kill -9 \&quot;\\$2}&#39;|sh &amp;&amp; hexo clean &amp;&amp; hexo s&quot;,
+    &quot;working_dir&quot;: &quot;/Users/mac/Documents/blog/&quot;
+}</code></pre><p>另存为 hexo-start.sublime-build</p>
 <h3 id="Sublime-发布到博客网站命令"><a href="#Sublime-发布到博客网站命令" class="headerlink" title="Sublime 发布到博客网站命令"></a>Sublime 发布到博客网站命令</h3><p>命令创建的路径 Sublime&gt;&gt;Tools&gt;&gt;Build System&gt;&gt;New Build System…，新建以下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;shell_cmd&quot;: &quot;hexo clean&amp;&amp;hexo g -d&quot;,</span><br><span class="line">    &quot;working_dir&quot;: &quot;/Users/mac/Documents/blog/&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>另存为 hexo-deploy.sublime-build</p>
+<pre><code>{
+    &quot;shell_cmd&quot;: &quot;hexo clean&amp;&amp;hexo g -d&quot;,
+    &quot;working_dir&quot;: &quot;/Users/mac/Documents/blog/&quot;
+}</code></pre><p>另存为 hexo-deploy.sublime-build</p>
 <h3 id="Sublime-重命名快捷键"><a href="#Sublime-重命名快捷键" class="headerlink" title="Sublime 重命名快捷键"></a>Sublime 重命名快捷键</h3><ol>
 <li>新建命令文件</li>
 </ol>
 <p>打开包目录：Sublime &gt;&gt; Preferences &gt;&gt; Browser Packages…</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rename_file.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sublime</span><br><span class="line"><span class="keyword">import</span> sublime_plugin</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RenameFileCommand</span><span class="params">(sublime_plugin.WindowCommand)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, paths)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> paths[<span class="number">0</span>] == <span class="string">"$file"</span>:</span><br><span class="line">            paths[<span class="number">0</span>] = self.window.active_view().file_name()</span><br><span class="line">        branch, leaf = os.path.split(paths[<span class="number">0</span>])</span><br><span class="line">        v = self.window.show_input_panel(<span class="string">"New Name:"</span>, leaf, functools.partial(self.on_done, paths[<span class="number">0</span>], branch), <span class="keyword">None</span>, <span class="keyword">None</span>)</span><br><span class="line">        name, ext = os.path.splitext(leaf)</span><br><span class="line"></span><br><span class="line">        v.sel().clear()</span><br><span class="line">        v.sel().add(sublime.Region(<span class="number">0</span>, len(name)))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_done</span><span class="params">(self, old, branch, leaf)</span>:</span></span><br><span class="line">        new = os.path.join(branch, leaf)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            os.rename(old, new)</span><br><span class="line"></span><br><span class="line">            v = self.window.find_open_file(old)</span><br><span class="line">            <span class="keyword">if</span> v:</span><br><span class="line">                v.retarget(new)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            sublime.status_message(<span class="string">"Unable to rename"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_visible</span><span class="params">(self, paths)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(paths) == <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-Python"><code class="language-Python"># rename_file.py
+
+import sublime
+import sublime_plugin
+import os
+import functools
+
+
+class RenameFileCommand(sublime_plugin.WindowCommand):
+    def run(self, paths):
+        if paths[0] == "$file":
+            paths[0] = self.window.active_view().file_name()
+        branch, leaf = os.path.split(paths[0])
+        v = self.window.show_input_panel("New Name:", leaf, functools.partial(self.on_done, paths[0], branch), None, None)
+        name, ext = os.path.splitext(leaf)
+
+        v.sel().clear()
+        v.sel().add(sublime.Region(0, len(name)))
+
+    def on_done(self, old, branch, leaf):
+        new = os.path.join(branch, leaf)
+
+        try:
+            os.rename(old, new)
+
+            v = self.window.find_open_file(old)
+            if v:
+                v.retarget(new)
+        except:
+            sublime.status_message("Unable to rename")
+
+    def is_visible(self, paths):
+        return len(paths) == 1</code></pre>
 <blockquote>
 <p>感谢 <a href="https://superuser.com/questions/683766/renaming-open-files-in-sublime-text-2/684114#684114" target="_blank" rel="noopener">https://superuser.com/questions/683766/renaming-open-files-in-sublime-text-2/684114#684114</a></p>
 </blockquote>
@@ -395,8 +458,12 @@
 <li>注册快捷键</li>
 </ol>
 <p>打开快捷键设置 Sublime &gt;&gt; Preferences &gt;&gt; key Bindings,添加下面配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; </span><br><span class="line">        &quot;keys&quot;: [&quot;f2&quot;], &quot;command&quot;: &quot;rename_file&quot;, &quot;args&quot;: &#123; &quot;paths&quot;: [&quot;$file&quot;] &#125; </span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<blockquote>
+<pre><code>[
+    { 
+        &quot;keys&quot;: [&quot;f2&quot;], &quot;command&quot;: &quot;rename_file&quot;, &quot;args&quot;: { &quot;paths&quot;: [&quot;$file&quot;] } 
+    }
+]
+</code></pre><blockquote>
 <p>也可使用命令来控制文件的重命名和删除，Command-Shift-P &gt;&gt; Package Control: Install Package &gt;&gt; File Rename 和 Delete Current File。</p>
 </blockquote>
 <h3 id="Markdown插件安装"><a href="#Markdown插件安装" class="headerlink" title="Markdown插件安装"></a>Markdown插件安装</h3><ol>
@@ -436,7 +503,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Quippy</a>
+                    <a href="https://blinkfox.github.io" rel="external nofollow noreferrer">blinkfox</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -446,7 +513,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://kwp2014.github.io/2018/07/16/sublime-hexo-write-blog/">http://kwp2014.github.io/2018/07/16/sublime-hexo-write-blog/</a>
+                    <a href="https://blinkfox.github.io/2018/07/16/sublime-hexo-write-blog/">https://blinkfox.github.io/2018/07/16/sublime-hexo-write-blog/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -459,7 +526,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Quippy</a>
+                    <a href="https://blinkfox.github.io" target="_blank">blinkfox</a>
                     !
                 </span>
             </div>
@@ -500,7 +567,7 @@
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
@@ -674,7 +741,9 @@
                     <div class="summary block-with-text">
                         
                             为什么程序员写不出优雅的代码呢？这个问题困惑了我好多年。似乎写代码的人很多，但留存久的代码却很少。
-上大学时，起初还停留在只会某种或少许的几种语言，比如C语言，Matlab，当时每多学一门语言都觉得很自豪，但学语言，主要还是为了解决老师留下
+
+
+上大学时，起初还停留在只会某种或少许的几种语言，比如C语言，Matlab，当时每多学一门语言都觉得很自豪，但学语言，主要还是为了解决老师
                         
                     </div>
                     <div class="publish-info">
@@ -684,7 +753,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Quippy
+                            blinkfox
                             
                         </span>
                     </div>
@@ -713,10 +782,12 @@
                         
                             Hexo和Next主题自带标签
 内容居中
-123&#123;% cq %&#125;    Your content.&#123;% endcq %&#125;
-
+{% cq %}
+    Your content.
+{% endcq %}
 引用
-123&#123;% blockquote David Levitha
+{% blockquote David Levithan, Wide Awake %}
+    Do not ju
                         
                     </div>
                     <div class="publish-info">
@@ -726,7 +797,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Quippy
+                            blinkfox
                             
                         </span>
                     </div>
@@ -881,18 +952,12 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
         font-size: 12px;
         font-weight: 700;
         line-height: 16px !important;
     }
 
     .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
         font-size: 15px;
         color: #42b983;
     }
@@ -932,14 +997,17 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2020</span>
-            <a href="/about" target="_blank">Quippy</a>
+            <span id="year">2018</span>
+            <a href="https://blinkfox.github.io" target="_blank">blinkfox</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">11.4k</span>&nbsp;字
             
             
             
@@ -958,6 +1026,50 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2018";
+                    var startMonth = "09";
+                    var startDate = "20";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             
@@ -978,10 +1090,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=695595369" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 695595369" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
 
 
 
@@ -1065,6 +1173,10 @@ $(function () {
 
     
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

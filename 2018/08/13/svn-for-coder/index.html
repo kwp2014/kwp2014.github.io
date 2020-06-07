@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="SVN,master,branch,rollback">
-    <meta name="description" content="清風徐來，水波不興，寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。">
+    <meta name="description" content="从来没有真正的绝境，只有心灵的迷途">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SVN工具用于本地版本管理 | Breeze Blows</title>
+    <title>SVN工具用于本地版本管理 | 拾下</title>
     <link rel="icon" type="image/png" href="/duola-a-meng_43.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +41,7 @@
                     
                     <img src="/duola-a-meng_43.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Breeze Blows</span>
+                    <span class="logo-span">拾下</span>
                 </a>
             </div>
             
@@ -97,7 +97,7 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
     </a>
@@ -118,10 +118,10 @@
         
         <img src="/duola-a-meng_43.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Breeze Blows</div>
+        <div class="logo-name">拾下</div>
         <div class="logo-desc">
             
-            清風徐來，水波不興，寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。
+            从来没有真正的绝境，只有心灵的迷途
             
         </div>
     </div>
@@ -178,7 +178,7 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
 		</a>
@@ -289,8 +289,16 @@
         display: block;
     }
 
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
     #toc-content .is-active-link {
         color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
     }
 
     #floating-toc-btn {
@@ -342,10 +350,25 @@
                 
 
                 
-
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    426
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -353,8 +376,30 @@
             <div id="articleContent">
                 <h1 id="SVN是什么"><a href="#SVN是什么" class="headerlink" title="SVN是什么"></a>SVN是什么</h1><p>SVN是Subversion的简称，即版本控制系统。</p>
 <p>首先，SVN不仅可用于代码版本的管理，还可以用于项目资源的管理。本质上，SVN会在本地提供一个公共的共享仓库，仓库用于存放资源，资源以文件的方式表示，并且这些文件都是有状态的，状态通过版本号来标识。只要有需要，任何人在任何时间都可以获取到仓库里的任何历史版本的资源。SVN的一个实际用途是在团队内进行项目资源的管理，将项目涉及的所有资料、文档以及代码等都放在一个项目目录下，这样，在项目开展过程中，可以很方便的管理项目相关的文件，且便于不同成员之间进行资源的分享。比如，从项目管理的角度，SVN的文件夹可以如下进行创建：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">- Project_Name</span><br><span class="line">  |--- 01_需求分析</span><br><span class="line">    |--- 业务相关</span><br><span class="line">    |--- 技术相关</span><br><span class="line">    |--- 产品相关</span><br><span class="line">    |--- Readme.md</span><br><span class="line">  |--- 02_开发阶段</span><br><span class="line">    |--- 环境准备</span><br><span class="line">    |--- 数据模型</span><br><span class="line">    |--- 第三方服务</span><br><span class="line">    |--- 工程源码</span><br><span class="line">    |--- Readme.md</span><br><span class="line">  |--- 03_测试阶段</span><br><span class="line">    |--- 第一轮测试_YYMMDD</span><br><span class="line">    |--- 第二轮测试_YYMMDD</span><br><span class="line">    |--- 第三轮测试_YYMMDD</span><br><span class="line">    |--- Readme.md</span><br><span class="line">  |--- 04_上线阶段</span><br><span class="line">    |--- 源码发布</span><br><span class="line">    |--- 上线计划</span><br><span class="line">    |--- Readme.md </span><br><span class="line">  |--- 05_文档输出</span><br><span class="line">    |--- Readme.md</span><br></pre></td></tr></table></figure>
-<p>这里关注的问题是，SVN如何有效的用到实际项目开发过程中呢？</p>
+<pre><code>- Project_Name
+  |--- 01_需求分析
+    |--- 业务相关
+    |--- 技术相关
+    |--- 产品相关
+    |--- Readme.md
+  |--- 02_开发阶段
+    |--- 环境准备
+    |--- 数据模型
+    |--- 第三方服务
+    |--- 工程源码
+    |--- Readme.md
+  |--- 03_测试阶段
+    |--- 第一轮测试_YYMMDD
+    |--- 第二轮测试_YYMMDD
+    |--- 第三轮测试_YYMMDD
+    |--- Readme.md
+  |--- 04_上线阶段
+    |--- 源码发布
+    |--- 上线计划
+    |--- Readme.md 
+  |--- 05_文档输出
+    |--- Readme.md
+</code></pre><p>这里关注的问题是，SVN如何有效的用到实际项目开发过程中呢？</p>
 <h1 id="SVN有哪些实用的功能"><a href="#SVN有哪些实用的功能" class="headerlink" title="SVN有哪些实用的功能"></a>SVN有哪些实用的功能</h1><ol>
 <li>文件共享</li>
 <li>代码同步</li>
@@ -385,7 +430,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Quippy</a>
+                    <a href="https://blinkfox.github.io" rel="external nofollow noreferrer">blinkfox</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -395,7 +440,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://kwp2014.github.io/2018/08/13/svn-for-coder/">http://kwp2014.github.io/2018/08/13/svn-for-coder/</a>
+                    <a href="https://blinkfox.github.io/2018/08/13/svn-for-coder/">https://blinkfox.github.io/2018/08/13/svn-for-coder/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -408,7 +453,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Quippy</a>
+                    <a href="https://blinkfox.github.io" target="_blank">blinkfox</a>
                     !
                 </span>
             </div>
@@ -441,7 +486,7 @@
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
@@ -634,7 +679,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Quippy
+                            blinkfox
                             
                         </span>
                     </div>
@@ -674,7 +719,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Quippy
+                            blinkfox
                             
                         </span>
                     </div>
@@ -821,18 +866,12 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
         font-size: 12px;
         font-weight: 700;
         line-height: 16px !important;
     }
 
     .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
         font-size: 15px;
         color: #42b983;
     }
@@ -872,14 +911,17 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2020</span>
-            <a href="/about" target="_blank">Quippy</a>
+            <span id="year">2018</span>
+            <a href="https://blinkfox.github.io" target="_blank">blinkfox</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">11.4k</span>&nbsp;字
             
             
             
@@ -898,6 +940,50 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2018";
+                    var startMonth = "09";
+                    var startDate = "20";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             
@@ -918,10 +1004,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=695595369" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 695595369" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
 
 
 
@@ -1005,6 +1087,10 @@ $(function () {
 
     
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
