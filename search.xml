@@ -205,11 +205,11 @@
             
             <tag> Hadoop </tag>
             
-            <tag> HDFS </tag>
-            
             <tag> Mapreduce </tag>
             
             <tag> Eclipse </tag>
+            
+            <tag> HDFS </tag>
             
         </tags>
       
@@ -344,11 +344,11 @@
     
     
     <entry>
-      <title>Git 基本命令</title>
-      <link href="/2018/07/13/git-basic-command/"/>
-      <url>/2018/07/13/git-basic-command/</url>
+      <title>Git For Coder</title>
+      <link href="/2018/07/13/git-for-coder/"/>
+      <url>/2018/07/13/git-for-coder/</url>
       
-        <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol><li>工作目录</li><li>本地版本库</li><li>远程版本库</li></ol><a id="more"></a><h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><pre><code>git config --global user.email &quot;you@example.com&quot;git config --global user.name &quot;Your Name&quot;</code></pre><h2 id="作业提交"><a href="#作业提交" class="headerlink" title="作业提交"></a>作业提交</h2><pre><code>git initgit add ./git commit -m &quot;init&quot;git remote rm origingit remote add origin git@github.com:用户名/仓库名.gitgit push -u origin master</code></pre><hr><h2 id="版本恢复"><a href="#版本恢复" class="headerlink" title="版本恢复"></a>版本恢复</h2><pre><code>git statusgit loggit checkout &lt;sha1-of-a-commit&gt; &lt;/path/to/your/file&gt;</code></pre><h2 id="去托管"><a href="#去托管" class="headerlink" title="去托管"></a>去托管</h2><pre><code>git rm -r --cached filename git commit -m &quot;delete&quot;git push -u origin master</code></pre><h2 id="gitignore文件"><a href="#gitignore文件" class="headerlink" title=".gitignore文件"></a>.gitignore文件</h2><pre><code>ls -la</code></pre>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>Git，为开发而生，是Linus Torvalds的又一个伟大的作品。</p></blockquote><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol><li>工作空间：可以是一个文件夹，一个工程，抑或是一个项目，是用于生产代码的地方。</li><li>暂存区：用于记录哪些文件需要加入Git的版本跟踪。</li><li>本地仓库：记录了本地工作空间所有的修改变动，或者说是历史版本。</li><li>远程仓库：一个用于公共访问的空间，用于集中存放需要共享的分支。</li></ol><h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><pre><code>全局配置git config --global user.email &quot;you@example.com&quot;git config --global user.name &quot;Your Name&quot;设置当前本地分支跟踪远程分支git branch --set-upstream-to=origin/devgit branch -u origin/dev</code></pre><h2 id="代码开发"><a href="#代码开发" class="headerlink" title="代码开发"></a>代码开发</h2><blockquote><p>面向开发人员，专注于本地管理自己的代码。</p></blockquote><pre><code>从远程拉分支到本地git clone -b develop url建本地开发分支并切换git checkout -b feature/XXX查看工作状态git status添加文件到暂存区git add .提交git commit -a合并develop到当前分支git merge origin/develop查看提交日志git log --graph --oneline推送到远程git push -u origin master</code></pre><hr><h2 id="撤销和回退"><a href="#撤销和回退" class="headerlink" title="撤销和回退"></a>撤销和回退</h2><pre><code>回撤到上一个版本git reset HEAD^清空暂存和未暂存的更改 ，仓库重置到目标提交git reset --hard [commit]保留暂存和未暂存的更改，仓库重置到目标提交git reset --soft [commit]生成一个新的提交来撤销某次提交，不会影响此次提交git revert [commit]从缓存区中拉取版本还原，如果没有则到版本库中拉取还原git checkout -- &lt;file&gt;git rm -r --cached filename </code></pre><h2 id="代码维护"><a href="#代码维护" class="headerlink" title="代码维护"></a>代码维护</h2><blockquote><p>面向代码维护者，专注于分支和版本管理。</p></blockquote><pre><code>查看分支提交合并分支删除分支新建标签版本比较版本发布版本回退</code></pre>]]></content>
       
       
       
@@ -367,7 +367,7 @@
       <link href="/2018/07/12/breeze-blows/"/>
       <url>/2018/07/12/breeze-blows/</url>
       
-        <content type="html"><![CDATA[<p>Codding is fun.<br>Computer has accompanied us for many years.<br>Friends, in this time of happiness, joy and good will accompany to you! </p><blockquote><p>It is the kind of mind that can see things as they are, which step by step and in a flash can realize the original nature of everything. Beginner’s mind is Zen practice in action. It is the mind that is innocent of preconceptions and expectations, judgements and prejudices. Think of beginner’s mind as the mind that faces life like a small child, full of curiosity and wonder and amazement.</p><footer><strong>Steve Jobs</strong></footer></blockquote><p>There’s a phrase in Buddhism, ‘Beginner’s mind.’ It’s wonderful to have a beginner’s mind.</p><p>The only way to do great work is to love what you do. If you haven’t found it yet, keep looking. Don’t settle. As with all matters of the heart, you’ll know when you find it.</p><blockquote><p>Have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.  </p><footer><strong>Steve Jobs</strong></footer></blockquote><p>If you have a drream, you will never stop here.</p><hr><p>Created by Quippy on 2018-07-12.</p>]]></content>
+        <content type="html"><![CDATA[<p>Codding is fun.<br>Computer has accompanied us for many years.<br>Friends, in this time of happiness, joy and good will accompany to you! </p><blockquote><p>It is the kind of mind that can see things as they are, which step by step and in a flash can realize the original nature of everything. Beginner’s mind is Zen practice in action. It is the mind that is innocent of preconceptions and expectations, judgements and prejudices. Think of beginner’s mind as the mind that faces life like a small child, full of curiosity and wonder and amazement.</p><footer><strong>Steve Jobs</strong></footer></blockquote><p>There’s a phrase in Buddhism, ‘Beginner’s mind.’ It’s wonderful to have a beginner’s mind.</p><p>The only way to do great work is to love what you do. If you haven’t found it yet, keep looking. Don’t settle. As with all matters of the heart, you’ll know when you find it.</p><blockquote><p>Have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.  </p><footer><strong>Steve Jobs</strong></footer></blockquote><p>If you have a drream, you would never stop here.</p><hr><p>Created by Quippy on 2018-07-12.</p>]]></content>
       
       
       

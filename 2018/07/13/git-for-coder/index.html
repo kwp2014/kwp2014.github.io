@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git 基本命令 | 清风徐来</title>
+    <title>Git For Coder | 清风徐来</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/kwp2014/kwp2014.github.io/duola-a-meng_43.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kwp2014/kwp2014.github.io/libs/awesome/css/all.css">
@@ -201,12 +201,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/kwp2014/kwp2014.github.io/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/kwp2014/kwp2014.github.io/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git 基本命令</h1>
+                    <h1 class="description center-align post-title">Git For Coder</h1>
                 </div>
             </div>
         </div>
@@ -356,7 +356,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    119
+                    463
                 </div>
                 
 
@@ -378,29 +378,62 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol>
-<li>工作目录</li>
-<li>本地版本库</li>
-<li>远程版本库</li>
+                <blockquote>
+<p>Git，为开发而生，是Linus Torvalds的又一个伟大的作品。</p>
+</blockquote>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol>
+<li>工作空间：可以是一个文件夹，一个工程，抑或是一个项目，是用于生产代码的地方。</li>
+<li>暂存区：用于记录哪些文件需要加入Git的版本跟踪。</li>
+<li>本地仓库：记录了本地工作空间所有的修改变动，或者说是历史版本。</li>
+<li>远程仓库：一个用于公共访问的空间，用于集中存放需要共享的分支。</li>
 </ol>
-<a id="more"></a>
-<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><pre><code>git config --global user.email &quot;you@example.com&quot;
-git config --global user.name &quot;Your Name&quot;</code></pre><h2 id="作业提交"><a href="#作业提交" class="headerlink" title="作业提交"></a>作业提交</h2><pre><code>git init
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><pre><code>全局配置
+git config --global user.email &quot;you@example.com&quot;
+git config --global user.name &quot;Your Name&quot;
 
-git add ./
-
-git commit -m &quot;init&quot;
-
-git remote rm origin
-
-git remote add origin git@github.com:用户名/仓库名.git
-
+设置当前本地分支跟踪远程分支
+git branch --set-upstream-to=origin/dev
+git branch -u origin/dev</code></pre><h2 id="代码开发"><a href="#代码开发" class="headerlink" title="代码开发"></a>代码开发</h2><blockquote>
+<p>面向开发人员，专注于本地管理自己的代码。</p>
+</blockquote>
+<pre><code>从远程拉分支到本地
+git clone -b develop url
+建本地开发分支并切换
+git checkout -b feature/XXX
+查看工作状态
+git status
+添加文件到暂存区
+git add .
+提交
+git commit -a
+合并develop到当前分支
+git merge origin/develop
+查看提交日志
+git log --graph --oneline
+推送到远程
 git push -u origin master</code></pre><hr>
-<h2 id="版本恢复"><a href="#版本恢复" class="headerlink" title="版本恢复"></a>版本恢复</h2><pre><code>git status
-git log
-git checkout &lt;sha1-of-a-commit&gt; &lt;/path/to/your/file&gt;</code></pre><h2 id="去托管"><a href="#去托管" class="headerlink" title="去托管"></a>去托管</h2><pre><code>git rm -r --cached filename 
-git commit -m &quot;delete&quot;
-git push -u origin master</code></pre><h2 id="gitignore文件"><a href="#gitignore文件" class="headerlink" title=".gitignore文件"></a>.gitignore文件</h2><pre><code>ls -la</code></pre>
+<h2 id="撤销和回退"><a href="#撤销和回退" class="headerlink" title="撤销和回退"></a>撤销和回退</h2><pre><code>回撤到上一个版本
+git reset HEAD^
+清空暂存和未暂存的更改 ，仓库重置到目标提交
+git reset --hard [commit]
+保留暂存和未暂存的更改，仓库重置到目标提交
+git reset --soft [commit]
+生成一个新的提交来撤销某次提交，不会影响此次提交
+git revert [commit]
+从缓存区中拉取版本还原，如果没有则到版本库中拉取还原
+git checkout -- &lt;file&gt;
+
+git rm -r --cached filename 
+</code></pre><h2 id="代码维护"><a href="#代码维护" class="headerlink" title="代码维护"></a>代码维护</h2><blockquote>
+<p>面向代码维护者，专注于分支和版本管理。</p>
+</blockquote>
+<pre><code>查看分支提交
+合并分支
+删除分支
+新建标签
+版本比较
+版本发布
+版本回退</code></pre>
             </div>
             <hr/>
 
@@ -425,7 +458,7 @@ git push -u origin master</code></pre><h2 id="gitignore文件"><a href="#gitigno
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://kwp2014.github.io/2018/07/13/git-basic-command/">https://kwp2014.github.io/2018/07/13/git-basic-command/</a>
+                    <a href="https://kwp2014.github.io/2018/07/13/git-for-coder/">https://kwp2014.github.io/2018/07/13/git-for-coder/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -933,7 +966,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.4k</span>&nbsp;字
+                class="white-color">11.7k</span>&nbsp;字
             
             
             

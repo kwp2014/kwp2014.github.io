@@ -262,11 +262,11 @@
     
       <category term="Hadoop" scheme="https://kwp2014.github.io/tags/Hadoop/"/>
     
-      <category term="HDFS" scheme="https://kwp2014.github.io/tags/HDFS/"/>
-    
       <category term="Mapreduce" scheme="https://kwp2014.github.io/tags/Mapreduce/"/>
     
       <category term="Eclipse" scheme="https://kwp2014.github.io/tags/Eclipse/"/>
+    
+      <category term="HDFS" scheme="https://kwp2014.github.io/tags/HDFS/"/>
     
   </entry>
   
