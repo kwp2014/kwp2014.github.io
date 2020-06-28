@@ -4,11 +4,24 @@
   
     
     <entry>
+      <title>算法基础</title>
+      <link href="/2020/06/28/suan-fa-ji-chu/"/>
+      <url>/2020/06/28/suan-fa-ji-chu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="算法概览"><a href="#算法概览" class="headerlink" title="算法概览"></a>算法概览</h2><ol><li><p>按照数据结构分：</p><ul><li>数组</li><li>链表</li><li>字符串</li><li>二叉树</li><li>图</li><li>栈</li><li>队列</li><li>哈希表</li></ul></li><li><p>处理思路：</p><ul><li>基本数据结构，配合基本数学运算</li><li>高级点的，还需要考虑函数的递归调用模型，类似于高阶函数和数列</li><li>涉及循环或递归这些重复计算都需要考虑退出条件</li><li>算法都效率由时间复杂度和空间复杂度共同决定</li></ul></li><li><p>数值运算：</p><ul><li>最基本的是加法和减法，然后是乘法和除法</li><li>取模运算和整数除法</li><li>乘法会造成数值溢出</li><li>最大值和最小值经常用于动态规划</li><li>位运算主要涉及移位操作，有左移和右移</li><li>不同的数据类型的精度不同</li><li>逻辑运算有与或非和异或</li></ul></li><li><p>经典算法：</p><ul><li>暴力求解</li><li>二分查找</li><li>遍历</li><li>双指针</li><li>递归</li><li>回溯</li><li>动态规划</li><li>分治</li><li>哈希</li><li>归并</li><li>位图</li><li>AVL树</li><li>KMP算法</li><li>Manacher算法</li></ul></li></ol><h2 id="暴力求解"><a href="#暴力求解" class="headerlink" title="暴力求解"></a>暴力求解</h2><p>不计较算法的开销，采用直观的方式进行求解，枚举可能出现的每一种情况。该方法虽然执行效率低，但相对直观，有助于发现冗余，打开思路。需要注意的是，为了获得正确的结果，需要着重考虑不同的输入情形下对应的边界条件，防止溢出。</p><h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/3c0d479710a8d4a08e55a0e6bcf26938a63ac4a553f912a458290ff0fd5f2d13490249bb474d50cd60c3dda32460155a?pictype=scale&from=30113&version=3.3.3.3&uin=695595369&fname=%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202020-06-28%2016.44.57.png&size=750" alt="img"></p><blockquote><p>注意mid = (high + low)/2, 中间数一定位于low和high之间。</p></blockquote><pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> A<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token keyword">int</span> low <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> high <span class="token operator">=</span> A<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>   <span class="token keyword">int</span> mid<span class="token punctuation">;</span>   <span class="token keyword">while</span><span class="token punctuation">(</span>low <span class="token operator">&lt;=</span> high<span class="token punctuation">)</span> <span class="token punctuation">{</span>       mid <span class="token operator">=</span> <span class="token punctuation">(</span>high <span class="token operator">+</span> low<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>A<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>          <span class="token keyword">return</span> mid<span class="token punctuation">;</span>       <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>A<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">></span> target<span class="token punctuation">)</span><span class="token punctuation">{</span>           high <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>       <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>           low <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>       <span class="token punctuation">}</span>   <span class="token punctuation">}</span>   <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre><ol><li>举例：A = [0,1,2,3,4,5]<ul><li>初始化：low=0,high=5,mid=0,target=10;</li><li>1) mid=2, A[mid] &lt; target;</li><li>2) low=3,high=5,mid=4, A[mid] &lt; target;</li><li>3) low=5,high=5,mid=5,A[mid] &lt; target;</li><li>4) low=6,high=5,退出循环 return -1;</li></ul></li></ol><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><blockquote><p>遍历：按照一定规则异常访问每一个数据。</p></blockquote><ol><li>数组遍历：最典型的场景是数组进行反转</li><li>链表遍历：配合双指针可以近似实现随机访问节点的目的</li><li>二叉树遍历：通过递归的方式访问每一个节点</li></ol><h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><blockquote><p>双指针：在循环遍历链表过程中通过快慢指针来记录当前访问的节点。</p></blockquote><ol><li>适用场景：<ul><li>访问链表的倒数第K个节点</li><li>访问链表的中间节点</li><li>检测单链表中是否有环</li></ul></li></ol><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><blockquote><p>递归：一类通用算法的代名词，本质是基于编程语言的函数的栈式调用结构。</p></blockquote><ol><li><p>递归的陷阱</p><ul><li>效率低，调用栈太深</li><li>容易溢出，边界条件不好控制</li></ul></li><li><p>递归的三大要素</p><ul><li>明确函数的输入输出和功能定位，越简单越好</li><li>发现递归结束条件，从最简单或最初始的状态入手</li><li>发现递归式，从通用的范式入手<br>发现递归条件：可以理解为，从f(1)…正向推到f(n),从初始到无穷，从简单到一般。<br>发现递归式：即发现问题的本质，从通用着手，从f(n)…反推到f(1).</li></ul></li><li><p>场景：</p><ul><li>求阶乘，斐波那契数列</li><li>反转单链表</li><li>二叉树遍历</li></ul></li><li><p>递归的优化</p><blockquote><p>起因：子问题被重复计算。</p></blockquote><ul><li>保存递归过程的中间计算结果</li><li>考虑是否可以自底向上的递推</li></ul></li></ol><h2 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h2><blockquote><p>回溯：back tracking，属于路径搜索算法中的一种，通过不断的去试错，控制路径的前进和后退来选取最终的目标。</p></blockquote><ol><li><p>经典问题</p><ul><li>01背包问题</li><li>8皇后问题</li></ul></li><li><p>回溯的陷阱</p><ul><li>可看作深度优先搜索</li><li>全搜索，复杂度高 </li></ul></li><li><p>设计思路</p></li></ol><pre><code>res = [];       全局变量 保存最终的结果state = [];     状态变量 保存当前的状态p,q,r;          条件变量 决定搜索是否满足条件back(状态，条件1, 条件2, ...) {    if(不满足条件则剪枝操作) {        return;    }else { 状态满足最终的要求        res.add(state);        return;    }    for 依次遍历和递归 {        if(满足执行条件) {            back(状态，条件1, 条件2, ...);        }    }}最终从res中获取结果</code></pre><ol start="4"><li>适用场景<ul><li>排列、组合（子集、幂集、字符全排列）。 在传值时，对于排列问题，是要删掉单个用过的元素；组合问题，是删掉前面所有的元素。</li><li>数组、字符串，给定一个特定的规则，尝试搜索迭代找到某个解。</li><li>二维数组下的DFS搜索（八皇后、黄金矿工、数独）</li></ul></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java技术成长之路</title>
       <link href="/2019/08/13/grow-up-with-java/"/>
       <url>/2019/08/13/grow-up-with-java/</url>
       
-        <content type="html"><![CDATA[<h2 id="从IF-ELSE到FOR循环"><a href="#从IF-ELSE到FOR循环" class="headerlink" title="从IF ELSE到FOR循环"></a>从IF ELSE到FOR循环</h2><h2 id="从增删查改到持久化工具"><a href="#从增删查改到持久化工具" class="headerlink" title="从增删查改到持久化工具"></a>从增删查改到持久化工具</h2><h2 id="IO和集合框架的认识"><a href="#IO和集合框架的认识" class="headerlink" title="IO和集合框架的认识"></a>IO和集合框架的认识</h2><h2 id="从多线程到线程池"><a href="#从多线程到线程池" class="headerlink" title="从多线程到线程池"></a>从多线程到线程池</h2><h2 id="从单应用到分布式"><a href="#从单应用到分布式" class="headerlink" title="从单应用到分布式"></a>从单应用到分布式</h2><h2 id="从运营监控到JVM调优"><a href="#从运营监控到JVM调优" class="headerlink" title="从运营监控到JVM调优"></a>从运营监控到JVM调优</h2><h2 id="从一个人战斗到一个团队"><a href="#从一个人战斗到一个团队" class="headerlink" title="从一个人战斗到一个团队"></a>从一个人战斗到一个团队</h2><h2 id="从编程到系统"><a href="#从编程到系统" class="headerlink" title="从编程到系统"></a>从编程到系统</h2><h2 id="从系统到产品"><a href="#从系统到产品" class="headerlink" title="从系统到产品"></a>从系统到产品</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="从IF到FOR循环"><a href="#从IF到FOR循环" class="headerlink" title="从IF到FOR循环"></a>从IF到FOR循环</h2><h2 id="从增删查改到持久化工具"><a href="#从增删查改到持久化工具" class="headerlink" title="从增删查改到持久化工具"></a>从增删查改到持久化工具</h2><h2 id="从基本类型到集合框架"><a href="#从基本类型到集合框架" class="headerlink" title="从基本类型到集合框架"></a>从基本类型到集合框架</h2><h2 id="从多线程到线程池"><a href="#从多线程到线程池" class="headerlink" title="从多线程到线程池"></a>从多线程到线程池</h2><h2 id="从单应用到分布式"><a href="#从单应用到分布式" class="headerlink" title="从单应用到分布式"></a>从单应用到分布式</h2><h2 id="从IO到NIO"><a href="#从IO到NIO" class="headerlink" title="从IO到NIO"></a>从IO到NIO</h2><h2 id="从运营监控到JVM调优"><a href="#从运营监控到JVM调优" class="headerlink" title="从运营监控到JVM调优"></a>从运营监控到JVM调优</h2><h2 id="从一个人战斗到一个团队"><a href="#从一个人战斗到一个团队" class="headerlink" title="从一个人战斗到一个团队"></a>从一个人战斗到一个团队</h2><h2 id="从编程到系统"><a href="#从编程到系统" class="headerlink" title="从编程到系统"></a>从编程到系统</h2><h2 id="从系统到产品"><a href="#从系统到产品" class="headerlink" title="从系统到产品"></a>从系统到产品</h2>]]></content>
       
       
       
@@ -106,7 +119,7 @@
       <link href="/2018/11/04/how-closed-loop-done/"/>
       <url>/2018/11/04/how-closed-loop-done/</url>
       
-        <content type="html"><![CDATA[<h2 id="有始有终"><a href="#有始有终" class="headerlink" title="有始有终"></a>有始有终</h2><blockquote><p>再小的事情也不要忘了结束。</p></blockquote><h2 id="谨小慎微"><a href="#谨小慎微" class="headerlink" title="谨小慎微"></a>谨小慎微</h2><blockquote><p>小问题随处可见，为什么要轻易忽视呢。</p></blockquote><h2 id="连续作业"><a href="#连续作业" class="headerlink" title="连续作业"></a>连续作业</h2><blockquote><p>任务开始了，就需要一根到底，直到关闭任务。</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h2 id="未雨绸缪"><a href="#未雨绸缪" class="headerlink" title="未雨绸缪"></a>未雨绸缪</h2><blockquote><p>不要急着开始做，想明白需要做什么以及如何做。</p></blockquote><h2 id="有始有终"><a href="#有始有终" class="headerlink" title="有始有终"></a>有始有终</h2><blockquote><p>再小的事情也不要忘了结束。</p></blockquote><h2 id="谨小慎微"><a href="#谨小慎微" class="headerlink" title="谨小慎微"></a>谨小慎微</h2><blockquote><p>小问题随处可见，为什么要轻易忽视呢。</p></blockquote><h2 id="连续作业"><a href="#连续作业" class="headerlink" title="连续作业"></a>连续作业</h2><blockquote><p>任务开始了，就需要一根到底，直到关闭任务。</p></blockquote>]]></content>
       
       
       
@@ -187,31 +200,6 @@
         <content type="html"><![CDATA[<blockquote><p>待完成。</p></blockquote>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>（四）Hadoop笔记：MacOS本地开发Mapreduce程序</title>
-      <link href="/2018/07/27/hadoop-learn-04/"/>
-      <url>/2018/07/27/hadoop-learn-04/</url>
-      
-        <content type="html"><![CDATA[<h1 id="本地Java-IDE准备"><a href="#本地Java-IDE准备" class="headerlink" title="本地Java IDE准备"></a>本地Java IDE准备</h1><h1 id="Hadoop远程访问"><a href="#Hadoop远程访问" class="headerlink" title="Hadoop远程访问"></a>Hadoop远程访问</h1><h1 id="基本Hadoop程序开发"><a href="#基本Hadoop程序开发" class="headerlink" title="基本Hadoop程序开发"></a>基本Hadoop程序开发</h1><hr><p>【待完成】</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Hadoop </tag>
-            
-            <tag> HDFS </tag>
-            
-            <tag> Mapreduce </tag>
-            
-            <tag> Eclipse </tag>
-            
-        </tags>
       
     </entry>
     
@@ -348,7 +336,7 @@
       <link href="/2018/07/13/git-for-coder/"/>
       <url>/2018/07/13/git-for-coder/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>Git，为开发而生，是Linus Torvalds的又一个伟大的作品。</p></blockquote><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol><li>工作空间：可以是一个文件夹，一个工程，抑或是一个项目，是用于生产代码的地方。</li><li>暂存区：用于记录哪些文件需要加入Git的版本跟踪。</li><li>本地仓库：记录了本地工作空间所有的修改变动，或者说是历史版本。</li><li>远程仓库：一个用于公共访问的空间，用于集中存放需要共享的分支。</li></ol><h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><pre><code>全局配置git config --global user.email &quot;you@example.com&quot;git config --global user.name &quot;Your Name&quot;设置当前本地分支跟踪远程分支git branch --set-upstream-to=origin/devgit branch -u origin/dev</code></pre><h2 id="代码开发"><a href="#代码开发" class="headerlink" title="代码开发"></a>代码开发</h2><blockquote><p>面向开发人员，专注于本地管理自己的代码。</p></blockquote><pre><code>从远程拉分支到本地git clone -b develop url建本地开发分支并切换git checkout -b feature/XXX查看工作状态git status添加文件到暂存区git add .提交git commit -a合并develop到当前分支git merge origin/develop查看提交日志git log --graph --oneline推送到远程git push -u origin master</code></pre><hr><h2 id="撤销和回退"><a href="#撤销和回退" class="headerlink" title="撤销和回退"></a>撤销和回退</h2><pre><code>回撤到上一个版本git reset HEAD^清空暂存和未暂存的更改 ，仓库重置到目标提交git reset --hard [commit]保留暂存和未暂存的更改，仓库重置到目标提交git reset --soft [commit]生成一个新的提交来撤销某次提交，不会影响此次提交git revert [commit]从缓存区中拉取版本还原，如果没有则到版本库中拉取还原git checkout -- &lt;file&gt;git rm -r --cached filename </code></pre><h2 id="代码维护"><a href="#代码维护" class="headerlink" title="代码维护"></a>代码维护</h2><blockquote><p>面向代码维护者，专注于分支和版本管理。</p></blockquote><pre><code>查看分支提交合并分支删除分支新建标签版本比较版本发布版本回退</code></pre>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>Git，为开发而生，是Linus Torvalds的又一个伟大的作品。</p></blockquote><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol><li>工作空间：可以是一个文件夹，一个工程，抑或是一个项目，是用于生产代码的地方。</li><li>暂存区：用于记录哪些文件需要加入Git的版本跟踪。</li><li>本地仓库：记录了本地工作空间所有的修改变动，或者说是历史版本。</li><li>远程仓库：一个用于公共访问的空间，用于集中存放需要共享的分支。</li></ol><h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><pre><code>全局配置git config --global user.email &quot;you@example.com&quot;git config --global user.name &quot;Your Name&quot;设置当前本地分支跟踪远程分支git branch --set-upstream-to=origin/devgit branch -u origin/dev</code></pre><h2 id="代码开发"><a href="#代码开发" class="headerlink" title="代码开发"></a>代码开发</h2><blockquote><p>面向开发人员，专注于本地管理自己的代码。</p></blockquote><pre><code>从远程拉分支到本地git clone -b develop url建本地开发分支并切换git checkout -b feature/XXX查看工作状态git status添加文件到暂存区git add .提交git commit -a合并develop到当前分支git merge origin/develop查看提交日志git log --graph --oneline推送到远程git push -u origin master</code></pre><hr><h2 id="撤销和回退"><a href="#撤销和回退" class="headerlink" title="撤销和回退"></a>撤销和回退</h2><pre><code>回撤到上一个版本git reset HEAD^清空暂存和未暂存的更改 ，仓库重置到目标提交git reset --hard [commit]保留暂存和未暂存的更改，仓库重置到目标提交git reset --soft [commit]生成一个新的提交来撤销某次提交，不会影响此次提交git revert [commit]从缓存区中拉取版本还原，如果没有则到版本库中拉取还原git checkout -- &lt;file&gt;去除本地仓库中文件git rm -r --cached filename 丢弃工作区修改git checkout --file</code></pre><h2 id="代码维护"><a href="#代码维护" class="headerlink" title="代码维护"></a>代码维护</h2><blockquote><p>面向代码维护者，专注于分支和版本管理。</p></blockquote><pre><code>查看远程分支git branch -r拉取远程分支git feitch合并分支git merge删除分支git push origin --delete hotfix/YYY新建标签git tag -a tagName -m &#39;my tag&#39;同步标签到远程git push origin tagName版本比较git diff commit_id1 commit_id2 -- file查看操作记录git reflog</code></pre><h2 id="忽略"><a href="#忽略" class="headerlink" title="忽略"></a>忽略</h2><blockquote><p>.gitignore只能忽略那些原来没有被track的文件<br>过滤条件</p></blockquote><pre><code>#           此为注释 – 将被 Git 忽略*.a         忽略所有 .a 结尾的文件!lib.a      但 lib.a 除外/TODO       仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODObuild/      忽略 build/ 目录下的所有文件doc/*.txt   会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</code></pre>]]></content>
       
       
       

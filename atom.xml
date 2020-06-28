@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kwp2014.github.io/"/>
-  <updated>2019-08-13T13:28:31.663Z</updated>
+  <updated>2020-06-28T10:03:16.592Z</updated>
   <id>https://kwp2014.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>算法基础</title>
+    <link href="https://kwp2014.github.io/2020/06/28/suan-fa-ji-chu/"/>
+    <id>https://kwp2014.github.io/2020/06/28/suan-fa-ji-chu/</id>
+    <published>2020-06-28T06:32:31.000Z</published>
+    <updated>2020-06-28T10:03:16.592Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;算法概览&quot;&gt;&lt;a href=&quot;#算法概览&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Java技术成长之路</title>
     <link href="https://kwp2014.github.io/2019/08/13/grow-up-with-java/"/>
     <id>https://kwp2014.github.io/2019/08/13/grow-up-with-java/</id>
     <published>2019-08-13T13:19:49.000Z</published>
-    <updated>2019-08-13T13:28:31.663Z</updated>
+    <updated>2020-06-14T04:28:05.130Z</updated>
     
     <summary type="html">
     
@@ -139,7 +161,7 @@
     <link href="https://kwp2014.github.io/2018/11/04/how-closed-loop-done/"/>
     <id>https://kwp2014.github.io/2018/11/04/how-closed-loop-done/</id>
     <published>2018-11-04T14:38:00.000Z</published>
-    <updated>2018-11-04T14:51:33.611Z</updated>
+    <updated>2020-06-14T04:25:37.997Z</updated>
     
     <summary type="html">
     
@@ -243,30 +265,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>（四）Hadoop笔记：MacOS本地开发Mapreduce程序</title>
-    <link href="https://kwp2014.github.io/2018/07/27/hadoop-learn-04/"/>
-    <id>https://kwp2014.github.io/2018/07/27/hadoop-learn-04/</id>
-    <published>2018-07-27T13:05:19.000Z</published>
-    <updated>2018-07-27T13:13:48.120Z</updated>
-    
-    <summary type="html">
-    
-      该部分主要讲述，基于虚拟机搭建的Hadoop集群，直接在MacOS本地进行Mapreduce程序开发的过程。本部分涉及3小节：本地Java IDE准备，Hadoop远程访问，基本Hadoop程序开发。
-    
-    </summary>
-    
-    
-      <category term="Hadoop" scheme="https://kwp2014.github.io/tags/Hadoop/"/>
-    
-      <category term="HDFS" scheme="https://kwp2014.github.io/tags/HDFS/"/>
-    
-      <category term="Mapreduce" scheme="https://kwp2014.github.io/tags/Mapreduce/"/>
-    
-      <category term="Eclipse" scheme="https://kwp2014.github.io/tags/Eclipse/"/>
     
   </entry>
   
