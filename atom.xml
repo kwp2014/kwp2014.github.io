@@ -306,9 +306,9 @@
     </summary>
     
     
-      <category term="CentOS" scheme="https://kwp2014.github.io/tags/CentOS/"/>
-    
       <category term="Linux" scheme="https://kwp2014.github.io/tags/Linux/"/>
+    
+      <category term="CentOS" scheme="https://kwp2014.github.io/tags/CentOS/"/>
     
       <category term="VMware Tools" scheme="https://kwp2014.github.io/tags/VMware-Tools/"/>
     
@@ -328,9 +328,9 @@
     </summary>
     
     
-      <category term="Linux" scheme="https://kwp2014.github.io/tags/Linux/"/>
-    
       <category term="Hadoop" scheme="https://kwp2014.github.io/tags/Hadoop/"/>
+    
+      <category term="Linux" scheme="https://kwp2014.github.io/tags/Linux/"/>
     
       <category term="Node" scheme="https://kwp2014.github.io/tags/Node/"/>
     
